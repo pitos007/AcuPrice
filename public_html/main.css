@@ -1,0 +1,14 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-Dec-2015, 09:40:43
+    Author     : UPatryk
+*/
+div.header {
+    height: 300px;
+    width: 300px;
+    background-image: url("images/irongrip.png");
+}
