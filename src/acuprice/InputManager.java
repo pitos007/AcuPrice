@@ -1,5 +1,5 @@
 
-package DB_tests;
+package acuprice;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

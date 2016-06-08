@@ -11,17 +11,20 @@ package acuprice;
  */
 public class Main {
     public static void main(String[] args){
-        InputManager tm = new InputManager();
-        System.out.println("Generate files from headers...");
-        tm.createFilesFromHeaders();
-        System.out.println("Generate map: codeIn - prices list ");
-        tm.createPriceMaps();
-        tm.printCodeList();
-        tm.readUploadFile();
-        System.out.println("Generate map: CodeOut - price");
-        tm.printPriceList();
-        tm.updatePrice();
-        tm.printPriceList();
-        tm.updateOutFile();
+//        InputManager tm = new InputManager();
+//        System.out.println("Generate files from headers...");
+//        tm.createFilesFromHeaders();
+//        System.out.println("Generate map: codeIn - prices list ");
+//        tm.createPriceMaps();
+//        tm.printCodeList();
+//        tm.readUploadFile();
+//        System.out.println("Generate map: CodeOut - price");
+//        tm.printPriceList();
+//        tm.updatePrice();
+//        tm.printPriceList();
+//        tm.updateOutFile();
+        
+          Converter cvrt = new Converter();
+          cvrt.extractLongTokens();
     }
 }

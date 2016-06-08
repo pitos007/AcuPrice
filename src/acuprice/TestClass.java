@@ -3,26 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DB_tests;
+package acuprice;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/**
- *
- * @author UPatryk
- */
-public class TestClass {
-    public static void main(String[] args) {
-        String[] stringArray = {"The", "cat", "sat", "on", "the", "mat"};                   //create new array 
-        List<String> stringList = Arrays.asList(stringArray);                                       //convert array to list      
-        Set<String> stringSet = new TreeSet<>(stringList);                                          //creates new set from array (removes duplicates with updated hashCode?) 
-        List<String> stringListTwo = new ArrayList<>(stringSet);                                            //converts set to list 
-        String[] stringArrayTwo = stringList.toArray(new String[stringList.size()]);                 //converts List back to array 
-        String str = stringArray[0];
-        System.out.println(str);
-    }
-}
+public class TestClass{ 
+  public static void main(String args[]){ 
+      test(); 
+  } 
+  public static void test(){ 
+     String dataInput = "The reset method clears all state information from " 
+             + "the Matcher object it's called on. The Matcher is, in effect, " 
+             + "reverted to the state it originally had when you first " 
+             + "received a reference to it"; 
+ 
+     Pattern p = Pattern.compile("(text|value|application)"); 
+     Matcher m1 = p.matcher(dataInput); 
+ 
+      while (m1.find()){ 
+      System.out.println("\t\t" + m1.group()); 
+     } 
+      
+     m1.reset(); 
+     System.out.println("After resetting the Matcher"); 
+     
+ 
+     //this would not be possible without Matcher.reset(); 
+     while (m1.find()){ 
+      System.out.println("\t\t" + m1.group()); 
+     } 
+  } 
+} 
