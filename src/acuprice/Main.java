@@ -10,12 +10,18 @@ package acuprice;
  * @author patry
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args){
+        InputManager tm = new InputManager();
+        System.out.println("Generate files from headers...");
+        tm.createFilesFromHeaders();
+        System.out.println("Generate map: codeIn - prices list ");
+        tm.createPriceMaps();
+        tm.printCodeList();
+        tm.readUploadFile();
+        System.out.println("Generate map: CodeOut - price");
+        tm.printPriceList();
+        tm.updatePrice();
+        tm.printPriceList();
+        tm.updateOutFile();
     }
-    
 }
