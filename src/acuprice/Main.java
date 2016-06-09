@@ -24,7 +24,6 @@ public class Main {
 //        tm.printPriceList();
 //        tm.updateOutFile();
         
-          Converter cvrt = new Converter();
-          cvrt.extractLongTokens();
+          
     }
 }
