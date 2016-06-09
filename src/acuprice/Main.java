@@ -24,6 +24,9 @@ public class Main {
 //        tm.printPriceList();
 //        tm.updateOutFile();
         
-          
+        //Extractor extr = new Extractor();
+        ExtractorManager extrMgr = new ExtractorManager();
+        extrMgr.StringToCodes();
+        extrMgr.printCodes();
     }
 }
