@@ -27,6 +27,5 @@ public class Main {
         //Extractor extr = new Extractor();
         ExtractorManager extrMgr = new ExtractorManager();
         extrMgr.StringToCodes();
-        extrMgr.printCodes();
     }
 }

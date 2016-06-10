@@ -13,7 +13,7 @@ import java.util.List;
  * @author UPatryk
  */
 public class ExtractorManager extends Extractor {
-    List<String> templatesList = new ArrayList<>();
+    private List<String> templatesList = new ArrayList<>();
     
     public ExtractorManager(){
         
@@ -27,12 +27,6 @@ public class ExtractorManager extends Extractor {
             for (String eachToken : templList) {
                 this.templatesList.add(eachToken);
             }
-        }
-    }
-    
-    public void printCodes(){
-        for (String eachCode : templatesList) {
-            System.out.println(eachCode);
         }
     }
 }
