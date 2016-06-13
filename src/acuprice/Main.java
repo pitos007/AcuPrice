@@ -27,5 +27,7 @@ public class Main {
         //Extractor extr = new Extractor();
         ExtractorManager extrMgr = new ExtractorManager();
         extrMgr.StringToCodes();
+        FileManager fm = new FileManager();
+        fm.codePricesMap();
     }
 }

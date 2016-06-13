@@ -14,11 +14,10 @@ import java.util.regex.Pattern;
  * @author Pitos
  */
 public class Extractor {
-
     String plStr1 = "92290/1/2/3; 92309 95890/1/2/3/45/46/8/81/82: 92235/36 : 91788/8 ; 92753/54";
 
     public Extractor() {
-
+        FileManager fm = new FileManager();
     }
 
     // extract all numbers from the single String
