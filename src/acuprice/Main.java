@@ -24,7 +24,8 @@ public class Main {
 //        tm.printPriceList();
 //        tm.updateOutFile();
         
-          Converter cvrt = new Converter();
-          cvrt.extractLongTokens();
+        //Extractor extr = new Extractor();
+        ExtractorManager extrMgr = new ExtractorManager();
+        extrMgr.StringToCodes();
     }
 }
