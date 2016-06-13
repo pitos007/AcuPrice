@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://www.netbeans.org/ns/project/1">
+<<<<<<< HEAD
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
@@ -10,6 +11,12 @@
             <test-roots>
                 <root id="test.src.dir"/>
             </test-roots>
+=======
+    <type>org.netbeans.modules.web.clientproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/clientside-project/1">
+            <name>blog</name>
+>>>>>>> 2d1044fe0782c23bfddb9210edac7cecceb14116
         </data>
     </configuration>
 </project>
