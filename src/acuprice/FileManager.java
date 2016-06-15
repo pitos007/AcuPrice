@@ -22,7 +22,7 @@ import java.util.Set;
  */
 public class FileManager {
     private List<String> headers = new ArrayList<>();
-    String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\IO_tests\\src\\DB_tests\\FJpriceList.csv";
+    String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\acuprice\\FJpriceList.csv";
     
     
     public FileManager(){
@@ -51,6 +51,7 @@ public class FileManager {
         catch (Exception ex){
             System.out.println(ex);
         }
+        System.out.println(headers);
     }
     
     public void codePricesMap(){
@@ -69,9 +70,7 @@ public class FileManager {
                 while(ls.hasNext()){
                     tmpList.add(ls.next());
                 }
-                String firstItem = tmpList.get(0);
-                tmpList.remove(0);
-                cdPrMap.put(firstItem, tmpList);
+                cdPrMap.put(tmpList.get(0), tmpList);
             }
             printPriceListMap(cdPrMap);
         }
@@ -84,7 +83,7 @@ public class FileManager {
         Set tempSet = new HashSet();
         for(String eachCode : prListMap.keySet()){
             tempSet = prListMap.keySet();
-            System.out.println(eachCode + " " + tempSet);
+            System.out.println(eachCode);
         }
         System.out.println();
     }

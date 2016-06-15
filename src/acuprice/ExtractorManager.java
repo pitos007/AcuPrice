@@ -19,8 +19,8 @@ public class ExtractorManager extends Extractor {
         
     }
     
-    public void StringToCodes(){
-        List<String> groupTokens = getGroupTokens();
+    public void StringToCodes(String str){
+        List<String> groupTokens = getGroupTokens(str);
         for (String grToken : groupTokens) {
             List<String> tokenNum = getTokens(grToken);
             List<String> templList = createCodes(tokenNum);
