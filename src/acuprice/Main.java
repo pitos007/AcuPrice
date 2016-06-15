@@ -11,6 +11,8 @@ package acuprice;
  */
 public class Main {
     public static void main(String[] args){
+    //E:/NetBeans_JavaSE_8.0_Portable/Data/Projects/AcuPrice    
+        
 //        InputManager tm = new InputManager();
 //        System.out.println("Generate files from headers...");
 //        tm.createFilesFromHeaders();
