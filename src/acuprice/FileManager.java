@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -62,15 +63,20 @@ public class FileManager {
             Scanner ls = null;
             String currentLine;
             bs = new Scanner(new BufferedReader(new FileReader(inFile)));
-            Map<String, List<String>> cdPrMap = new HashMap<>();
+            Map<String, List<String>> cdPrMap = new LinkedHashMap<>();
             while(bs.hasNextLine()){
                 currentLine = bs.nextLine();
                 ls = new Scanner(currentLine);
+                ls.useDelimiter(",");
                 List<String> tmpList = new ArrayList<>();
                 while(ls.hasNext()){
                     tmpList.add(ls.next());
                 }
-                cdPrMap.put(tmpList.get(0), tmpList);
+                String tempKey = tmpList.get(0);
+                tmpList.remove(0);
+                tmpList.remove(0);
+                tmpList.remove(0);
+                cdPrMap.put(tempKey, tmpList);
             }
             printPriceListMap(cdPrMap);
         }
@@ -80,10 +86,10 @@ public class FileManager {
     }
     
     public void printPriceListMap(Map<String, List<String>> prListMap){
-        Set tempSet = new HashSet();
+        List<String> tempList = new ArrayList();
         for(String eachCode : prListMap.keySet()){
-            tempSet = prListMap.keySet();
-            System.out.println(eachCode);
+            tempList = prListMap.get(eachCode);
+            System.out.println(eachCode + " " + tempList);
         }
         System.out.println();
     }

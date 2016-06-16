@@ -29,4 +29,8 @@ public class ExtractorManager extends Extractor {
             }
         }
     }
+    
+    public List<String> getCodes(){
+        return this.templatesList;
+    }
 }
