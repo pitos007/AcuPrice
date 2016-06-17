@@ -14,24 +14,23 @@ import java.util.regex.Pattern;
  * @author Pitos
  */
 public class Extractor {
-
-    String plStr1 = "92290/1/2/3; 92309 95890/1/2/3/45/46/8/81/82: 92235/36 : 91788/8 ; 92753/54";
+    //String plStr1 = "92290/1/2/3; 92309 95890/1/2/3/45/46/8/81/82: 92235/36 : 91788/8 ; 92753/54";
 
     public Extractor() {
-
+        FileManager fm = new FileManager();
     }
 
     // extract all numbers from the single String
-    public List<String> getGroupTokens() {
+    public List<String> getGroupTokens(String str) {
         List<String> groupTokenList = new ArrayList<>();
 
         Pattern p1 = Pattern.compile("(\\d)+(\\/\\d+)*");
-        Matcher m1 = p1.matcher(plStr1);
+        Matcher m1 = p1.matcher(str);
 
         while (m1.find()) {
             groupTokenList.add(m1.group());
         }
-        System.out.println("string:" + groupTokenList);
+        System.out.println("string groups:" + groupTokenList);
         return groupTokenList;
     }
 
@@ -44,7 +43,7 @@ public class Extractor {
         while (m1.find()) {
             tokenList.add(m1.group());
         }
-        System.out.println("group: " + tokenList);
+        System.out.println("tokens from each group: " + tokenList);
         return tokenList;
     }
 
@@ -57,7 +56,7 @@ public class Extractor {
             String newToken = firstPart + str;
             templateList.add(newToken);
         }
-        System.out.println("codes: " + templateList);
+        System.out.println("codes from each token group: " + templateList);
         return templateList;
     }
 }
