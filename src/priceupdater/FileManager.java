@@ -24,7 +24,8 @@ import java.util.Set;
 public class FileManager {
     private List<String> headers = new ArrayList<>();
     //String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\acuprice\\FJpriceList.csv";
-    String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\priceupdater\\FjPriceList.csv";
+    //String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\priceupdater\\FjPriceList.csv";
+    private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\priceupdater\\FJpriceList.csv";
     
     public FileManager(){
         
@@ -55,44 +56,7 @@ public class FileManager {
         System.out.println(headers);
     }
     
-    public void codePricesMap(){
-        File inFile = new File(inPathName);
-        Scanner bs = null;
-        
-        try{
-            Scanner ls = null;
-            String currentLine;
-            bs = new Scanner(new BufferedReader(new FileReader(inFile)));
-            Map<String, List<String>> cdPrMap = new LinkedHashMap<>();
-            while(bs.hasNextLine()){
-                currentLine = bs.nextLine();
-                ls = new Scanner(currentLine);
-                ls.useDelimiter(",");
-                List<String> tmpList = new ArrayList<>();
-                while(ls.hasNext()){
-                    tmpList.add(ls.next());
-                }
-                String tempKey = tmpList.get(0);
-                tmpList.remove(0);
-                tmpList.remove(0);
-                tmpList.remove(0);
-                cdPrMap.put(tempKey, tmpList);
-            }
-            printPriceListMap(cdPrMap);
-        }
-        catch (Exception ex){
-            System.out.println(ex);
-        }
+    public String getInPathName(){
+        return this.inPathName;
     }
-    
-    public void printPriceListMap(Map<String, List<String>> prListMap){
-        List<String> tempList = new ArrayList();
-        for(String eachCode : prListMap.keySet()){
-            tempList = prListMap.get(eachCode);
-            System.out.println(eachCode + " " + tempList);
-        }
-        System.out.println();
-    }
-    
-    
 }

@@ -5,6 +5,10 @@
  */
 package priceupdater;
 
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  *
  * @author patry
@@ -28,9 +32,8 @@ public class Main {
         
         //Extractor extr = new Extractor();
         ExtractorManager extrMgr = new ExtractorManager();
-        String str = "92290/1/2/3; 92309 95890/1/2/3/45/46/8/81/82: 92235/36 : 91788/8 ; 92753/54";
-        extrMgr.StringToCodes(str);
-        FileManager fm = new FileManager();
-        fm.codePricesMap();
+        Map<String, List<String>> fullPriceList = new LinkedHashMap<>();
+        fullPriceList = extrMgr.generatePriceMap();
+        extrMgr.printPriceListMap(fullPriceList);
     }
 }
