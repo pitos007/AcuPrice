@@ -6,7 +6,6 @@
 package priceupdater;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -31,7 +30,6 @@ public class ExtractorManager extends Extractor {
                 groupTokens.add(eachToken);
             }
         }
-        Collections.replaceAll(groupTokens, "", "cover");
         return groupTokens;
     }
     
@@ -48,7 +46,6 @@ public class ExtractorManager extends Extractor {
         for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
             List<String> tempCodeList = new ArrayList<>();
             tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
-            Collections.replaceAll(tempCodeList, "", "cover");
             for (String code : tempCodeList) { // 12345
                 priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
             }

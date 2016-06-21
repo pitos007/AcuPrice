@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +40,6 @@ public class Extractor extends FileManager {
             groupTokenList.add(m1.group());
         }
         //System.out.println("string groups:" + groupTokenList);
-        Collections.replaceAll(groupTokenList, "", "cover");
         return groupTokenList;
     }
 
@@ -53,7 +52,6 @@ public class Extractor extends FileManager {
             tokenList.add(m1.group());
         }
         //System.out.println("tokens from each group: " + tokenList);
-        Collections.replaceAll(tokenList, "", "cover");
         return tokenList;
     }
 
@@ -66,7 +64,6 @@ public class Extractor extends FileManager {
             templateList.add(newToken);
         }
         //System.out.println("codes from each token group: " + templateList);
-        Collections.replaceAll(templateList, "", "cover");
         return templateList;
     }
     
@@ -81,7 +78,9 @@ public class Extractor extends FileManager {
             bs = new Scanner(new BufferedReader(new FileReader(inFile)));
             while(bs.hasNextLine()){
                 currentLine = bs.nextLine();
-                ls = new Scanner(currentLine);
+                String emptyBeg = currentLine.replaceAll("^,", "null,"); //replace ,12345/6 into null,12345
+                String emptyMid = emptyBeg.replaceAll(",,", ",null,");   //replace 12345,,54321 into 12345,null,54321
+                ls = new Scanner(emptyMid);
                 ls.useDelimiter(",");
                 List<String> tmpList = new ArrayList<>();
                 while(ls.hasNext()){
