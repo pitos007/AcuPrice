@@ -68,7 +68,7 @@ public class Extractor extends FileManager {
     }
     
     
-    public Map<String, List<String>> codePricesMap(String inPathName){
+    public synchronized Map<String, List<String>> codePricesMap(String inPathName){
         File inFile = new File(inPathName);
         Scanner bs = null;
         Map<String, List<String>> cdPrMap = new LinkedHashMap<>();
@@ -100,14 +100,14 @@ public class Extractor extends FileManager {
         return cdPrMap;
     }
     
-    public void printPriceListMap(Map<String, List<String>> prListMap){
-        List<String> tempList = new ArrayList();
-        for(String codes : prListMap.keySet()){
-            tempList = prListMap.get(codes);
-            System.out.println(codes + " " + tempList);
-        }
-        System.out.println();
-    }
+//    public void printPriceListMap(Map<String, List<String>> prListMap){
+//        List<String> tempList = new ArrayList();
+//        for(String codes : prListMap.keySet()){
+//            tempList = prListMap.get(codes);
+//            System.out.println(codes + " " + tempList);
+//        }
+//        System.out.println();
+//    }
     
     public String getInPathName(){
         return this.inPathName;

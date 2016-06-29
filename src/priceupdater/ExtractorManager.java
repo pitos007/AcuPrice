@@ -7,9 +7,11 @@ package priceupdater;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -35,14 +37,15 @@ public class ExtractorManager extends Extractor {
     
     
     
-    public Map<String, List<String>> generatePriceMap(){
+    public void generatePriceMap(){
+        // public Map<String, List<String>> generatePriceMap()
         String inPath = getInPathName();
         System.out.println("getting inPath " + inPath);
         Map<String, List<String>> priceList = new LinkedHashMap<>();
         Map<String, List<String>> tempPriceList = new LinkedHashMap<>();
         tempPriceList = codePricesMap(inPath); // [12345/6/7; 10, 11, 12]
         System.out.println("printing tempPriceList:");
-        printPriceListMap(tempPriceList);
+        //printPriceListMap(tempPriceList);
         for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
             List<String> tempCodeList = new ArrayList<>();
             tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
@@ -50,6 +53,20 @@ public class ExtractorManager extends Extractor {
                 priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
             }
         }
-        return priceList;
+        System.out.println("Printing full map:");
+        printPriceListMap(priceList);
+        //return tempPriceList;
     }
+    
+        public void printPriceListMap(Map<String, List<String>> prListMap){
+        List<String> tempList = new ArrayList();
+        for(String codes : prListMap.keySet()){
+            tempList = prListMap.get(codes);
+            System.out.println(codes + " " + tempList);
+        }
+        System.out.println();
+    }
+    
+    
+    
 }

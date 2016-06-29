@@ -5,6 +5,7 @@
  */
 package priceupdater;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class Main {
         //Extractor extr = new Extractor();
         ExtractorManager extrMgr = new ExtractorManager();
         Map<String, List<String>> fullPriceList = new LinkedHashMap<>();
-        fullPriceList = extrMgr.generatePriceMap();
-        extrMgr.printPriceListMap(fullPriceList);
+        extrMgr.generatePriceMap();
     }
+        
 }

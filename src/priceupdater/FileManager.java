@@ -43,9 +43,7 @@ public class FileManager {
                 ls = new Scanner(currentLine);
                 ls.useDelimiter(",");
                 while (ls.hasNext()){
-                    String ct = ls.next();
-                    ct = ct.trim();
-                    headers.add(ct);
+                    headers.add(ls.next());
                 }
                 break;
             }
