@@ -35,6 +35,9 @@ public class Main {
         ExtractorManager extrMgr = new ExtractorManager();
         Map<String, List<String>> fullPriceList = new LinkedHashMap<>();
         extrMgr.generatePriceMap();
+        
+        //String str = "92150/51/52 ; 92334/5/6 ; 92350";
+        //extrMgr.stringToCodes(str);
     }
         
 }

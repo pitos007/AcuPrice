@@ -78,8 +78,8 @@ public class Extractor extends FileManager {
             bs = new Scanner(new BufferedReader(new FileReader(inFile)));
             while(bs.hasNextLine()){
                 currentLine = bs.nextLine();
-                String emptyBeg = currentLine.replaceAll("^,", "null,"); //replace ,12345/6 into null,12345
-                String emptyMid = emptyBeg.replaceAll(",,", ",null,");   //replace 12345,,54321 into 12345,null,54321
+                String emptyBeg = currentLine.replaceAll("^,", "99999,"); //replace ,12345/6 into null,12345
+                String emptyMid = emptyBeg.replaceAll(",,", ",99999,");   //replace 12345,,54321 into 12345,null,54321
                 ls = new Scanner(emptyMid);
                 ls.useDelimiter(",");
                 List<String> tmpList = new ArrayList<>();

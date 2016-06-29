@@ -25,15 +25,22 @@ public class ExtractorManager extends Extractor {
     
     public List<String> stringToCodes(String str){
         List<String> groupTokens = getGroupTokens(str);
+        List<String> groupTokensFull = new ArrayList<>();
+        //System.out.println("groupTokens: " + groupTokens);
         for (String grToken : groupTokens) {
             List<String> tokenNum = getTokens(grToken);
+            //System.out.println("tokenNum: " + tokenNum);
             List<String> templList = createCodes(tokenNum);
+            //System.out.println("templList: " + templList);
             for (String eachToken : templList) {
-                groupTokens.add(eachToken);
+                groupTokensFull.add(eachToken);
             }
         }
+        //System.out.println(groupTokensFull);
         return groupTokens;
     }
+    
+    
     
     
     
@@ -46,18 +53,20 @@ public class ExtractorManager extends Extractor {
         tempPriceList = codePricesMap(inPath); // [12345/6/7; 10, 11, 12]
         System.out.println("printing tempPriceList:");
         printPriceListMap(tempPriceList);
-//        for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
-//            List<String> tempCodeList = new ArrayList<>();
-//            tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
-//            for (String code : tempCodeList) { // 12345
-//                priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
-//            }
-//        }
-        System.out.println("Printing full map:");
-        //return tempPriceList;
+        for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
+            System.out.println(eachCode);
+            List<String> tempCodeList = new ArrayList<>();
+            tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
+            System.out.println(tempCodeList);
+            for (String code : tempCodeList) { // 12345
+                priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
+            }
+        }
+        printPriceListMap(priceList);
     }
     
-        public void printPriceListMap(Map<String, List<String>> prListMap){
+
+    public void printPriceListMap(Map<String, List<String>> prListMap){
         List<String> tempList = new ArrayList();
         for(String codes : prListMap.keySet()){
             tempList = prListMap.get(codes);
