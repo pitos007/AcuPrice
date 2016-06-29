@@ -45,16 +45,15 @@ public class ExtractorManager extends Extractor {
         Map<String, List<String>> tempPriceList = new LinkedHashMap<>();
         tempPriceList = codePricesMap(inPath); // [12345/6/7; 10, 11, 12]
         System.out.println("printing tempPriceList:");
-        //printPriceListMap(tempPriceList);
-        for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
-            List<String> tempCodeList = new ArrayList<>();
-            tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
-            for (String code : tempCodeList) { // 12345
-                priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
-            }
-        }
+        printPriceListMap(tempPriceList);
+//        for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
+//            List<String> tempCodeList = new ArrayList<>();
+//            tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
+//            for (String code : tempCodeList) { // 12345
+//                priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
+//            }
+//        }
         System.out.println("Printing full map:");
-        printPriceListMap(priceList);
         //return tempPriceList;
     }
     
