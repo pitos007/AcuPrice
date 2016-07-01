@@ -112,4 +112,29 @@ public class Extractor extends FileManager {
     public String getInPathName(){
         return this.inPathName;
     }
+    
+    
+    public List<String> getHeaders(){
+        List<String> headers = new ArrayList<>();
+        File inFile = new File(inPathName);
+        Scanner bs = null;
+        try{
+            Scanner ls = null;
+            String currentLine;
+            bs = new Scanner(new BufferedReader(new FileReader(inFile)));
+            while (bs.hasNextLine()){
+                currentLine = bs.nextLine();
+                ls = new Scanner(currentLine);
+                ls.useDelimiter(",");
+                while (ls.hasNext()){
+                    headers.add(ls.next());
+                }
+                break;
+            }
+        }
+        catch (Exception ex){
+            System.out.println(ex);
+        }
+        return headers;
+    }
 }

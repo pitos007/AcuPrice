@@ -33,11 +33,17 @@ public class Main {
         
         //Extractor extr = new Extractor();
         ExtractorManager extrMgr = new ExtractorManager();
+        PriceWriter pw = new PriceWriter();
         Map<String, List<String>> fullPriceList = new LinkedHashMap<>();
-        extrMgr.generatePriceMap();
+        fullPriceList = extrMgr.generatePriceMap();
+        pw.updateOutFile(fullPriceList);
+        //extrMgr.generatePriceMap();
         
-        //String str = "92150/51/52 ; 92334/5/6 ; 92350";
-        //extrMgr.stringToCodes(str);
+//        String str = "92150/51/52 ; 92334/5/6 ; 92350";
+//        System.out.println(extrMgr.stringToCodes(str));
+//        PriceWriter pw = new PriceWriter();
+//        String str = pw.createFileName();
+        //System.out.println(str);
     }
         
 }

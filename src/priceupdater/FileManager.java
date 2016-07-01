@@ -22,39 +22,22 @@ import java.util.Set;
  * @author UPatryk
  */
 public class FileManager {
-    private List<String> headers = new ArrayList<>();
     //String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\acuprice\\FJpriceList.csv";
     //String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\priceupdater\\FjPriceList.csv";
     private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\priceupdater\\FJpriceList.csv";
+    private String outPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\priceupdater\\";
     
     public FileManager(){
         
     }
     
-    public void getHeaders(){
-        File inFile = new File(inPathName);
-        Scanner bs = null;
-        try{
-            Scanner ls = null;
-            String currentLine;
-            bs = new Scanner(new BufferedReader(new FileReader(inFile)));
-            while (bs.hasNextLine()){
-                currentLine = bs.nextLine();
-                ls = new Scanner(currentLine);
-                ls.useDelimiter(",");
-                while (ls.hasNext()){
-                    headers.add(ls.next());
-                }
-                break;
-            }
-        }
-        catch (Exception ex){
-            System.out.println(ex);
-        }
-        System.out.println(headers);
-    }
+    
     
     public String getInPathName(){
         return this.inPathName;
+    }
+    
+    public String getOutPathName(){
+        return this.outPathName;
     }
 }
