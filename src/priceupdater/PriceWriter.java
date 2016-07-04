@@ -30,22 +30,38 @@ public class PriceWriter extends Extractor {
     }
     
     public void updateOutFile(Map<String, List<String>> priceListMap){
-        File fileOut = new File(createFileName());
+        String fileName = createFileName();
+        File fileOut = new File(fileName);
         BufferedWriter bw = null;
         Map<String, List<String>> priceList = new LinkedHashMap<>();
         priceList = extrMgr.generatePriceMap();
         try {
-            bw = new BufferedWriter(new FileWriter(createFileName()));
+            fileOut.createNewFile();
+            bw = new BufferedWriter(new FileWriter(fileName));
             List<String> headers = getHeaders();
             bw.newLine();
             for (String header : headers) {
                 bw.write(header);
+                bw.write(",");
             }
             bw.newLine();
             for (String token : priceList.keySet()) {
-                
+                bw.write(token);
+                bw.write(",");
+                for (String valPrice : priceList.get(token)) {
+                    bw.write(valPrice);
+                    bw.write(",");
+                }
+                bw.newLine();
             }
         } catch (Exception e) {
+        }
+        finally{
+            try{
+                bw.close();
+            } catch(Exception ex){
+                System.out.println("Problem with updateOutFile");
+            }
         }
     }
     
@@ -55,7 +71,7 @@ public class PriceWriter extends Extractor {
         DateFormat dateFormat = new SimpleDateFormat("yyMMddHHmmss");
         Date dateTime = new Date();
         String dateTimeStr = dateFormat.format(dateTime);
-        String outFileName = outPath + dateTimeStr;
+        String outFileName = outPath + dateTimeStr + ".csv";
         System.out.println(outFileName);
         return outFileName;
     }
