@@ -26,7 +26,7 @@ public class ExtractorManager extends Extractor {
     public ExtractorManager(){
     }
     
-    
+    // creates 12345, 12346, 12347 from 12345/6/7
     public List<String> stringToCodes(String str){
         List<String> groupTokens = getGroupTokens(str);
         List<String> groupTokensFull = new ArrayList<>();

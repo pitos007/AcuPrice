@@ -67,7 +67,7 @@ public class Extractor extends FileManager {
         return templateList;
     }
     
-    
+    // creates a raw price map [12345/6/7; 10,20,30,40] 
     public synchronized Map<String, List<String>> codePricesMap(String inPathName){
         File inFile = new File(inPathName);
         Scanner bs = null;
@@ -78,21 +78,27 @@ public class Extractor extends FileManager {
             bs = new Scanner(new BufferedReader(new FileReader(inFile)));
             while(bs.hasNextLine()){
                 currentLine = bs.nextLine();
-                String emptyBeg = currentLine.replaceAll("^,", "99999,"); //replace ,12345/6 into null,12345
-                String emptyMid = emptyBeg.replaceAll(",,", ",99999,");   //replace 12345,,54321 into 12345,null,54321
+                String emptyBeg = currentLine.replaceAll("^,", " ,"); //replace ,12345/6 into null,12345
+                //System.out.println(emptyBeg);
+                String emptyMid = emptyBeg.replaceAll(",,", ", ,");   //replace 12345,,54321 into 12345,null,54321
+                //System.out.println(emptyMid);
                 ls = new Scanner(emptyMid);
                 ls.useDelimiter(",");
                 List<String> tmpList = new ArrayList<>();
-                while(ls.hasNext()){
+                while (ls.hasNext()){
                     tmpList.add(ls.next());
                 }
-                String tempKey = tmpList.get(0);
+                //System.out.println("tmpList: " + tmpList);
+                if (tmpList.get(0).equals(" ")) {
+                    String covr = tmpList.get(1);
+                    tmpList.remove(0);
+                    tmpList.add(0, covr);
+                }
+                String rawCodes = tmpList.get(0);
                 tmpList.remove(0);
-                tmpList.remove(0);
-                tmpList.remove(0);
-                cdPrMap.put(tempKey, tmpList);
+                cdPrMap.put(rawCodes, tmpList);
             }
-            //printPriceListMap(cdPrMap);
+            printPriceListMap(cdPrMap);
         }
         catch (Exception ex){
             System.out.println(ex);
@@ -100,14 +106,15 @@ public class Extractor extends FileManager {
         return cdPrMap;
     }
     
-//    public void printPriceListMap(Map<String, List<String>> prListMap){
-//        List<String> tempList = new ArrayList();
-//        for(String codes : prListMap.keySet()){
-//            tempList = prListMap.get(codes);
-//            System.out.println(codes + " " + tempList);
-//        }
-//        System.out.println();
-//    }
+    public void printPriceListMap(Map<String, List<String>> prListMap){
+        Map<String, List<String>> prListMapa = new LinkedHashMap<>();
+        List<String> tempList = new ArrayList();
+        for(String codes : prListMapa.keySet()){
+            tempList = prListMapa.get(codes);
+            System.out.println(codes + " " + tempList);
+        }
+        System.out.println();
+    }
     
     public String getInPathName(){
         return this.inPathName;
