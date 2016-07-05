@@ -11,4 +11,8 @@ package priceupdater;
  */
 public class Updater {
     
+    public Updater(){
+        
+    }
+    
 }
