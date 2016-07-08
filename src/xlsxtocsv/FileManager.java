@@ -24,7 +24,8 @@ import java.util.Set;
 public class FileManager {
     //String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\acuprice\\FJpriceList.csv";
     //String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\priceupdater\\FjPriceList.csv";
-    private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\FJpriceList.csv";
+    //private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\FJpriceList.csv";
+    private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\mcguk.csv";
     private String outPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
     
     public FileManager(){
@@ -51,5 +52,12 @@ public class FileManager {
         fileNameList.remove(0);
         System.out.println("fileNameList: " + fileNameList);
         return fileNameList;
+    }
+    
+    public List<String> getFilePath(){
+        List<String> filePathList = new ArrayList<>();
+        String regPat = "([^>]*>)*([^\\\\]*\\\\)+";
+        
+        return filePathList;
     }
 }
