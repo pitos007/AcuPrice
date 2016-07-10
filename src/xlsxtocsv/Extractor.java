@@ -21,7 +21,9 @@ import java.util.regex.Pattern;
  * @author Pitos
  */
 public class Extractor extends FileManager {
-    //String plStr1 = "92290/1/2/3; 92309 95890/1/2/3/45/46/8/81/82: 92235/36 : 91788/8 ; 92753/54";
+    //String plStr1 = "92290/1/2/3; 92309H, 95890/1/2/3/45/46/8/81/82: 92235D/36 : 91788/8 ; 92753/54 62758P";
+    //String plStr2 = "60003/37/60/94, 60128/51; 60241/74, 68254P 65706/44/51/68/75/82/91/99, 64814H : 65702E"
+    //String plStr3 = "64815E/16E/18E/20E/20P/24E/53E/60E/70E; 66241E/58E/70E/79; 67860E/88E; 67901E/02E;
     String inPathName;
 
     public Extractor() {
@@ -29,11 +31,12 @@ public class Extractor extends FileManager {
         this.inPathName = fm.getInPathName();
     }
 
-    // extract all numbers from the single String
+    // extract all tokens from the single String
+    //66820E, 67882E, 66241E/58E/70E/79E, 67860E/88E
     public List<String> getGroupTokens(String str) {
         List<String> groupTokenList = new ArrayList<>();
 
-        Pattern p1 = Pattern.compile("(\\d)+(\\/\\d+)*");
+        Pattern p1 = Pattern.compile("[\\w\\/]+");
         Matcher m1 = p1.matcher(str);
 
         while (m1.find()) {
@@ -43,10 +46,11 @@ public class Extractor extends FileManager {
         return groupTokenList;
     }
 
-    // extract numbers from the single group of numbers
+    // extract alpha-numeric tokens only from group of tokens
+    // 66820E, 67882E, 66241E, 58E, 70E, 79E, 67860E, 88E
     public List<String> getTokens(String group) {
         List<String> tokenList = new ArrayList<>();
-        Pattern p1 = Pattern.compile("\\d+");
+        Pattern p1 = Pattern.compile("\\w+");
         Matcher m1 = p1.matcher(group);
         while (m1.find()) {
             tokenList.add(m1.group());
@@ -55,7 +59,8 @@ public class Extractor extends FileManager {
         return tokenList;
     }
 
-    // converts numbers into template codes
+    // converts alpha-numeric tokens into template codes
+    // 66820E, 67882E, 66241E, 66258E, 66270E, 66279E, 67860E, 67888E
     public List<String> createCodes(List<String> numList) {
         List<String> templateList = new ArrayList<>();
         for (String str : numList) {
@@ -93,6 +98,11 @@ public class Extractor extends FileManager {
                     String covr = tmpList.get(1);
                     tmpList.remove(0);
                     tmpList.add(0, covr);
+                }
+                else{
+                    String newPlusCovr = tmpList.get(0) + " " + tmpList.get(1);
+                    tmpList.remove(0);
+                    tmpList.add(0, newPlusCovr);
                 }
                 String rawCodes = tmpList.get(0);
                 tmpList.remove(0);

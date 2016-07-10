@@ -9,7 +9,8 @@ import java.util.List;
 
 public class TestClass {
     public static void main(String[] args) {
-        FileManager fmgr = new FileManager();
-        fmgr.getFileNames();
+        String str = "66241E/58E/70E/79E; 67860E/88E; 67901E/02E";
+        str = str.replaceAll("[A-Za-z]", "");
+        System.out.println(str);
     }
 }
