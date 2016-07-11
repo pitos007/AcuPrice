@@ -22,14 +22,14 @@ import java.util.Set;
  * @author UPatryk
  */
 public class FileManager {
-    String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\xlsxtocsv\\MasterPriceFile_v1.csv";
-    String outPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
+    //String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\xlsxtocsv\\MCGUIRK1.csv";
+    //String outPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
     
     //String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\priceupdater\\FjPriceList.csv";
     //private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\FJpriceList.csv";
     
-    //private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\mcguk.csv";
-    //private String outPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
+    private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\MCGUIRK.csv";
+    private String outPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
     
     public FileManager(){
         
