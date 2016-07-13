@@ -20,8 +20,4 @@ public class PriceReader {
     public PriceReader(){
         
     }
-    
-    
-    
-    
 }
