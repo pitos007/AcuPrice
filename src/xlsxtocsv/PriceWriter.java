@@ -39,7 +39,6 @@ public class PriceWriter extends Extractor {
             fileOut.createNewFile();
             bw = new BufferedWriter(new FileWriter(fileName));
             List<String> headers = getHeaders();
-            bw.newLine();
             for (String header : headers) {
                 bw.write(header);
                 bw.write(",");

@@ -21,7 +21,7 @@ import java.util.Set;
  *
  * @author UPatryk
  */
-public class ExtractorManager extends Extractor {
+public class ExtractorManager extends Extractor implements Printer{
 
     public ExtractorManager(){
     }
@@ -69,12 +69,13 @@ public class ExtractorManager extends Extractor {
     }
     
 
+    @Override
     public void printPriceListMap(Map<String, List<String>> prListMap){
         List<String> tempList = new ArrayList();
         for(String codes : prListMap.keySet()){
             tempList = prListMap.get(codes);
-            //System.out.println(codes + " " + tempList);
+            System.out.println(codes + " " + tempList);
         }
-        //System.out.println();
+        System.out.println();
     }
 }

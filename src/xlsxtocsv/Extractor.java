@@ -31,7 +31,7 @@ public class Extractor extends FileManager {
         this.inPathName = fm.getInPathName();
     }
 
-    // extract all tokens from the single String
+    // extract tokens separated by commas from the single String
     //66820E, 67882E, 66241E/58E/70E/79E, 67860E/88E
     public List<String> getGroupTokens(String str) {
         List<String> groupTokenList = new ArrayList<>();
@@ -46,7 +46,7 @@ public class Extractor extends FileManager {
         return groupTokenList;
     }
 
-    // extract alpha-numeric tokens only from group of tokens
+    // extract alpha-numeric tokens from the group of tokens
     // 66820E, 67882E, 66241E, 58E, 70E, 79E, 67860E, 88E
     public List<String> getTokens(String group) {
         List<String> tokenList = new ArrayList<>();
@@ -72,7 +72,7 @@ public class Extractor extends FileManager {
         return templateList;
     }
     
-    // creates a raw price map [12345/6/7; 10,20,30,40] 
+    // creates a price map [12345/6/7; 10,20,30,40] 
     public synchronized Map<String, List<String>> codePricesMap(String inPathName){
         File inFile = new File(inPathName);
         Scanner bs = null;
@@ -83,9 +83,9 @@ public class Extractor extends FileManager {
             bs = new Scanner(new BufferedReader(new FileReader(inFile)));
             while(bs.hasNextLine()){
                 currentLine = bs.nextLine();
-                String emptyBeg = currentLine.replaceAll("^,", " ,"); //replace ,12345/6 into null,12345
+                String emptyBeg = currentLine.replaceAll("^,", " ,"); //replace ,12345/6 into " ",12345
                 //System.out.println(emptyBeg);
-                String emptyMid = emptyBeg.replaceAll(",,", ", ,");   //replace 12345,,54321 into 12345,null,54321
+                String emptyMid = emptyBeg.replaceAll(",,", ", ,");   //replace 12345,,54321 into 12345," ",54321
                 //System.out.println(emptyMid);
                 ls = new Scanner(emptyMid);
                 ls.useDelimiter(",");
@@ -99,7 +99,7 @@ public class Extractor extends FileManager {
                     tmpList.remove(0);
                     tmpList.add(0, covr);
                 }
-                else{
+                else if (!tmpList.get(1).equals(" ")){
                     String newPlusCovr = tmpList.get(0) + " " + tmpList.get(1);
                     tmpList.remove(0);
                     tmpList.add(0, newPlusCovr);
@@ -108,7 +108,7 @@ public class Extractor extends FileManager {
                 tmpList.remove(0);
                 cdPrMap.put(rawCodes, tmpList);
             }
-            printPriceListMap(cdPrMap);
+            //printPriceListMap(cdPrMap);
         }
         catch (Exception ex){
             System.out.println(ex);
@@ -116,14 +116,17 @@ public class Extractor extends FileManager {
         return cdPrMap;
     }
     
+    
+    
     public void printPriceListMap(Map<String, List<String>> prListMap){
         Map<String, List<String>> prListMapa = new LinkedHashMap<>();
+        prListMapa = prListMap;
         List<String> tempList = new ArrayList();
         for(String codes : prListMapa.keySet()){
             tempList = prListMapa.get(codes);
-            //System.out.println(codes + " " + tempList);
+            System.out.println(codes + " " + tempList);
         }
-        //System.out.println();
+        System.out.println();
     }
     
     public String getInPathName(){

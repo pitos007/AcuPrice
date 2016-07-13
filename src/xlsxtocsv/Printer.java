@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package updatePrice;
+package xlsxtocsv;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author UPatryk
  */
-public class Update {
-    public static void main(String[] args) {
-        PriceReader pr = new PriceReader();
-        pr.readFile();
-    }
+public interface Printer {
+    public void printPriceListMap(Map<String, List<String>> prListMap);
 }
