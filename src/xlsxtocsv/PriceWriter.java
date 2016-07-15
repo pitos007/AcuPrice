@@ -8,6 +8,7 @@ package xlsxtocsv;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,20 +24,22 @@ import java.util.Scanner;
 public class PriceWriter extends Extractor {
     //Map<String, List<String>> priceListMap = new LinkedHashMap<>();
     ExtractorManager extrMgr = new ExtractorManager();
-    
-    
+    File masterFile;
+    File fileOut;
+
+
     public PriceWriter(){
         
     }
     
     public void updateOutFile(Map<String, List<String>> priceListMap){
         String fileName = createFileName();
-        File fileOut = new File(fileName);
+        this.fileOut = new File(fileName);
         BufferedWriter bw = null;
         Map<String, List<String>> priceList = new LinkedHashMap<>();
         priceList = extrMgr.generatePriceMap();
         try {
-            fileOut.createNewFile();
+            this.fileOut.createNewFile();
             bw = new BufferedWriter(new FileWriter(fileName));
             List<String> headers = getHeaders();
             for (String header : headers) {
@@ -75,5 +78,10 @@ public class PriceWriter extends Extractor {
         System.out.println("creating output file: ");
         System.out.println(outFileName);
         return outFileName;
+    }
+    
+    
+    public File getFileOut() {
+        return fileOut;
     }
 }

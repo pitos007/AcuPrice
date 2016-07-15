@@ -11,7 +11,7 @@ package updatePrice;
  */
 public class Update {
     public static void main(String[] args) {
-        PriceReader pr = new PriceReader();
-        pr.readFile();
+        PriceReaderFile pr = new PriceReaderFile();
+        pr.readPriceFile();
     }
 }

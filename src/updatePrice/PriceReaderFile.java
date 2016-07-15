@@ -19,18 +19,18 @@ import xlsxtocsv.FileManager;
  *
  * @author UPatryk
  */
-public class PriceReader extends FileManager {
+public class PriceReaderFile extends FileManager {
     List<Collection> priceListFileMap = new ArrayList<>();
     FileManager fm = new FileManager();
     List<String> headers;
     List<Map<String, List<String>>> priceFileList = new ArrayList<>();
     String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\updatePrice\\";
             
-    public PriceReader(){
+    public PriceReaderFile(){
         this.headers = fm.getFileNames();
     }
     
-    public void readFile(){
+    public void readPriceFile(){
         for (String prFile : headers) {
             File inFile = new File(path + prFile + ".csv");
             if(inFile.exists() && !inFile.isDirectory()){
