@@ -60,7 +60,6 @@ public class PriceReader extends FileManager {
                 catch (Exception e) {
                 }
                 this.priceFileList.add(priceFileMap);
-                
             }
         }
     }
