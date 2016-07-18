@@ -13,5 +13,6 @@ public class Update {
     public static void main(String[] args) {
         PriceReaderFile pr = new PriceReaderFile();
         pr.readPriceFile();
+       
     }
 }

@@ -68,6 +68,7 @@ public class ExtractorManager extends Extractor implements Printer{
         return priceList;
     }
     
+    
 
     @Override
     public void printPriceListMap(Map<String, List<String>> prListMap){
