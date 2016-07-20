@@ -54,7 +54,7 @@ public class ExtractorManager extends Extractor implements Printer{
         Map<String, List<String>> tempPriceList = new LinkedHashMap<>();
         Map<String, List<String>> priceList = new LinkedHashMap<>();
         tempPriceList = codePricesMap(inPath); // [12345/6/7; 10, 11, 12]
-        System.out.println("create price list map...");
+        System.out.println("create price list map: [12345; 5.70, 3.20, 4.50]...");
         //printPriceListMap(tempPriceList);
         for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
             List<String> tempCodeList = new ArrayList<>();

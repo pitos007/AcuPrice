@@ -14,6 +14,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import xlsxtocsv.FileManager;
 import xlsxtocsv.ExtractorManager;
 /**
@@ -57,15 +59,10 @@ public class PriceReaderFile extends FileManager {
                         while(ls.hasNext()){
                             tmpList.add(ls.next());
                         }
-                        String prodCode = null;
-                        if (tmpList.get(1).length() > 6) {
-                            prodCode = tmpList.get(1).substring(0, 5);
-                        }
-                        else{
-                            prodCode = tmpList.get(1);
-                        }
+                        String prodCode = formatCode(tmpList.get(1));
                         String price = tmpList.get(9);
                         String priceListName = tmpList.get(0);
+                        System.out.println(priceListName + " " + prodCode + " " + price);
                         if (isInPriceList(prodCode)) {
                             List<String> updatedTmpList = updatePrice(tmpList,prodCode,price,priceListName);
                             priceFileMap.put(prodCode, updatedTmpList);
@@ -78,6 +75,33 @@ public class PriceReaderFile extends FileManager {
             }
         }
         printAllPriceFiles();
+    }
+    
+    // converts 12345P, 12346S to 12345P, 12346
+    public String formatCode(String cd){
+        String ncd = null;
+        if (cd.length()>5) {
+            ncd = cd.substring(0, 6);
+        }
+        else{
+            ncd = cd;
+        }
+        Pattern p1 = Pattern.compile("(?i)[qadhrbpe]");
+        Pattern p2 = Pattern.compile("(?i)(e-)");
+        Matcher m1 = p1.matcher(ncd);
+        if (m1.find()) {
+            m1.reset();
+            m1 = p2.matcher(ncd);
+            if(m1.find()){
+                return ncd.substring(0, 4);
+            }
+            else{
+                return ncd;
+            }
+        }
+        else{
+            return ncd.substring(0, 5);
+        }
     }
     
     public List<String> getListFromMap(String key){
@@ -95,6 +119,7 @@ public class PriceReaderFile extends FileManager {
         //System.out.println("list from map: " + tmpl);
         int priceIndex = getIndexHeaderPrice(priceListName);
         String newPrice = tmpl.get(priceIndex);
+        System.out.println("replacing " + tempList.get(9) + " to " + newPrice);
         tempList.set(9, newPrice);
         return tempList;
     }
