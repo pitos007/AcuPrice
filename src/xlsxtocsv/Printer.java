@@ -14,4 +14,6 @@ import java.util.Map;
  */
 public interface Printer {
     public void printPriceListMap(Map<String, List<String>> prListMap);
+    public void printPriceList(List<String> prListMap);
+    public void printAllPriceFiles(List<Map<String, List<String>>> priceFileList);
 }

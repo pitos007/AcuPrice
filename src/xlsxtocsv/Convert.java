@@ -32,12 +32,8 @@ public class Convert {
 //        tm.updateOutFile();
         
         //Extractor extr = new Extractor();
-        ExtractorManager extrMgr = new ExtractorManager();
         PriceWriter pw = new PriceWriter();
-        Map<String, List<String>> fullPriceList = new LinkedHashMap<>();
-        fullPriceList = extrMgr.generatePriceMap();
-        pw.updateOutFile(fullPriceList);
-        //extrMgr.generatePriceMap();
+        pw.updateOutFile();
         
         
 //        String str = "92150/51/52 ; 92334/5/6 ; 92350";

@@ -32,7 +32,7 @@ public class PriceWriter extends Extractor {
         
     }
     
-    public void updateOutFile(Map<String, List<String>> priceListMap){
+    public void updateOutFile(){
         String fileName = createFileName();
         this.fileOut = new File(fileName);
         BufferedWriter bw = null;

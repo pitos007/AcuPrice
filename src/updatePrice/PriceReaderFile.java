@@ -18,6 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import xlsxtocsv.FileManager;
 import xlsxtocsv.ExtractorManager;
+import xlsxtocsv.Printer;
 /**
  *
  * @author UPatryk
@@ -30,11 +31,12 @@ public class PriceReaderFile extends FileManager {
     List<Map<String, List<String>>> priceFileList = new ArrayList<>();
     Map<String, List<String>> priceList = new LinkedHashMap<>();
     List<String> availPL = new ArrayList<>();
+    Printer pr = new PriceMapListPrinter();
     String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\updatePrice\\";
             
     public PriceReaderFile(){
         this.headers = fm.getFileNames();
-        this.priceList = em.generatePriceMap();
+        this.priceList = em.generatePriceMap(); //[12345; 10, 11, 12]
     }
     
     public void readPriceFile(){
@@ -60,12 +62,10 @@ public class PriceReaderFile extends FileManager {
                             tmpList.add(ls.next());
                         }
                         String prodCode = formatCode(tmpList.get(1));
-                        String price = tmpList.get(9);
-                        String priceListName = tmpList.get(0);
-                        System.out.println(priceListName + " " + prodCode + " " + price);
                         if (isInPriceList(prodCode)) {
-                            List<String> updatedTmpList = updatePrice(tmpList,prodCode,price,priceListName);
-                            priceFileMap.put(prodCode, updatedTmpList);
+                            List<String> updatedTmpList = updatePrice(tmpList, prodCode);
+                            tmpList = updatedTmpList;
+                            priceFileMap.put(tmpList.get(1), updatedTmpList);
                         }
                     }
                 }
@@ -74,7 +74,7 @@ public class PriceReaderFile extends FileManager {
                 this.priceFileList.add(priceFileMap);
             }
         }
-        printAllPriceFiles();
+        pr.printAllPriceFiles(priceFileList);
     }
     
     // converts 12345P, 12346S to 12345P, 12346
@@ -104,43 +104,43 @@ public class PriceReaderFile extends FileManager {
         }
     }
     
-    public List<String> getListFromMap(String key){
-        List<String> tempList = priceList.get(key);
-        System.out.println("list from map: " + tempList);
-        return tempList;
-    }
     
     public boolean isInPriceList(String code){
         return priceList.containsKey(code);
     }
     
-    public List<String> updatePrice(List<String> tempList, String code, String price, String priceListName){
-        List<String> tmpl = getListFromMap(code);
-        //System.out.println("list from map: " + tmpl);
+    public List<String> updatePrice(List<String> tempList, String prodCode){
+        System.out.println("original list: " + tempList);
+        System.out.println("search key: " + prodCode);
+        List<String> mfMapKeyList = getListFromMapKey(prodCode); //[95890/1/2/3/4, Womens FJ Lambswool, 34, 44.2, 47.4, 43.0]
+        System.out.println("found in: " + mfMapKeyList);
+        
+        String priceListName = tempList.get(0);
+        System.out.println(priceListName);
         int priceIndex = getIndexHeaderPrice(priceListName);
-        String newPrice = tmpl.get(priceIndex);
-        System.out.println("replacing " + tempList.get(9) + " to " + newPrice);
-        tempList.set(9, newPrice);
+        
+        String newPrice = mfMapKeyList.get(priceIndex - 1); // 1st column newCode is excluded from the PriceList, but headers contain the newCode
+        System.out.println("new price in " + priceListName + " is " + newPrice);
+        
+        tempList.set(8, newPrice);
+        System.out.println("updated list: " + tempList);
+        return tempList;
+    }
+    
+    public List<String> getListFromMapKey(String key){
+        List<String> tempList = priceList.get(key);
+        //System.out.println(tempList);
+        //System.out.println("list from map: " + tempList);
         return tempList;
     }
     
     public int getIndexHeaderPrice(String prc){
         List<String> headers = this.em.getHeaders();
         int hindex = headers.lastIndexOf(prc);
+        //System.out.println(prc + " is at " + hindex);
         return hindex;
     }
     
     
-    public void printAllPriceFiles(){
-        for (Map<String, List<String>> eachMap : priceFileList) {
-            List<String> tempList = new ArrayList();
-            for(String code : eachMap.keySet()){
-                tempList = eachMap.get(code);
-                System.out.println(code + " " + tempList);
-            }
-        }
-    }
     
-   
-   
 }
