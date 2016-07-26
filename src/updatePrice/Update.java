@@ -15,6 +15,7 @@ public class Update {
         // 92533 new price: 100
         PriceReaderFile pr = new PriceReaderFile();
         pr.readPriceFile();
-       
+        Report rep = new Report();
+        rep.updateOutFile();
     }
 }

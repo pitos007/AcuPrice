@@ -155,7 +155,7 @@ public class Extractor extends FileManager {
         catch (Exception ex){
             System.out.println(ex);
         }
-        System.out.println("headers: " + headers);
+        //System.out.println("headers: " + headers);
         return headers;
     }
 }
