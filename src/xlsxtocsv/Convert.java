@@ -32,14 +32,14 @@ public class Convert {
 //        tm.updateOutFile();
         
         //Extractor extr = new Extractor();
-        PriceWriter pw = new PriceWriter();
-        pw.updateOutFile();
+        TemplateWriter tempWrit = new TemplateWriter();
+        tempWrit.updateOutFile();
         
         
 //        String str = "92150/51/52 ; 92334/5/6 ; 92350";
 //        System.out.println(extrMgr.stringToCodes(str));
-//        PriceWriter pw = new PriceWriter();
-//        String str = pw.createFileName();
+//        TemplateWriter tempWrit = new TemplateWriter();
+//        String str = tempWrit.createFileName();
         //System.out.println(str);
     }
         

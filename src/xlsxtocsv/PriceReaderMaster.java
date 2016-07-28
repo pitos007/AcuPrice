@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class PriceReaderMaster {
     List<Map<String, List<String>>> priceFileMasterList = new ArrayList<>();
-    PriceWriter pw = new PriceWriter();
+    TemplateWriter pw = new TemplateWriter();
     File masterFile;
     
     public PriceReaderMaster(){

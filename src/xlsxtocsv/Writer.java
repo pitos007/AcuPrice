@@ -5,11 +5,17 @@
  */
 package xlsxtocsv;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  *
  * @author UPatryk
  */
 public interface Writer {
     public void updateOutFile();
+    public void updateOutFile(List<String> list);
+    public void updateOutFile(Map<String, List<String>> map);
     public String createFileName();
+    public String createFileName(String fileName);
 }

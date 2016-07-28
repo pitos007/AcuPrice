@@ -5,24 +5,16 @@
  */
 package xlsxtocsv;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
 
 /**
  *
  * @author UPatryk
  */
 public class ExtractorManager extends Extractor{
-    Printer pr = new MapPrinter();
 
     public ExtractorManager(){
     }
@@ -65,7 +57,6 @@ public class ExtractorManager extends Extractor{
                 priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
             }
         }
-        //pr.printPriceListMap(priceList);
         return priceList;
     }
     
