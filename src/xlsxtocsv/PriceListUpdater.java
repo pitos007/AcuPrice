@@ -6,10 +6,8 @@
 package xlsxtocsv;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     private List<Map<String, List<String>>> priceFileList = new ArrayList<>();
     private Map<String, List<String>> priceList = new LinkedHashMap<>();
     private Map<String, List<String>> priceChanges = new LinkedHashMap<>();
-    private Printer pr = new PriceMapListPrinter();
+    private Printer pr;
     private String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
     private File fileOut;
     
@@ -155,6 +153,10 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     
     public Map<String, List<String>> getPriceChanges(){
         return this.priceChanges;
+    }
+    
+    public List<Map<String, List<String>>> getPriceFileList(){
+        return this.priceFileList;
     }
 
     

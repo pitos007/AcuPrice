@@ -17,5 +17,9 @@ public class Update {
         pr.readAndUpdatePriceFile();
         //Report rep = new Report();
         //rep.updateOutFile(pr.getPriceChanges());
+        
+        PriceListWriter plw = new PriceListWriter();
+        plw.writeUpdatedFile(pr.getPriceFileList());
+        
     }
 }
