@@ -54,7 +54,7 @@ public class ExtractorManager extends Extractor{
             tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
             //System.out.println(tempCodeList);
             for (String code : tempCodeList) { // 12345
-                priceList.put(code, tempPriceList.get(eachCode)); //[12345; 10, 11, 12]
+                priceList.put(code, tempPriceList.get(eachCode)); // 12345 [10, 11, 12]
             }
         }
         return priceList;

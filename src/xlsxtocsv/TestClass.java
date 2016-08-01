@@ -11,15 +11,15 @@ import java.util.Map;
 
 public class TestClass implements Printer {
     public static void main(String[] args) {
-        PriceListUpdater plu = new PriceListUpdater();
-        plu.readAndUpdatePriceFile();
-        Map<String, List<String>> upl = plu.getPriceChanges();
-        System.out.println(upl.isEmpty());
-        List<String> tempList = new ArrayList();
-        for(String code : upl.keySet()){
-            tempList = upl.get(code);
-            System.out.println(code + " " + tempList);
-        }
+//        PriceListUpdater plu = new PriceListUpdater();
+//        plu.readAndUpdatePriceFile();
+//        Map<String, List<String>> upl = plu.getPriceChangesList();
+//        System.out.println(upl.isEmpty());
+//        List<String> tempList = new ArrayList();
+//        for(String code : upl.keySet()){
+//            tempList = upl.get(code);
+//            System.out.println(code + " " + tempList);
+//        }
 }
     
     public void updatePrice(){

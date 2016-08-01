@@ -15,8 +15,8 @@ public class Update {
         
         PriceListUpdater pr = new PriceListUpdater();
         pr.readAndUpdatePriceFile();
-        //Report rep = new Report();
-        //rep.updateOutFile(pr.getPriceChanges());
+        Report rep = new Report();
+        rep.updateOutFile(pr.getPriceChangesList());
         
         PriceListWriter plw = new PriceListWriter();
         plw.writeUpdatedFile(pr.getPriceFileList());
