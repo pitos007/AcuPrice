@@ -38,8 +38,7 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
         this.headers.add("NewPrice");
     }
 
-    @Override
-    public void updateOutFile(Map<String, List<String>> priceChg) {
+    public void updateOutFile(List<Map<String, List<String>>> priceChgList) {
         updateHeaders();
         String fileName = createFileName();
         this.fileOut = new File(fileName);
@@ -52,14 +51,16 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
                 bw.write(",");
             }
             bw.newLine();
-            for (String code : priceChg.keySet()) {
-                bw.write(code);
-                bw.write(",");
-                for (String valPrice : priceChg.get(code)) {
+            for (Map<String, List<String>> eachMap : priceChgList) {
+                for (String code : eachMap.keySet()) {
+                    bw.write(code);
+                    bw.write(",");
+                for (String valPrice : eachMap.get(code)) {
                     bw.write(valPrice);
                     bw.write(",");
                 }
-                bw.newLine();
+                    bw.newLine();
+                }
             }
         } catch (Exception e) {
             System.err.println("Problem with writing report " + e);
@@ -103,13 +104,6 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
 
     @Override
     public void printAllPriceFiles(List<Map<String, List<String>>> priceFileList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
-
-    @Override
-    public void updateOutFile() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -178,10 +178,6 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    @Override
-    public void updateOutFile(List<String> currLineList){
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     @Override
     public String createFileName(String fileName){
@@ -195,15 +191,8 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
         return outFileName;
     }
 
-    @Override
-    public void updateOutFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    @Override
-    public void updateOutFile(Map<String, List<String>> map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public String createFileName() {

@@ -13,6 +13,9 @@ public class Update {
     public static void main(String[] args) {
         
         
+        TemplateWriter tempWrit = new TemplateWriter();
+        tempWrit.createTemplateFile();
+        
         PriceListUpdater pr = new PriceListUpdater();
         pr.readAndUpdatePriceFile();
         Report rep = new Report();

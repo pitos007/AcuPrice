@@ -65,21 +65,6 @@ public class PriceListWriter implements Writer {
         }
     }
     
-    
-    @Override
-    public void updateOutFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateOutFile(List<String> list) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateOutFile(Map<String, List<String>> map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public String createFileName(String priceFileName) {

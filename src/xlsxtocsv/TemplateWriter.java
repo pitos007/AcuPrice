@@ -19,7 +19,7 @@ import java.util.Map;
  *
  * @author UPatryk
  */
-public class TemplateWriter extends Extractor implements Writer {
+public class TemplateWriter extends Extractor {
     //Map<String, List<String>> priceListMap = new LinkedHashMap<>();
     ExtractorManager extrMgr = new ExtractorManager();
     private File fileOut;
@@ -29,8 +29,8 @@ public class TemplateWriter extends Extractor implements Writer {
         
     }
     
-    @Override
-    public void updateOutFile(){
+   
+    public void createTemplateFile(){
         String fileName = createFileName();
         this.fileOut = new File(fileName);
         BufferedWriter bw = null;
@@ -39,12 +39,6 @@ public class TemplateWriter extends Extractor implements Writer {
         try {
             this.fileOut.createNewFile();
             bw = new BufferedWriter(new FileWriter(fileName));
-            List<String> headers = getHeaders();
-            for (String header : headers) {
-                bw.write(header);
-                bw.write(",");
-            }
-            bw.newLine();
             for (String token : priceList.keySet()) {
                 bw.write(token);
                 bw.write(",");
@@ -67,7 +61,7 @@ public class TemplateWriter extends Extractor implements Writer {
         }
     }
     
-    @Override
+    
     public String createFileName(){
         FileManager fileMgr = new FileManager();
         String outPath = fileMgr.getOutPathName();
@@ -83,20 +77,5 @@ public class TemplateWriter extends Extractor implements Writer {
     
     public File getFileOut() {
         return fileOut;
-    }
-
-    @Override
-    public void updateOutFile(Map<String, List<String>> map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateOutFile(List<String> list) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public String createFileName(String fileName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

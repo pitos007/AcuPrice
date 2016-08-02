@@ -5,11 +5,6 @@
  */
 package xlsxtocsv;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  *
  * @author patry
@@ -33,8 +28,8 @@ public class Convert {
 //        tm.updateOutFile();
         
         //Extractor extr = new Extractor();
-        TemplateWriter tempWrit = new TemplateWriter();
-        tempWrit.updateOutFile();
+        //TemplateWriter tempWrit = new TemplateWriter();
+        //tempWrit.createTemplateFile();
         
         
 //        String str = "92150/51/52 ; 92334/5/6 ; 92350";
