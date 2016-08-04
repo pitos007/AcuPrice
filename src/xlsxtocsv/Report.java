@@ -32,6 +32,7 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
     
     
     public void updateHeaders(){
+        //this.headers.add("UniqueCode");
         this.headers.add("Code");
         this.headers.add("PriceList");
         this.headers.add("OldPrice");
@@ -53,12 +54,11 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
             bw.newLine();
             for (Map<String, List<String>> eachMap : priceChgList) {
                 for (String code : eachMap.keySet()) {
-                    bw.write(code);
-                    bw.write(",");
-                for (String valPrice : eachMap.get(code)) {
-                    bw.write(valPrice);
-                    bw.write(",");
-                }
+                    List<String> tempList = eachMap.get(code);
+                    for (String eachToken : tempList) {
+                        bw.write(eachToken);
+                        bw.write(",");
+                    }
                     bw.newLine();
                 }
             }
@@ -68,7 +68,7 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
         finally{
             try{
                 bw.close();
-                System.err.println("writing to the output file succesful");
+                System.out.println("writing to the output file succesful");
             } catch(Exception ex){
                 System.err.println("Problem with updateOutFile " + ex);
             }

@@ -31,19 +31,18 @@ public class PriceListWriter implements Writer {
     
     public void writeUpdatedFile(List<Map<String, List<String>>> priceFileList){
         for (Map<String, List<String>> eachPriceList : priceFileList) {
-            Set<String> tempSet = eachPriceList.keySet();
-            List<String> tempList = new ArrayList<>(tempSet);
-            String anyKey = tempList.get(1);
-            List<String> anyKeyList = eachPriceList.get(anyKey);
-            String priceFileName = anyKeyList.get(0);
-            String fileName = createFileName(priceFileName);
+            Set<String> tempSet = eachPriceList.keySet(); //[EXCATL, Code1Qty12Date16, Code2Qty6Date15 ...]
+            List<String> tempList = new ArrayList<>(tempSet); //(EXCATL, Code1Qty12Date16, Code2Qty6Date15 ...)
+            String anyKey = tempList.get(1); //Code1Qty12Date16
+            List<String> anyKeyList = eachPriceList.get(anyKey); //[TRADEUK1, 92250-32, PERF SHORTS BLACK, 8Q, 67, PR, 10112, 311217, 1, 25,
+            String priceFileName = anyKeyList.get(0); //TRADEUK1
+            String fileName = createFileName(priceFileName); //%TRADEUK1.csv
             File outFile = new File(fileName);
             BufferedWriter bw = null;
             try {
                 outFile.createNewFile();
                 bw = new BufferedWriter(new FileWriter(outFile));
-                List<String> eachLineList = new ArrayList<>();
-                bw.newLine();
+                //bw.newLine();
                 for (String eachKey : eachPriceList.keySet()) {
                     for (String eachToken : eachPriceList.get(eachKey)) {
                         bw.write(eachToken);

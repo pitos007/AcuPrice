@@ -18,6 +18,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+        
 /**
  *
  * @author UPatryk
@@ -31,7 +32,6 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     private List<Map<String, List<String>>> priceChangesList = new ArrayList<>();
     private Printer pr;
     private String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
-    private File fileOut;
     
     public PriceListUpdater(){
         this.headers = fileMgr.getFileNames();
@@ -54,19 +54,23 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
                     while(fs.hasNextLine()){
                         currentLine = fs.nextLine();
                         String strEmpty = currentLine.replaceAll(",,", ", ,");   //replace 12345,,54321 into 12345," ",54321
-                        List<String> tmpList = new ArrayList<>();
+                        List<String> origList = new ArrayList<>();
                         ls = new Scanner(strEmpty);
                         ls.useDelimiter(",");
                         while(ls.hasNext()){
-                            tmpList.add(ls.next()); //[TRADEUK1, 92250-32, PERF SHORTS BLACK, 8Q, 67, PR, 10112, 311217, 1, 25,
+                            origList.add(ls.next()); //[TRADEUK1, 92250-32, PERF SHORTS BLACK, 8Q, 67, PR, 10112, 311217, 1, 25,
                         }
-                        String origCode = tmpList.get(1);  // 92250-32
-                        String templCode = formatCode(tmpList.get(1)); // 92250
-                        String origPrice = tmpList.get(9); // 25
+                        // uniqueCode must be unique in the Map
+                        String uniqueCode = origList.get(1) + origList.get(8) + origList.get(6);  // Code1Qty12Date16, 92250-3212010116
+                        String templCode = formatCode(origList.get(1)); // 92250
+                        String origPrice = origList.get(9); // 25
                         if (isInPriceList(templCode)) { // 92250 in 92250 [10, 11, 12]
-                            List<String> updatedTmpList = updatePrice(tmpList, templCode, origPrice, origCode);
+                            List<String> updatedTmpList = updatePrice(origList, templCode, origPrice, uniqueCode);
                             //tmpList = updatedTmpList;
-                            priceFileMap.put(tmpList.get(1), updatedTmpList);
+                            priceFileMap.put(uniqueCode, updatedTmpList);
+                        }
+                        else{
+                            priceFileMap.put(uniqueCode, origList);
                         }
                     }
                 }
@@ -109,13 +113,12 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     
     // the method changes the current price if the new price 99.99 does not equal the current price
     // then it updates the priceChangesList
-    public List<String> updatePrice(List<String> origList, String templCode, String origPrice, String origCode){
+    public List<String> updatePrice(List<String> origList, String templCode, String origPrice, String uniqueCode){
         List<String> mfMapKeyList = getListFromMapKey(templCode); //[95890/1/2/3/4, Womens FJ Lambswool, 99.99, 44.2, 47.4, 43.0 ...]
-        
         String priceListName = origList.get(0); //TRADEUK1
         int priceIndex = getIndexHeaderPrice(priceListName); //2
         String newPrice = mfMapKeyList.get(priceIndex - 1); // 99.99
-        if (!newPrice.equals(origPrice)) { //99.99 != 25.50
+        if ((!newPrice.equals(origPrice))&&(!newPrice.equals("0"))) { //99.99 != 25.50
             //System.out.println("original list: " + origList);
             //System.out.println("search key: " + templCode);
             //System.out.println("found in: " + mfMapKeyList);
@@ -124,14 +127,15 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
             List<String> updatedList = origList; //TRADEUK1,95890M,STA-COOLER,4R,40,EA,10100,311217,1,25.50 ...
             updatedList.set(9, newPrice); //TRADEUK1,95890M,STA-COOLER,4R,40,EA,10100,311217,1,99.99 ...
             System.out.println("updated list: " + updatedList);
-            System.out.println("-------------------------"); 
-            List<String> reportList = new ArrayList<>(); 
+            System.out.println("-------------------------");
+            List<String> reportList = new ArrayList<>();
+            reportList.add(origList.get(1));
             reportList.add(priceListName);
             reportList.add(origPrice);
             reportList.add(newPrice);
             Map<String, List<String>> priceChanges = new LinkedHashMap<>();
-            priceChanges.put(origCode, reportList); //95890M [TRADEUK, 25.50, 99.99]
-            this.priceChangesList.add(priceChanges); //[95890M [TRADEUK, 25.50, 99.99]], [95890M [TRADEEU, 28.50, 99.99]]
+            priceChanges.put(uniqueCode, reportList); //95890M1010116 [95890M, TRADEUK, 25.50, 99.99]
+            this.priceChangesList.add(priceChanges); //[95890M1010116 [95890M, TRADEUK, 25.50, 99.99]], [95890M1010116[95890M, TRADEEU, 28.50, 99.99]]
             return updatedList;
         }
         else{
