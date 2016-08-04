@@ -36,6 +36,7 @@ public class PriceListWriter implements Writer {
             String anyKey = tempList.get(1); //Code1Qty12Date16
             List<String> anyKeyList = eachPriceList.get(anyKey); //[TRADEUK1, 92250-32, PERF SHORTS BLACK, 8Q, 67, PR, 10112, 311217, 1, 25,
             String priceFileName = anyKeyList.get(0); //TRADEUK1
+            System.out.println("updating " + priceFileName);
             String fileName = createFileName(priceFileName); //%TRADEUK1.csv
             File outFile = new File(fileName);
             BufferedWriter bw = null;

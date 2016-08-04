@@ -40,10 +40,12 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     
     
     public void readAndUpdatePriceFile(){
+        System.out.println("Updating prices...");
+        System.out.println("Creating priceChanges list...");
+        System.out.println("available files:");
         for (String prFile : headers) {
             File inFile = new File(path + prFile + ".csv");
             if(inFile.exists() && !inFile.isDirectory()){
-                System.out.println("available files:");
                 System.out.println(inFile);
                 Scanner fs = null;
                 Map<String, List<String>> priceFileMap = new LinkedHashMap<>();
@@ -126,8 +128,8 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
             //System.out.println("new price in " + priceListName + " is " + newPrice);
             List<String> updatedList = origList; //TRADEUK1,95890M,STA-COOLER,4R,40,EA,10100,311217,1,25.50 ...
             updatedList.set(9, newPrice); //TRADEUK1,95890M,STA-COOLER,4R,40,EA,10100,311217,1,99.99 ...
-            System.out.println("updated list: " + updatedList);
-            System.out.println("-------------------------");
+            //System.out.println("updated list: " + updatedList);
+            //System.out.println("-------------------------");
             List<String> reportList = new ArrayList<>();
             reportList.add(origList.get(1));
             reportList.add(priceListName);
