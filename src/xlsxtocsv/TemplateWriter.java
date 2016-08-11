@@ -29,13 +29,15 @@ public class TemplateWriter extends Extractor {
         
     }
     
-   
-    public void createTemplateFile(){
+   /**
+    * creates a file with templates codes: 12345, 12346 etc and prices
+    */
+    public void createTemplateFile() throws DuplicateElementException{
         String fileName = createFileName();
         this.fileOut = new File(fileName);
         BufferedWriter bw = null;
         Map<String, List<String>> priceList = new LinkedHashMap<>();
-        priceList = extrMgr.generatePriceMap();
+        priceList = extrMgr.generatePriceMap(); // 12345 [10, 11, 12]
         try {
             this.fileOut.createNewFile();
             bw = new BufferedWriter(new FileWriter(fileName));

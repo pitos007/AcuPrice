@@ -10,9 +10,13 @@ package xlsxtocsv;
  * @author UPatryk
  */
 public class Update {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DuplicateElementException {
         
-        
+        /**
+         * invoke crateTemplateFile only if you want the file in the folder
+         * generatePriceMap() will be invoked on Extractor manager
+         * in the PriceListUpdater constructor
+         */
         TemplateWriter tempWrit = new TemplateWriter();
         tempWrit.createTemplateFile();
         

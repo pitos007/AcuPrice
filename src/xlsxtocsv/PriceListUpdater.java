@@ -33,7 +33,7 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     private Printer pr;
     private String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
     
-    public PriceListUpdater(){
+    public PriceListUpdater() throws DuplicateElementException{
         this.headers = fileMgr.getFileNames();
         this.priceList = em.generatePriceMap(); // 12345 [10, 11, 12]
     }
@@ -66,8 +66,9 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
                         String uniqueCode = origList.get(1) + origList.get(8) + origList.get(6);  // Code1Qty12Date16, 92250-3212010116
                         String templCode = formatCode(origList.get(1)); // 92250
                         String origPrice = origList.get(9); // 25
+                        String codeDesc = origList.get(2);
                         if (isInPriceList(templCode)) { // 92250 in 92250 [10, 11, 12]
-                            List<String> updatedTmpList = updatePrice(origList, templCode, origPrice, uniqueCode);
+                            List<String> updatedTmpList = updatePrice(origList, templCode, origPrice, uniqueCode, codeDesc);
                             //tmpList = updatedTmpList;
                             priceFileMap.put(uniqueCode, updatedTmpList);
                         }
@@ -115,7 +116,7 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     
     // the method changes the current price if the new price 99.99 does not equal the current price
     // then it updates the priceChangesList
-    public List<String> updatePrice(List<String> origList, String templCode, String origPrice, String uniqueCode){
+    public List<String> updatePrice(List<String> origList, String templCode, String origPrice, String uniqueCode, String codeDesc){
         List<String> mfMapKeyList = getListFromMapKey(templCode); //[95890/1/2/3/4, Womens FJ Lambswool, 99.99, 44.2, 47.4, 43.0 ...]
         String priceListName = origList.get(0); //TRADEUK1
         int priceIndex = getIndexHeaderPrice(priceListName); //2
@@ -132,12 +133,13 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
             //System.out.println("-------------------------");
             List<String> reportList = new ArrayList<>();
             reportList.add(origList.get(1));
+            reportList.add(codeDesc);
             reportList.add(priceListName);
             reportList.add(origPrice);
             reportList.add(newPrice);
             Map<String, List<String>> priceChanges = new LinkedHashMap<>();
-            priceChanges.put(uniqueCode, reportList); //95890M1010116 [95890M, TRADEUK, 25.50, 99.99]
-            this.priceChangesList.add(priceChanges); //[95890M1010116 [95890M, TRADEUK, 25.50, 99.99]], [95890M1010116[95890M, TRADEEU, 28.50, 99.99]]
+            priceChanges.put(uniqueCode, reportList); //95890M1010116 [95890M, STA-COOLER, TRADEUK, 25.50, 99.99]
+            this.priceChangesList.add(priceChanges); //[95890M1010116 [95890M, STA-COOLER, TRADEUK, 25.50, 99.99]], [95890M1010116[95890M, STA-COOLER, TRADEEU, 28.50, 99.99]]
             return updatedList;
         }
         else{

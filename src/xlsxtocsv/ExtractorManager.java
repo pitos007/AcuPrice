@@ -19,7 +19,13 @@ public class ExtractorManager extends Extractor{
     public ExtractorManager(){
     }
     
-    // creates 12345, 12346, 12347 from 12345/6/7
+    
+    /**
+     * creates 12345, 12346, 12347 from 12345/6/7
+     * calls getTokens in Extractor using regular expression pattern
+     * @param str String got from codePricesMap(inPath) 12345/6/7
+     * @return ArrayList templates codes 12345, 12346, 12347
+     */
     public List<String> stringToCodes(String str){
         List<String> groupTokens = getGroupTokens(str);
         List<String> groupTokensFull = new ArrayList<>();
@@ -40,13 +46,18 @@ public class ExtractorManager extends Extractor{
     
     
     
-    
-    public Map<String, List<String>> generatePriceMap(){
+    /**
+     * calls codePriceMap(path) on Extractor class to get price map 12345/6/7 [10, 11, 12]
+     * calls stringToCodes(map) to convert 12345/6/7 to 12345, 12346, 12347
+     * @return LinkedHashMap 12345 [10, 11, 12]
+     * @throws xlsxtocsv.DuplicateElementException
+     */
+    public Map<String, List<String>> generatePriceMap() throws DuplicateElementException{
         String inPath = getInPathName();
         System.out.println("getting inPath: " + inPath);
         Map<String, List<String>> tempPriceList = new LinkedHashMap<>();
         Map<String, List<String>> priceList = new LinkedHashMap<>();
-        tempPriceList = codePricesMap(inPath); // [12345/6/7; 10, 11, 12]
+        tempPriceList = codePricesMap(inPath); // 12345/6/7; 10, 11, 12
         System.out.println("create price list map: [12345; 5.70, 3.20, 4.50]...");
         //printPriceListMap(tempPriceList);
         for (String eachCode : tempPriceList.keySet()) { //12345/6/7;
@@ -54,7 +65,11 @@ public class ExtractorManager extends Extractor{
             tempCodeList  = stringToCodes(eachCode); // 12345, 12346, 12347
             //System.out.println(tempCodeList);
             for (String code : tempCodeList) { // 12345
-                priceList.put(code, tempPriceList.get(eachCode)); // 12345 [10, 11, 12]
+                if (priceList.containsKey(code)) {
+                    throw new DuplicateElementException("code: " + code + " already exists");
+                }else{
+                    priceList.put(code, tempPriceList.get(eachCode)); // 12345 [10, 11, 12]
+                }
             }
         }
         return priceList;

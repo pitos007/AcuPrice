@@ -34,6 +34,7 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
     public void updateHeaders(){
         //this.headers.add("UniqueCode");
         this.headers.add("Code");
+        this.headers.add("Description");
         this.headers.add("PriceList");
         this.headers.add("OldPrice");
         this.headers.add("NewPrice");

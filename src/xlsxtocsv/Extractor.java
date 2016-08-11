@@ -31,7 +31,7 @@ public class Extractor extends FileManager {
     }
 
     // extract tokens separated by commas from the single String
-    //66820E, 67882E, 66241E/58E/70E/79E, 67860E/88E
+    // 66241E/58E/70E/79E, 67860E/88E, 66820E, 67882E 
     public List<String> getGroupTokens(String str) {
         List<String> groupTokenList = new ArrayList<>();
 
@@ -46,7 +46,7 @@ public class Extractor extends FileManager {
     }
 
     // extract alpha-numeric tokens from the group of tokens
-    // 66820E, 67882E, 66241E, 58E, 70E, 79E, 67860E, 88E
+    // 66241E, 58E, 70E, 79E
     public List<String> getTokens(String group) {
         List<String> tokenList = new ArrayList<>();
         Pattern p1 = Pattern.compile("\\w+");
@@ -58,8 +58,8 @@ public class Extractor extends FileManager {
         return tokenList;
     }
 
-    // converts alpha-numeric tokens into template codes
-    // 66820E, 67882E, 66241E, 66258E, 66270E, 66279E, 67860E, 67888E
+    // converts 66241E, 58E, 70E, 79E into
+    // 66241E, 66258E, 66270E, 66279E, 67860E, 67888E
     public List<String> createCodes(List<String> numList) {
         List<String> templateList = new ArrayList<>();
         for (String str : numList) {
@@ -71,7 +71,11 @@ public class Extractor extends FileManager {
         return templateList;
     }
     
-    // creates a price map [12345/6/7; 10,20,30,40] 
+    /**
+     * reads an input file and creates map 
+     * @param inPathName input path name e.g FJpriceList.csv
+     * @return LinkedHashMap 12345/6/7; 10,11,12,13
+     */
     public synchronized Map<String, List<String>> codePricesMap(String inPathName){
         File inFile = new File(inPathName);
         Scanner bs = null;
@@ -92,20 +96,21 @@ public class Extractor extends FileManager {
                 while (ls.hasNext()){
                     tmpList.add(ls.next());
                 }
-                //System.out.println("tmpList: " + tmpList);
+                // new is empty (carry over is non-empty)
                 if (tmpList.get(0).equals(" ")) {
-                    String covr = tmpList.get(1);
+                    String covr = tmpList.get(1); //get carry over
                     tmpList.remove(0);
-                    tmpList.add(0, covr);
+                    tmpList.add(0, covr); // add carry over to first column
                 }
+                // cary over is non-empty (marge new with carry over)
                 else if (!tmpList.get(1).equals(" ")){
                     String newPlusCovr = tmpList.get(0) + " " + tmpList.get(1);
                     tmpList.remove(0);
-                    tmpList.add(0, newPlusCovr);
+                    tmpList.add(0, newPlusCovr); // add new+carryOver to first column
                 }
                 String rawCodes = tmpList.get(0);
                 tmpList.remove(0);
-                cdPrMap.put(rawCodes, tmpList);
+                cdPrMap.put(rawCodes, tmpList); //12345/6/7; 10,11,12,13
             }
             //printPriceListMap(cdPrMap);
         }
