@@ -26,7 +26,7 @@ public class Report extends PriceListUpdater implements Writer, Printer  {
     private List<String> headers = new ArrayList<>();
     
     
-    public Report() throws Exception{
+    public Report() throws DuplicateElementException{
     }
     
     

@@ -10,7 +10,7 @@ package xlsxtocsv;
  * @author UPatryk
  */
 public class Update {
-    public static void main(String[] args) throws DuplicateElementException, Exception {
+    public static void main(String[] args) throws DuplicateElementException {
         
         /**
          * invoke crateTemplateFile only if you want the file in the folder
