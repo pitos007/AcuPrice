@@ -16,6 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.function.Consumer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
         
@@ -31,7 +32,7 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     private Map<String, List<String>> priceList = new LinkedHashMap<>();
     private List<Map<String, List<String>>> priceChangesList = new ArrayList<>();
     private Printer pr;
-    private String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
+    private String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
     
     public PriceListUpdater() throws DuplicateElementException{
         this.headers = fileMgr.getFileNames();
@@ -39,19 +40,22 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     }
     
     
-    public void readAndUpdatePriceFile(){
+    public void readAndUpdatePriceFile() throws MissingFileException{
         System.out.println("Updating prices...");
         System.out.println("Creating priceChanges list...");
         System.out.println("available files:");
-        for (String prFile : headers) {
+        for(String prFile : this.headers){
             File inFile = new File(path + prFile + ".csv");
-            if(inFile.exists() && !inFile.isDirectory()){
+            if (!inFile.exists()) {
+                listMissingFiles();
+                throw new MissingFileException("file does not exist");
+            }else{
                 System.out.println(inFile);
                 Scanner fs = null;
                 Map<String, List<String>> priceFileMap = new LinkedHashMap<>();
                 try {
                     Scanner ls = null;
-                    String currentLine;                   
+                    String currentLine;
                     fs = new Scanner(new BufferedReader(new FileReader(inFile)));
                     while(fs.hasNextLine()){
                         currentLine = fs.nextLine();
@@ -79,12 +83,29 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
                 }
                 catch (Exception e) {
                     System.err.println("Probelm with reading " + prFile + " file" + e);
-                }
-                this.priceFileList.add(priceFileMap);
+                }   PriceListUpdater.this.priceFileList.add(priceFileMap);
             }
-        }
-        //pr.printAllPriceFiles(priceFileList);
+        } //pr.printAllPriceFiles(priceFileList);
     }
+    
+    public void listMissingFiles(){
+        List<String> fileNamesList = new ArrayList<>();
+        headers.stream().forEach((fileName) -> {
+            File inFile = new File(path + fileName + ".csv");
+            if (!inFile.exists()) {
+                fileNamesList.add(fileName);
+            }
+        });
+        String missingFiles = "";
+        missingFiles = fileNamesList.stream()
+                .map((String missingFile) -> ", " + missingFile)
+                .reduce(missingFiles, String::concat);
+        System.out.println("missing files: " + missingFiles);
+    }
+    
+    
+    
+    
     
     // converts 12345P, 12346S to 12345P, 12346
    public static String formatCode(String cd){
@@ -114,7 +135,7 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
     }
     
     
-    // the method changes the current price if the new price 99.99 does not equal the current price
+    // the method changes the current price if the new price does not equal the current price
     // then it updates the priceChangesList
     public List<String> updatePrice(List<String> origList, String templCode, String origPrice, String uniqueCode, String codeDesc){
         List<String> mfMapKeyList = getListFromMapKey(templCode); //[95890/1/2/3/4, Womens FJ Lambswool, 99.99, 44.2, 47.4, 43.0 ...]
