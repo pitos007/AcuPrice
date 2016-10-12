@@ -46,8 +46,9 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
         System.out.println("available files:");
         for(String prFile : this.headers){
             File inFile = new File(path + prFile + ".csv");
-            if (!inFile.exists() && inFile.isDirectory()) {
-                throw new MissingFileException(prFile + " file does not exist");
+            if (!inFile.exists()) {
+                listMissingFiles();
+                throw new MissingFileException("file does not exist");
             }else{
                 System.out.println(inFile);
                 Scanner fs = null;
@@ -84,7 +85,22 @@ public class PriceListUpdater extends FileManager implements Printer, Writer {
                     System.err.println("Probelm with reading " + prFile + " file" + e);
                 }   PriceListUpdater.this.priceFileList.add(priceFileMap);
             }
-        }; //pr.printAllPriceFiles(priceFileList);
+        } //pr.printAllPriceFiles(priceFileList);
+    }
+    
+    public void listMissingFiles(){
+        List<String> fileNamesList = new ArrayList<>();
+        headers.stream().forEach((fileName) -> {
+            File inFile = new File(path + fileName + ".csv");
+            if (!inFile.exists()) {
+                fileNamesList.add(fileName);
+            }
+        });
+        String missingFiles = "";
+        missingFiles = fileNamesList.stream()
+                .map((String missingFile) -> ", " + missingFile)
+                .reduce(missingFiles, String::concat);
+        System.out.println("missing files: " + missingFiles);
     }
     
     
