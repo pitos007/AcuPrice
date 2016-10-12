@@ -10,7 +10,7 @@ package xlsxtocsv;
  * @author UPatryk
  */
 public class Update {
-    public static void main(String[] args) throws DuplicateElementException {
+    public static void main(String[] args) throws DuplicateElementException{
         
         /**
          * invoke crateTemplateFile only if you want the file in the folder
@@ -20,13 +20,13 @@ public class Update {
         TemplateWriter tempWrit = new TemplateWriter();
         tempWrit.createTemplateFile();
         
-//        PriceListUpdater pr = new PriceListUpdater();
-//        pr.readAndUpdatePriceFile();
-//        Report rep = new Report();
-//        rep.updateOutFile(pr.getPriceChangesList());
-//        
-//        PriceListWriter plw = new PriceListWriter();
-//        plw.writeUpdatedFile(pr.getPriceFileList());
+        PriceListUpdater pr = new PriceListUpdater();
+        pr.readAndUpdatePriceFile();
+        Report rep = new Report();
+        rep.updateOutFile(pr.getPriceChangesList());
+        
+        PriceListWriter plw = new PriceListWriter();
+        plw.writeUpdatedFile(pr.getPriceFileList());
         
     }
 }
