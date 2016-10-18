@@ -2,7 +2,7 @@
  * Extractor class helps with extracting codes e.g 12345, 54321
  * from a single string containing product codes e.g 12345/6/7/55/56
  */
-package xlsxtocsv;
+package footjoy;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,14 +19,14 @@ import java.util.regex.Pattern;
  *
  * @author Pitos
  */
-public class Extractor extends FileManager {
+public class Extractor extends FJFileManager {
     //String plStr1 = "92290/1/2/3; 92309H, 95890/1/2/3/45/46/8/81/82: 92235D/36 : 91788/8 ; 92753/54 62758P";
     //String plStr2 = "60003/37/60/94, 60128/51; 60241/74, 68254P 65706/44/51/68/75/82/91/99, 64814H : 65702E"
     //String plStr3 = "64815E/16E/18E/20E/20P/24E/53E/60E/70E; 66241E/58E/70E/79; 67860E/88E; 67901E/02E;
     String inPathName;
 
     public Extractor() {
-        FileManager fm = new FileManager();
+        FJFileManager fm = new FJFileManager();
         this.inPathName = fm.getInPathName();
     }
 

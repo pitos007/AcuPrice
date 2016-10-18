@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xlsxtocsv;
+package footjoy;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,15 +24,15 @@ import java.util.regex.Pattern;
  *
  * @author UPatryk
  */
-public class PriceListUpdater extends FileManager implements Printer, Writer {
-    private FileManager fileMgr = new FileManager();
+public class PriceListUpdater extends FJFileManager implements Printer, Writer {
+    private FJFileManager fileMgr = new FJFileManager();
     private ExtractorManager em = new ExtractorManager();
     private List<String> headers;
     private List<Map<String, List<String>>> priceFileList = new ArrayList<>();
     private Map<String, List<String>> priceList = new LinkedHashMap<>();
     private List<Map<String, List<String>>> priceChangesList = new ArrayList<>();
     private Printer pr;
-    private String path = "E:\\NetBeans_JavaSE_8.0_Portable\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
+    private String path = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\";
     
     public PriceListUpdater() throws DuplicateElementException{
         this.headers = fileMgr.getFileNames();

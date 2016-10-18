@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xlsxtocsv;
+package footjoy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,18 +12,18 @@ import java.util.List;
  *
  * @author UPatryk
  */
-public class FileManager {
+public class FJFileManager {
     //String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\xlsxtocsv\\MCGUIRK1.csv";
     //String outPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
     
     //String inPathName = "D:\\OneDrive\\Projects\\AcuPrice\\src\\priceupdater\\FjPriceList.csv";
     //private String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\AcuPrice\\src\\xlsxtocsv\\FJpriceList.csv";
     
-    private final String inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Projects\\AcuPrice\\src\\xlsxtocsv\\FJpriceList.csv";
-    private final String outPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Projects\\AcuPrice\\src\\xlsxtocsv\\";
+    private final String inPathName = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\FJpriceList.csv";
+    private final String outPathName = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\";
     
     
-    public FileManager(){
+    public FJFileManager(){
         
     }
     

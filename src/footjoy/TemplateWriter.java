@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xlsxtocsv;
+package footjoy;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -31,6 +31,7 @@ public class TemplateWriter extends Extractor {
     
    /**
     * creates a file with templates codes: 12345, 12346 etc and prices
+     * @throws footjoy.DuplicateElementException
     */
     public void createTemplateFile() throws DuplicateElementException{
         String fileName = createFileName();
@@ -65,7 +66,7 @@ public class TemplateWriter extends Extractor {
     
     
     public String createFileName(){
-        FileManager fileMgr = new FileManager();
+        FJFileManager fileMgr = new FJFileManager();
         String outPath = fileMgr.getOutPathName();
         DateFormat dateFormat = new SimpleDateFormat("yyMMddHHmmss");
         Date dateTime = new Date();

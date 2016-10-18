@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xlsxtocsv;
+package footjoy;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -50,7 +50,7 @@ public class ExtractorManager extends Extractor{
      * calls codePriceMap(path) on Extractor class to get price map 12345/6/7 [10, 11, 12]
      * calls stringToCodes(map) to convert 12345/6/7 to 12345, 12346, 12347
      * @return LinkedHashMap 12345 [10, 11, 12]
-     * @throws xlsxtocsv.DuplicateElementException
+     * @throws footjoy.DuplicateElementException
      */
     public Map<String, List<String>> generatePriceMap() throws DuplicateElementException{
         String inPath = getInPathName();

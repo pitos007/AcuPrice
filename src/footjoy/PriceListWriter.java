@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xlsxtocsv;
+package footjoy;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -21,7 +21,7 @@ import java.util.Set;
  * @author UPatryk
  */
 public class PriceListWriter implements Writer {
-    private FileManager fileMgr = new FileManager();
+    private FJFileManager fileMgr = new FJFileManager();
 
     
     public PriceListWriter(){

@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package xlsxtocsv;
+package footjoy;
 
 /**
  *
  * @author UPatryk
  */
-class DuplicateElementException extends Exception {
-    public DuplicateElementException(String message){
+public class MissingFileException extends Exception {
+    public MissingFileException(String message){
         super(message);
     }
     
-    public DuplicateElementException(String message, Throwable throwable){
-        super(message, throwable);
+    public MissingFileException(String message, Throwable throwable){
+        super(message,throwable);
     }
 }

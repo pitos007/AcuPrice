@@ -1,5 +1,5 @@
 
-package xlsxtocsv;
+package footjoy;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,8 +35,8 @@ public class InputManager {
     
     
     public InputManager(){
-        this.inPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\IO_tests\\src\\DB_tests\\FJpriceList.csv";
-        this.outPathName = "E:\\NetBeans_JavaSE_8.0_Portable\\Data\\Projects\\IO_tests\\src\\DB_tests\\";
+        this.inPathName = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\FJpriceList.csv";
+        this.outPathName = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\";
         this.priceList.add("TRADEUK");
         this.priceList.add("TRADEEU");
         this.priceList.add("TRADESK");
