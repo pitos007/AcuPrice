@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  *
  * @author UPatryk
  */
-public class PriceListExtender extends TFileManager {
+public class PriceListExtender extends TFileManager implements Printer {
     private Map<String, List<String>> priceListMap = new LinkedHashMap<>();
 
     public PriceListExtender() {
@@ -28,23 +28,25 @@ public class PriceListExtender extends TFileManager {
     public void extendPriceList(){
        Scanner bs = null;
         try {
-            bs = new Scanner(new BufferedReader(new FileReader(TFileManager.IN_PATH)));
+            bs = new Scanner(new BufferedReader(new FileReader(new File(TFileManager.IN_PATH))));
             while(bs.hasNextLine()){
-                String lineStr = bs.nextLine();
+                String lineStr = bs.nextLine(); // bll,Pro V1 ,37,28.5,29.6,26,28.3,24.34
                 Scanner ls = new Scanner(lineStr);
                 ls.useDelimiter(",");
                 List<String> lineList = new ArrayList<>();
                 while(ls.hasNext()){
-                    lineList.add(ls.next());
-                    if (lineList.get(0).equals("irn")) {
+                    lineList.add(ls.next()); // [irn,716 AP1,75,54,57,49,52,46.91,975]
+                }
+                if (lineList.get(0).equals("irn")) {
                         converToSet(lineList);
                     }
-                    else if(lineList.get(0).equals("hdw")){
-                        convertToEa(lineList);
-                    }
+                else if(lineList.get(0).equals("hdw")){
+                    convertToEa(lineList);
                 }
             }
+            printPriceListMap();
         } catch (Exception e) {
+            System.err.println(e);
         }
     }
     
@@ -101,6 +103,36 @@ public class PriceListExtender extends TFileManager {
             }
         }
     }
+    
+    
+    @Override
+    public void printPriceListMap() {
+        List<String> tempList = new ArrayList();
+        for(String codes : this.priceListMap.keySet()){
+            tempList = this.priceListMap.get(codes);
+            System.out.println(codes + " " + tempList);
+        }
+        System.out.println();
+    }
+    
+
+
+    @Override
+    public void printPriceList(List<String> prListMap) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void printAllPriceFiles(List<Map<String, List<String>>> priceFileList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void printPriceListMap(Map<String, List<String>> prLm) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
             
             

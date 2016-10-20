@@ -14,7 +14,7 @@ import java.util.Map;
  *
  * @author UPatryk
  */
-public class ExtractorManager extends Extractor{
+public class ExtractorManager extends Extractor implements Printer{
 
     public ExtractorManager(){
     }
@@ -73,6 +73,21 @@ public class ExtractorManager extends Extractor{
             }
         }
         return priceList;
+    }
+
+    @Override
+    public void printPriceListMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void printPriceList(List<String> prListMap) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void printAllPriceFiles(List<Map<String, List<String>>> priceFileList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
