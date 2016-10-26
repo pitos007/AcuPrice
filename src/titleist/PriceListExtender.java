@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+import static jdk.nashorn.internal.objects.NativeMath.round;
 
 /**
  *
@@ -38,11 +39,12 @@ public class PriceListExtender extends TFileManager implements Printer {
                     lineList.add(ls.next()); // [irn,716 AP1,75,54,57,49,52,46.91,975]
                 }
                 if (lineList.get(0).equals("irn")) {
-                        converToSet(lineList);
+                        converToSet(lineList);  // 716 AP1 6, [irn,716 AP1,75,54,57,49,52,46.91,975]
                     }
                 else if(lineList.get(0).equals("hdw")){
                     convertToEa(lineList);
                 }
+                this.priceListMap.put(lineList.get(1), lineList);
             }
             printPriceListMap();
         } catch (Exception e) {
@@ -55,10 +57,11 @@ public class PriceListExtender extends TFileManager implements Printer {
             List<String> irnSetList = new ArrayList<>();
             irnSetList.add(lineList.get(0)); // irn
             String irnKeySet = lineList.get(1) + " " + set; 
-            irnSetList.add(irnKeySet); // 716 AP1 6, 716 AP1 7
+            irnSetList.add(irnKeySet); // 716 AP1 6, ... 716 AP1 9
             for (int i = 2; i < lineList.size(); i++) {
                 double priceD = set * Double.parseDouble(lineList.get(i));
-                irnSetList.add(String.valueOf(priceD)); // double*6, double*7
+                //double roundD = round(priceD, 2);
+                irnSetList.add(String.valueOf(priceD)); // double*6, double*7 ...
             }
             this.priceListMap.put(irnKeySet, irnSetList);
         }
@@ -66,10 +69,10 @@ public class PriceListExtender extends TFileManager implements Printer {
     
     public void convertToEa(List<String> lineList){
         List<String> pkToEaList = new ArrayList<>();
-        pkToEaList.add(lineList.get(0));
+        pkToEaList.add(lineList.get(0)); // hdw
         // Performance (DoZeN) to Performance (EA)
         if (Pattern.compile(Pattern.quote("Dozen"), Pattern.CASE_INSENSITIVE).matcher(lineList.get(1)).find()) {
-            String keyStr = lineList.get(1).replaceAll("(?i)Dozen", "EA");
+            String keyStr = lineList.get(1).replaceAll("(?i)Dozen", "EA");  // Tour Performance (EA)
             pkToEaList.add(keyStr);
             for (int i = 2; i < lineList.size(); i++) {
                 double priceD = (Double.parseDouble(lineList.get(i))) / 12;
@@ -77,7 +80,7 @@ public class PriceListExtender extends TFileManager implements Printer {
             }
         }
         // Performance (Dz) to Performance (EA)
-        else if (Pattern.compile(Pattern.quote("dz"), Pattern.CASE_INSENSITIVE).matcher(lineList.get(1)).find()) {
+        else if (Pattern.compile(Pattern.quote("(?<=[^/])\\w\\w"), Pattern.CASE_INSENSITIVE).matcher(lineList.get(1)).find()) {
             String keyStr = lineList.get(1).replaceAll("(?i)dz", "EA");
             pkToEaList.add(keyStr);
             for (int i = 2; i < lineList.size(); i++) {
@@ -90,7 +93,7 @@ public class PriceListExtender extends TFileManager implements Printer {
             String keyStr = lineList.get(1).replaceAll("(?i)1/2 dz", "EA");
             pkToEaList.add(keyStr);
             for (int i = 2; i < lineList.size(); i++) {
-                double priceD = (Double.parseDouble(lineList.get(i))) / 12;
+                double priceD = (Double.parseDouble(lineList.get(i))) / 6;
                 pkToEaList.add(String.valueOf(priceD));
             }
         }
@@ -98,10 +101,11 @@ public class PriceListExtender extends TFileManager implements Printer {
             String keyStr = lineList.get(1).replaceAll("(?i)1/2dz", "EA");
             pkToEaList.add(keyStr);
             for (int i = 2; i < lineList.size(); i++) {
-                double priceD = (Double.parseDouble(lineList.get(i))) / 12;
+                double priceD = (Double.parseDouble(lineList.get(i))) / 6;
                 pkToEaList.add(String.valueOf(priceD));
             }
         }
+        this.priceListMap.put(pkToEaList.get(1), pkToEaList);
     }
     
     

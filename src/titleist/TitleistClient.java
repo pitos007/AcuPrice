@@ -5,6 +5,8 @@
  */
 package titleist;
 
+import java.util.regex.Pattern;
+
 /**
  *
  * @author UPatryk
@@ -13,5 +15,6 @@ public class TitleistClient {
     public static void main(String[] args) {
         PriceListExtender ple = new PriceListExtender();
         ple.extendPriceList();
+        
     }
 }
