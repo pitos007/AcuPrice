@@ -25,7 +25,7 @@ public class Update {
         Report rep = new Report();
         rep.updateOutFile(pr.getPriceChangesList());
         
-        PriceListWriter plw = new PriceListWriter();
+        FJPriceListWriter plw = new FJPriceListWriter();
         plw.writeUpdatedFile(pr.getPriceFileList());
         
     }

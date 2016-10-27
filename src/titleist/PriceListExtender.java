@@ -61,7 +61,7 @@ public class PriceListExtender extends TFileManager implements Printer {
             for (int i = 2; i < lineList.size(); i++) {
                 double priceD = set * Double.parseDouble(lineList.get(i));
                 //double roundD = round(priceD, 2);
-                irnSetList.add(String.valueOf(priceD)); // double*6, double*7 ...
+                irnSetList.add(String.valueOf(round(priceD, 2))); // double*6, double*7 ...
             }
             this.priceListMap.put(irnKeySet, irnSetList);
         }
@@ -76,16 +76,7 @@ public class PriceListExtender extends TFileManager implements Printer {
             pkToEaList.add(keyStr);
             for (int i = 2; i < lineList.size(); i++) {
                 double priceD = (Double.parseDouble(lineList.get(i))) / 12;
-                pkToEaList.add(String.valueOf(priceD));
-            }
-        }
-        // Performance (Dz) to Performance (EA)
-        else if (Pattern.compile(Pattern.quote("(?<=[^/])\\w\\w"), Pattern.CASE_INSENSITIVE).matcher(lineList.get(1)).find()) {
-            String keyStr = lineList.get(1).replaceAll("(?i)dz", "EA");
-            pkToEaList.add(keyStr);
-            for (int i = 2; i < lineList.size(); i++) {
-                double priceD = (Double.parseDouble(lineList.get(i))) / 12;
-                pkToEaList.add(String.valueOf(priceD));
+                pkToEaList.add(String.valueOf(round(priceD, 2)));
             }
         }
         // Performance (1/2 dz) to Performance (EA)
@@ -94,7 +85,7 @@ public class PriceListExtender extends TFileManager implements Printer {
             pkToEaList.add(keyStr);
             for (int i = 2; i < lineList.size(); i++) {
                 double priceD = (Double.parseDouble(lineList.get(i))) / 6;
-                pkToEaList.add(String.valueOf(priceD));
+                pkToEaList.add(String.valueOf(round(priceD, 2)));
             }
         }
         else if (Pattern.compile(Pattern.quote("1/2dz"), Pattern.CASE_INSENSITIVE).matcher(lineList.get(1)).find()) {
@@ -102,10 +93,27 @@ public class PriceListExtender extends TFileManager implements Printer {
             pkToEaList.add(keyStr);
             for (int i = 2; i < lineList.size(); i++) {
                 double priceD = (Double.parseDouble(lineList.get(i))) / 6;
-                pkToEaList.add(String.valueOf(priceD));
+                pkToEaList.add(String.valueOf(round(priceD, 2)));
+            }
+        }
+        // Performance (Dz) to Performance (EA)
+        else if (Pattern.compile(Pattern.quote("dz"), Pattern.CASE_INSENSITIVE).matcher(lineList.get(1)).find()) { //((?<!1\\/2 )(?<!1\\/2))(?i)dz
+            String keyStr = lineList.get(1).replaceAll("(?i)dz", "EA");
+            pkToEaList.add(keyStr);
+            for (int i = 2; i < lineList.size(); i++) {
+                double priceD = (Double.parseDouble(lineList.get(i))) / 12;
+                pkToEaList.add(String.valueOf(round(priceD, 2)));
             }
         }
         this.priceListMap.put(pkToEaList.get(1), pkToEaList);
+    }
+    
+    public static double round(double val, int decPlc) {
+        if (decPlc < 0) throw new IllegalArgumentException();
+        long fctr = (long) Math.pow(10, decPlc);
+        val = val * fctr;
+        long tmp = Math.round(val);
+        return (double) tmp / fctr;
     }
     
     

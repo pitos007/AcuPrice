@@ -20,11 +20,11 @@ import java.util.Set;
  *
  * @author UPatryk
  */
-public class PriceListWriter implements Writer {
+public class FJPriceListWriter implements Writer {
     private FJFileManager fileMgr = new FJFileManager();
 
     
-    public PriceListWriter(){
+    public FJPriceListWriter(){
         
     }
     
