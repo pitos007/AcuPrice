@@ -8,6 +8,7 @@ package footjoy;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -51,14 +52,14 @@ public class FJPriceListWriter implements Writer {
                     }
                     bw.newLine();
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.err.println("Problem with writing price file " + e);
             }
             finally{
             try{
                 bw.close();
                 System.out.println("writing to the output file succesful");
-            } catch(Exception ex){
+            } catch(IOException ex){
                 System.err.println("Problem with writing priceFile " + ex);
                 }
             }

@@ -22,6 +22,7 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
  */
 public class PriceListExtender extends TFileManager implements Printer {
     private Map<String, List<String>> priceListMap = new LinkedHashMap<>();
+    
 
     public PriceListExtender() {
     }
@@ -126,6 +127,12 @@ public class PriceListExtender extends TFileManager implements Printer {
         }
         System.out.println();
     }
+
+    public Map<String, List<String>> getPriceListMap() {
+        return priceListMap;
+    }
+    
+    
     
 
 

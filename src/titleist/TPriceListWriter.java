@@ -5,7 +5,10 @@
  */
 package titleist;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,11 +22,23 @@ import java.util.Map;
 public class TPriceListWriter extends TFileManager implements footjoy.Writer {
     
     
-    public void writeExtendedTPriceFile(Map<String, List<String>> priceFileList){
-        String fileName = createFileName();
-        File outFile = new File("TpriceList.csv");
-        for (String v : priceFileList.keySet()) {
-            
+    public void writeExtendedTPriceFile(Map<String, List<String>> priceFileListMap) throws IOException{
+        if (priceFileListMap.isEmpty()) {
+            System.err.println("The map is empty. Did you run extendPriceList() ?");
+        } 
+        else{
+            String fileName = createFileName("TpriceListExt");
+            File outFile = new File(fileName);
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))){
+                outFile.createNewFile();
+                for (String k : priceFileListMap.keySet()) {
+                    for(String t : priceFileListMap.get(k)){
+                        bw.write(t);
+                        bw.write(",");
+                    }
+                    bw.newLine();
+                }
+            }
         }
     }
 

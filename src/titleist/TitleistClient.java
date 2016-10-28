@@ -5,6 +5,7 @@
  */
 package titleist;
 
+import java.io.IOException;
 import java.util.regex.Pattern;
 
 /**
@@ -12,9 +13,13 @@ import java.util.regex.Pattern;
  * @author UPatryk
  */
 public class TitleistClient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         PriceListExtender ple = new PriceListExtender();
         ple.extendPriceList();
+        
+        TPriceListWriter tplw = new TPriceListWriter();
+        tplw.writeExtendedTPriceFile(ple.getPriceListMap());
+        
         
     }
 }
