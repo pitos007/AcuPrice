@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * The class adds quantities to descriptions e.g 716 AP2 6, 716 AP2 7 etc.
+ * It also multiplies the price by the quantities inserted in the descriptions
  */
 package titleist;
 
@@ -21,7 +20,7 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
  * @author UPatryk
  */
 public class PriceListExtender extends TFileManager implements Printer {
-    private Map<String, List<String>> priceListMap = new LinkedHashMap<>();
+    private Map<String, List<String>> priceListMapExtend = new LinkedHashMap<>();
     
 
     public PriceListExtender() {
@@ -30,7 +29,7 @@ public class PriceListExtender extends TFileManager implements Printer {
     public void extendPriceList(){
        Scanner bs = null;
         try {
-            bs = new Scanner(new BufferedReader(new FileReader(new File(TFileManager.IN_PATH))));
+            bs = new Scanner(new BufferedReader(new FileReader(new File(TFileManager.T_PRICE_LST))));
             while(bs.hasNextLine()){
                 String lineStr = bs.nextLine(); // bll,Pro V1 ,37,28.5,29.6,26,28.3,24.34
                 Scanner ls = new Scanner(lineStr);
@@ -45,7 +44,7 @@ public class PriceListExtender extends TFileManager implements Printer {
                 else if(lineList.get(0).equals("hdw")){
                     convertToEa(lineList);
                 }
-                this.priceListMap.put(lineList.get(1), lineList);
+                this.priceListMapExtend.put(lineList.get(1), lineList);
             }
             printPriceListMap();
         } catch (Exception e) {
@@ -64,7 +63,7 @@ public class PriceListExtender extends TFileManager implements Printer {
                 //double roundD = round(priceD, 2);
                 irnSetList.add(String.valueOf(round(priceD, 2))); // double*6, double*7 ...
             }
-            this.priceListMap.put(irnKeySet, irnSetList);
+            this.priceListMapExtend.put(irnKeySet, irnSetList);
         }
     }
     
@@ -106,7 +105,7 @@ public class PriceListExtender extends TFileManager implements Printer {
                 pkToEaList.add(String.valueOf(round(priceD, 2)));
             }
         }
-        this.priceListMap.put(pkToEaList.get(1), pkToEaList);
+        this.priceListMapExtend.put(pkToEaList.get(1), pkToEaList);
     }
     
     public static double round(double val, int decPlc) {
@@ -121,15 +120,25 @@ public class PriceListExtender extends TFileManager implements Printer {
     @Override
     public void printPriceListMap() {
         List<String> tempList = new ArrayList();
-        for(String codes : this.priceListMap.keySet()){
-            tempList = this.priceListMap.get(codes);
+        for(String codes : this.priceListMapExtend.keySet()){
+            tempList = this.priceListMapExtend.get(codes);
             System.out.println(codes + " " + tempList);
         }
         System.out.println();
     }
 
-    public Map<String, List<String>> getPriceListMap() {
-        return priceListMap;
+
+    public Map<String, List<String>> getPriceListMapExtend() {
+        return priceListMapExtend;
+    }
+    
+    public String getPrice(String priceFileName, int priceListIndex){
+        String price = "";
+        if (this.priceListMapExtend.containsKey(priceFileName)) {
+            List<String> pricesList = priceListMapExtend.get(priceFileName);
+            price = pricesList.get(priceListIndex);
+        }
+        return price;
     }
     
     

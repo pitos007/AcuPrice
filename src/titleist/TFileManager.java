@@ -10,9 +10,10 @@ package titleist;
  * @author UPatryk
  */
 public abstract class TFileManager {
-    static final String IN_PATH = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\TpriceList.csv";
-    static final String OUT_PATH = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\";
-
+    static final String T_PRICE_LST = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\TpriceList.csv";
+    static final String FILE_CONT = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\";
+    static final String T_PRICE_MAP = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\TPriceMap.csv";
+    
     public TFileManager() {
     }
 
