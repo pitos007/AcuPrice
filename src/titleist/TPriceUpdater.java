@@ -45,7 +45,6 @@ public class TPriceUpdater extends TFileManager {
                 listMissingFiles();
                 throw new MissingFileException("file does not exist");
             }else{
-                System.out.println(inFile);
                 Map<String, List<String>> priceFileMap = new LinkedHashMap<>();
                 try {
                     String currentLine;
@@ -63,12 +62,26 @@ public class TPriceUpdater extends TFileManager {
                         String origPrice = lineList.get(9); // 25.00
                         // uniqueCode must be unique in the Map
                         String uniqueCode = lineList.get(1) + lineList.get(8) + lineList.get(6);  // Code1Qty12Date16, 92250-3212010116
-                        String newPrice = ple.getPrice(getKey(origCode), getPriceFileIndex(header));
-                        if (!origPrice.equals(newPrice)) {
-                            lineList.set(9, newPrice);
-                            changesMap.put(uniqueCode, lineList);
+                        String keyStr = getKey(origCode); // Perf shorts
+                        int priceIndex = getPriceFileIndex(header); // 0, 1, 2...
+                        if (keyStr.length() > 0) {
+                            //System.out.println(keyStr + ", " + priceIndex + ", " + keyStr.length());
+                            String newPrice = ple.getPrice(keyStr, priceIndex);
+                            // TRADEUK1, TH1WEAEB-0, 6.5 changed to 0
+                            // TRADEUK1, TH7BSRE-9, 999.99 changed to 0
+                            // make sure that if it's 0, it should not change!
+                            if (evalOne > 1) {
+                                double newPriceDbl = Double.parseDouble(newPrice);
+                                double origPriceDbl = Double.parseDouble(origPrice);
+                                if (compareNewToOrig(newPriceDbl, origPriceDbl)) {
+                                    lineList.set(9, newPrice);
+                                    System.out.println(header + ", " + origCode + ", " + origPrice + " changed to " + newPrice);
+                                    changesMap.put(uniqueCode, lineList);
+                                }
+                            }
                         }
                         priceFileMap.put(uniqueCode, lineList);
+                        //System.out.println(uniqueCode + ", " + lineList);
                     }
                 }
                 catch (FileNotFoundException e) {
@@ -109,12 +122,14 @@ public class TPriceUpdater extends TFileManager {
     public String getKey(String code){
         String key = "";
         if (tpmr.containsCode(code)) {
-            key = tpmr.getKey(code); // Dri-Hood Towel
+            key = tpmr.getKey(code); // pap, >>Dri-Hood Towel<<, desc
         }
         return key;
     }
     
-    
+    public boolean compareNewToOrig(double d1, double d2){
+        return Double.compare(d1, d2) != 0;
+    }
     
     public int getPriceFileIndex(String priceFileName){
         return this.headersList.indexOf(priceFileName);
@@ -124,15 +139,15 @@ public class TPriceUpdater extends TFileManager {
      * returns price list names from the price list file e.g TRADEUK, TRADEEU, ...
      * @return 
      */
-    public List<String> getHeaders(){
+    public final List<String> getHeaders(){
         List<String> headerList = new ArrayList<>();
-        File inFile = new File(TFileManager.T_PRICE_LST);
+        File inFile = new File(TFileManager.T_PRICE_LST); // TpriceList.csv
         try {
             Scanner bs = new Scanner(new BufferedReader(new FileReader(inFile)));
             while(bs.hasNextLine()){
                 String lineStr = bs.nextLine();
                 Scanner ls = new Scanner(lineStr);
-                ls.useDelimiter("");
+                ls.useDelimiter(",");
                 while(ls.hasNext()){
                     headerList.add(ls.next());
                 }
@@ -143,6 +158,7 @@ public class TPriceUpdater extends TFileManager {
         }
         headerList.remove(0);
         headerList.remove(0);
+        System.out.println("Available price lists: " + headerList);
         return headerList;
     }
     

@@ -29,7 +29,7 @@ public class PriceListExtender extends TFileManager implements Printer {
     public void extendPriceList(){
        Scanner bs = null;
         try {
-            bs = new Scanner(new BufferedReader(new FileReader(new File(TFileManager.T_PRICE_LST))));
+            bs = new Scanner(new BufferedReader(new FileReader(new File(TFileManager.T_PRICE_LST)))); //TpriceList.csv
             while(bs.hasNextLine()){
                 String lineStr = bs.nextLine(); // bll,Pro V1 ,37,28.5,29.6,26,28.3,24.34
                 Scanner ls = new Scanner(lineStr);
@@ -46,7 +46,7 @@ public class PriceListExtender extends TFileManager implements Printer {
                 }
                 this.priceListMapExtend.put(lineList.get(1), lineList);
             }
-            printPriceListMap();
+            //printPriceListMap();
         } catch (Exception e) {
             System.err.println(e);
         }
@@ -119,11 +119,10 @@ public class PriceListExtender extends TFileManager implements Printer {
     
     @Override
     public void printPriceListMap() {
-        List<String> tempList = new ArrayList();
-        for(String codes : this.priceListMapExtend.keySet()){
-            tempList = this.priceListMapExtend.get(codes);
+        this.priceListMapExtend.keySet().forEach((codes) -> {
+            List<String> tempList = this.priceListMapExtend.get(codes);
             System.out.println(codes + " " + tempList);
-        }
+        });
         System.out.println();
     }
 
@@ -132,11 +131,11 @@ public class PriceListExtender extends TFileManager implements Printer {
         return priceListMapExtend;
     }
     
-    public String getPrice(String priceFileName, int priceListIndex){
+    public String getPrice(String keyDescription, int priceListIndex){
         String price = "";
-        if (this.priceListMapExtend.containsKey(priceFileName)) {
-            List<String> pricesList = priceListMapExtend.get(priceFileName);
-            price = pricesList.get(priceListIndex);
+        if (this.priceListMapExtend.containsKey(keyDescription)) {
+            List<String> pricesList = priceListMapExtend.get(keyDescription);
+            price = pricesList.get(priceListIndex + 2); // omits Type and Key columns
         }
         return price;
     }

@@ -2,14 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/upatryk/Documents/NetBeansProjects/AcuPrice/src/titleist/TitleistClient.java</file>
-            <file>file:/C:/Users/upatryk/Documents/NetBeansProjects/AcuPrice/src/footjoy/PriceListUpdater.java</file>
-            <file>file:/C:/Users/upatryk/Documents/NetBeansProjects/AcuPrice/src/titleist/TPriceListWriter.java</file>
-            <file>file:/C:/Users/upatryk/Documents/NetBeansProjects/AcuPrice/src/titleist/TPriceUpdater.java</file>
-            <file>file:/C:/Users/upatryk/Documents/NetBeansProjects/AcuPrice/src/titleist/PriceListExtender.java</file>
-            <file>file:/C:/Users/upatryk/Documents/NetBeansProjects/AcuPrice/src/titleist/MissingCodesChecker.java</file>
-            <file>file:/C:/Users/upatryk/Documents/NetBeansProjects/AcuPrice/src/titleist/TFileManager.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

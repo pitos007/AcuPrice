@@ -40,7 +40,7 @@ public class TPriceMapReader {
                 String keyStr = tokenList.get(0);
                 tokenList.remove(0);
                 this.tPriceMap.put(keyStr, tokenList);
-                System.out.println(keyStr + tokenList);
+                //System.out.println(keyStr + ", " + tokenList);
             }
         } 
         catch (FileNotFoundException e) {

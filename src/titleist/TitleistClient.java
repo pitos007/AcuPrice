@@ -16,20 +16,20 @@ import java.util.regex.Pattern;
  */
 public class TitleistClient {
     public static void main(String[] args) throws IOException, MissingFileException, DuplicateElementException {
-        PriceListExtender ple = new PriceListExtender();
-        ple.extendPriceList();
+//        PriceListExtender ple = new PriceListExtender();
+//        ple.extendPriceList();
         
         TPriceListWriter tplw = new TPriceListWriter();
-        tplw.writeExtendedTPriceFile(ple.getPriceListMapExtend());
+        //tplw.writeExtendedTPriceFile(ple.getPriceListMapExtend());
         
-        TPriceMapReader pmr = new TPriceMapReader();
-        pmr.readTPriceMap();
+//        TPriceMapReader pmr = new TPriceMapReader();
+//        pmr.readTPriceMap();
         
         TPriceUpdater pu = new TPriceUpdater();
         pu.updatePriceList();
-        
-        TReport tr = new TReport();
-        tr.updateOutFile(pu.getPriceMapChangesList());
-        tplw.writeUpdatedFile(pu.getPriceMapList());
+//        
+//        TReport tr = new TReport();
+//        tr.updateOutFile(pu.getPriceMapChangesList());
+//        tplw.writeUpdatedFile(pu.getPriceMapList());
     }
 }
