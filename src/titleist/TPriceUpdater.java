@@ -6,12 +6,12 @@
 package titleist;
 
 import footjoy.MissingFileException;
-import footjoy.PriceListUpdater;
-import static footjoy.PriceListUpdater.formatCode;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -40,6 +40,7 @@ public class TPriceUpdater extends TFileManager {
         tpmr.readTPriceMap();
         for (String header : this.headersList) {
             Map<String, List<String>> changesMap = new LinkedHashMap<>();
+            int priceIndex = getPriceFileIndex(header); // 0, 1, 2...
             File inFile = new File(TFileManager.FILE_CONT + header + ".csv");
             if (!inFile.exists()) {
                 listMissingFiles();
@@ -59,24 +60,22 @@ public class TPriceUpdater extends TFileManager {
                             lineList.add(ls.next()); //[TRADEUK1, 92250-32, PERF SHORTS BLACK, 8Q, 67, PR, 10112, 311217, 1, 25,
                         }
                         String origCode = lineList.get(1); // 92250-32
-                        String origPrice = lineList.get(9); // 25.00
+                        String origPrice = lineList.get(9); // "25.00"
                         // uniqueCode must be unique in the Map
                         String uniqueCode = lineList.get(1) + lineList.get(8) + lineList.get(6);  // Code1Qty12Date16, 92250-3212010116
-                        String keyStr = getKey(origCode); // Perf shorts
-                        int priceIndex = getPriceFileIndex(header); // 0, 1, 2...
+                        String keyStr = getKey(origCode); // "Perf shorts", "",
                         if (keyStr.length() > 0) {
-                            //System.out.println(keyStr + ", " + priceIndex + ", " + keyStr.length());
-                            String newPrice = ple.getPrice(keyStr, priceIndex);
-                            // TRADEUK1, TH1WEAEB-0, 6.5 changed to 0
-                            // TRADEUK1, TH7BSRE-9, 999.99 changed to 0
-                            // make sure that if it's 0, it should not change!
-                            if (evalOne > 1) {
-                                double newPriceDbl = Double.parseDouble(newPrice);
+                            String newPrice = ple.getPrice(keyStr, priceIndex); //"25.259"
+                            double newPriceDbl = Double.parseDouble(newPrice); // 25.259
+                            double newPriceDblRnd = roundDb(newPriceDbl,2); // 25.26
+                            if (!(newPriceDblRnd == 0)) {
                                 double origPriceDbl = Double.parseDouble(origPrice);
-                                if (compareNewToOrig(newPriceDbl, origPriceDbl)) {
+                                if (compareNewToOrig(newPriceDblRnd, origPriceDbl)) {
                                     lineList.set(9, newPrice);
                                     System.out.println(header + ", " + origCode + ", " + origPrice + " changed to " + newPrice);
-                                    changesMap.put(uniqueCode, lineList);
+                                    List<String> changesList = lineList; //this is needed to add an old and new price
+                                    changesList.add(origPrice);
+                                    changesMap.put(uniqueCode, changesList);
                                 }
                             }
                         }
@@ -92,6 +91,15 @@ public class TPriceUpdater extends TFileManager {
             }
         }
     }
+    
+    public static double roundDb(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
+    
+    
 
     public List<Map<String, List<String>>> getPriceMapList() {
         return priceMapList;
@@ -110,7 +118,9 @@ public class TPriceUpdater extends TFileManager {
     }
     
     
-    
+    public Map<String, List<String>> getPriceListMapExtend(){
+        return ple.getPriceListMapExtend();
+    }
     
     
     /**
@@ -177,6 +187,10 @@ public class TPriceUpdater extends TFileManager {
                 .reduce(missingFiles, String::concat);
         System.out.println("missing files: " + missingFiles);
     }
+
+    
+    
+    
     
     
 }

@@ -19,17 +19,23 @@ public class TitleistClient {
 //        PriceListExtender ple = new PriceListExtender();
 //        ple.extendPriceList();
         
-        TPriceListWriter tplw = new TPriceListWriter();
-        //tplw.writeExtendedTPriceFile(ple.getPriceListMapExtend());
+        
         
 //        TPriceMapReader pmr = new TPriceMapReader();
 //        pmr.readTPriceMap();
         
         TPriceUpdater pu = new TPriceUpdater();
         pu.updatePriceList();
-//        
-//        TReport tr = new TReport();
-//        tr.updateOutFile(pu.getPriceMapChangesList());
-//        tplw.writeUpdatedFile(pu.getPriceMapList());
+        
+        TReport tr = new TReport();
+        tr.updateOutFile(pu.getPriceMapChangesList());
+        
+        TPriceListWriter tplw = new TPriceListWriter();
+        tplw.writeUpdatedFile(pu.getPriceMapList());
+        tplw.writeExtendedTPriceFile(pu.getPriceListMapExtend()); // irn, 2017 AP1 Steel, 10, 62; irn, 2017 AP1 Steel, 600, 372;
+        
+        
+        
+
     }
 }

@@ -46,6 +46,7 @@ public class PriceListExtender extends TFileManager implements Printer {
                 }
                 this.priceListMapExtend.put(lineList.get(1), lineList);
             }
+            System.out.println("Extended map created: " + priceListMapExtend.size() + " records");
             //printPriceListMap();
         } catch (Exception e) {
             System.err.println(e);
@@ -132,13 +133,15 @@ public class PriceListExtender extends TFileManager implements Printer {
     }
     
     public String getPrice(String keyDescription, int priceListIndex){
-        String price = "";
+        String price = "0";
         if (this.priceListMapExtend.containsKey(keyDescription)) {
             List<String> pricesList = priceListMapExtend.get(keyDescription);
             price = pricesList.get(priceListIndex + 2); // omits Type and Key columns
         }
         return price;
     }
+    
+    
     
     
     

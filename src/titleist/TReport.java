@@ -29,9 +29,9 @@ public class TReport extends TFileManager {
     }
     
     public void updateHeaders(){
+        this.headers.add("PriceList");
         this.headers.add("Code");
         this.headers.add("Description");
-        this.headers.add("PriceList");
         this.headers.add("OldPrice");
         this.headers.add("NewPrice");
     }
@@ -51,8 +51,14 @@ public class TReport extends TFileManager {
             bw.newLine();
             for (Map<String, List<String>> eachMap : priceChgList) {
                 for (String code : eachMap.keySet()) {
-                    List<String> tempList = eachMap.get(code);
-                    for (String eachToken : tempList) {
+                    List<String> tempList = eachMap.get(code); // TRADEDO1, TH5AUBM-1-ECBM, BALL MARKER, 85, 50, DZ, 10115,311217
+                    List<String> reportList = new ArrayList<>(); // PriceList, Code, Description, OldPrice, NewPrice
+                    reportList.add(tempList.get(0));
+                    reportList.add(tempList.get(1));
+                    reportList.add(tempList.get(2));
+                    reportList.add(tempList.get(16));
+                    reportList.add(tempList.get(9));
+                    for (String eachToken : reportList) {
                         bw.write(eachToken);
                         bw.write(",");
                     }

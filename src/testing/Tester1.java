@@ -5,6 +5,10 @@
  */
 package testing;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 /**
  *
  * @author UPatryk
@@ -12,7 +16,22 @@ package testing;
 public class Tester1 {
     public static void main(String[] args) {
         
-        System.out.println(compareNewToOrig());
+//        System.out.println(compareNewToOrig());
+//        System.out.println(isZero("-0.01"));
+//        System.out.println(isError("#REF!"));
+
+//          System.out.println(roundDb(1.123,2));
+
+
+    }
+    
+    public static boolean isZero(String str){
+        double dbl = Double.parseDouble(str);
+        return !(dbl == 0);
+    }
+    
+    public static boolean isError(String str){
+        return str.substring(0, 1).equals("#");
     }
     
     public static boolean compareNewToOrig(){
@@ -37,4 +56,25 @@ public class Tester1 {
         
         
     }
+    
+    public static double roundDouble(Number num, int decPl){
+        String decFormat = "#.";
+        for (int i = 0; i < decPl; i++) {
+            decFormat = decFormat + "#";
+        }
+        System.out.println(decFormat);
+        DecimalFormat df = new DecimalFormat(decFormat);
+        df.setRoundingMode(RoundingMode.CEILING);
+        String doubleStr = df.format(num.doubleValue());
+        return Double.parseDouble(doubleStr);
+    }
+    
+    public static double roundDb(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
+    
+    
 }

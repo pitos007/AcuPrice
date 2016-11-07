@@ -45,6 +45,25 @@ public class TPriceListWriter extends TFileManager implements footjoy.Writer {
     }
     
     
+    public void writePriceChanges(List<Map<String, List<String>>> priceListChanges) throws IOException{
+        String fileName = createFileName("TPriceChanges");
+        File outFile = new File(fileName);
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(outFile))){
+            outFile.createNewFile();
+            for (Map<String, List<String>> priceListName : priceListChanges) {
+                for (String uniqueCode : priceListName.keySet()) {
+                    List<String> tokens = priceListName.get(uniqueCode);
+                    for (String token : tokens) {
+                        bw.write(token);
+                        bw.write(",");
+                    }
+                    bw.newLine();
+                }
+            }
+        }
+    }
+    
+    
     
     public void writeUpdatedFile(List<Map<String, List<String>>> priceFileList){
         for (Map<String, List<String>> eachPriceList : priceFileList) {

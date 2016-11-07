@@ -42,6 +42,7 @@ public class TPriceMapReader {
                 this.tPriceMap.put(keyStr, tokenList);
                 //System.out.println(keyStr + ", " + tokenList);
             }
+            System.out.println("Titleist price map created: " + tPriceMap.size() + " records");
         } 
         catch (FileNotFoundException e) {
             System.err.println("Problem with reading TPriceMap file " + e);
