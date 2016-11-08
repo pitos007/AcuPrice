@@ -19,8 +19,6 @@ public class TitleistClient {
 //        PriceListExtender ple = new PriceListExtender();
 //        ple.extendPriceList();
         
-        
-        
 //        TPriceMapReader pmr = new TPriceMapReader();
 //        pmr.readTPriceMap();
         
@@ -30,9 +28,9 @@ public class TitleistClient {
         TReport tr = new TReport();
         tr.updateOutFile(pu.getPriceMapChangesList());
         
-        TPriceListWriter tplw = new TPriceListWriter();
-        tplw.writeUpdatedFile(pu.getPriceMapList());
-        tplw.writeExtendedTPriceFile(pu.getPriceListMapExtend()); // irn, 2017 AP1 Steel, 10, 62; irn, 2017 AP1 Steel, 600, 372;
+//        TPriceListWriter tplw = new TPriceListWriter();
+//        tplw.writeUpdatedFile(pu.getPriceMapList());
+//        tplw.writeExtendedTPriceFile(pu.getPriceListMapExtend()); // irn, 2017 AP1 Steel, 10, 62; irn, 2017 AP1 Steel, 600, 372;
         
         
         

@@ -6,6 +6,7 @@ package titleist;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -20,7 +21,7 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
  * @author UPatryk
  */
 public class PriceListExtender extends TFileManager implements Printer {
-    private Map<String, List<String>> priceListMapExtend = new LinkedHashMap<>();
+    private final Map<String, List<String>> priceListMapExtend = new LinkedHashMap<>();
     
 
     public PriceListExtender() {
@@ -48,7 +49,7 @@ public class PriceListExtender extends TFileManager implements Printer {
             }
             System.out.println("Extended map created: " + priceListMapExtend.size() + " records");
             //printPriceListMap();
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             System.err.println(e);
         }
     }

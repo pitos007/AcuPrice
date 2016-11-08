@@ -73,14 +73,13 @@ public class TPriceUpdater extends TFileManager {
                                 if (compareNewToOrig(newPriceDblRnd, origPriceDbl)) {
                                     lineList.set(9, newPrice);
                                     System.out.println(header + ", " + origCode + ", " + origPrice + " changed to " + newPrice);
-                                    List<String> changesList = lineList; //this is needed to add an old and new price
+                                    List<String> changesList = new ArrayList<>(lineList); //this is needed to add an old and new price
                                     changesList.add(origPrice);
-                                    changesMap.put(uniqueCode, changesList);
+                                    changesMap.put(uniqueCode, changesList); // TH5AUBM-1-ECBM110115; [TRADEDO1, TH5AUBM-1-ECBM ... 25.00, STASOF, M, FGLV, 25.26]
                                 }
                             }
                         }
-                        priceFileMap.put(uniqueCode, lineList);
-                        //System.out.println(uniqueCode + ", " + lineList);
+                        priceFileMap.put(uniqueCode, lineList); // TH5AUBM-1-ECBM110115; [TRADEDO1, TH5AUBM-1-ECBM ... 25.00, STASOF, M, FGLV]
                     }
                 }
                 catch (FileNotFoundException e) {
