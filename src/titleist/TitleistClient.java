@@ -15,12 +15,15 @@ import java.util.regex.Pattern;
  * @author UPatryk
  */
 public class TitleistClient {
-    public static void main(String[] args) throws IOException, MissingFileException, DuplicateElementException {
-//        PriceListExtender ple = new PriceListExtender();
+    public static void main(String[] args) throws IOException, MissingFileException, DuplicateElementException, FileModifiedException {
+//        PriceListExtender ple = new PriceListExtender(); // optional
 //        ple.extendPriceList();
         
-//        TPriceMapReader pmr = new TPriceMapReader();
+//        TPriceMapReader pmr = new TPriceMapReader(); // optional
 //        pmr.readTPriceMap();
+        
+        PriceMapDiffChecker pmdc = new PriceMapDiffChecker("TpriceList_161101");
+        pmdc.checkPriceMapDiff();
         
         TPriceUpdater pu = new TPriceUpdater();
         pu.updatePriceList();
@@ -28,12 +31,8 @@ public class TitleistClient {
         TReport tr = new TReport();
         tr.updateOutFile(pu.getPriceMapChangesList());
         
-//        TPriceListWriter tplw = new TPriceListWriter();
-//        tplw.writeUpdatedFile(pu.getPriceMapList());
-//        tplw.writeExtendedTPriceFile(pu.getPriceListMapExtend()); // irn, 2017 AP1 Steel, 10, 62; irn, 2017 AP1 Steel, 600, 372;
-        
-        
-        
-
+        TPriceListWriter tplw = new TPriceListWriter();
+        tplw.writeUpdatedFile(pu.getPriceMapList());
+        tplw.writeExtendedTPriceFile(pu.getPriceListMapExtend()); // irn, 2017 AP1 Steel, 10, 62; irn, 2017 AP1 Steel, 600, 372;
     }
 }

@@ -12,6 +12,7 @@ package titleist;
 public abstract class TFileManager {
     static final String T_PRICE_LST = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\TpriceList.csv";
     static final String FILE_CONT = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\";
+    static final String FILE_CONT_OLD = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\oldPriceLists";
     static final String T_PRICE_MAP = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\TPriceMap.csv";
     
     public TFileManager() {
