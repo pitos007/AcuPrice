@@ -31,7 +31,8 @@ public class TPriceMapReader {
             bs = new Scanner(new BufferedReader(new FileReader(new File(TFileManager.T_PRICE_MAP))));
             while(bs.hasNextLine()){
                 String lineStr = bs.nextLine();
-                Scanner ls = new Scanner(lineStr);
+                String emptyMid = lineStr.replaceAll(",,", ", ,"); // //replace 12345,,54321 into 12345," ",54321
+                Scanner ls = new Scanner(emptyMid);
                 ls.useDelimiter(",");
                 List<String> tokenList = new ArrayList<>();
                 while(ls.hasNext()){
