@@ -11,24 +11,36 @@ package testing;
  */
 public class RandomIntGeneratorTester {
     public static void main(String[] args) {
-        RandomIntGenerator1 rig1 = new RandomIntGenerator1(5, 10);
+        RandomIntGeneratorConstructor rig1 = new RandomIntGeneratorConstructor(5, 10);
         System.out.println(rig1.getMin() + " " + rig1.getMax());
         
-        rig1 = new RandomIntGenerator1(5);
+        rig1 = new RandomIntGeneratorConstructor(5);
         System.out.println(rig1.getMin());
         
-        // no constructor for RandomIntGenerator1(int max)
+        // no constructor for RandomIntGenerator1(int max) as it is
+        // the same type as RandomIntGenerator1(int min)
        
         System.out.println("-------------------------------");
         
         
-        RandomIntGenerator2 rig2 = RandomIntGenerator2.between(5, 10);
+        RandomIntGenerator rig2 = RandomIntGenerator.between(5, 10);
         System.out.println(rig2.getMin() + " " + rig2.getMax());
         
-        rig2 = RandomIntGenerator2.smallerThan(10);
+        rig2 = RandomIntGenerator.smallerThan(10);
         System.out.println(rig2.getMax());
         
-        rig2 = RandomIntGenerator2.biggerThan(6);
+        rig2 = RandomIntGenerator.biggerThan(6);
         System.out.println(rig2.getMin());
+        
+        System.out.println("--------------------------------");
+        
+        RandomGenerator rgInt = RandomGenerators.getIntGenerator();
+        System.out.println(rgInt.next());
+        RandomGenerator rgDb = RandomGenerators.getDoubleGenerator();
+        System.out.println(rgDb.next());
+        
+        
+        
+
     }
 }

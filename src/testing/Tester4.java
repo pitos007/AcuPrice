@@ -15,9 +15,15 @@ import java.util.List;
  */
 public class Tester4 {
     public static void main(String[] args) {
-        List<String> tokenList = Arrays.asList("92166","SMTH PIQ MULBERY","FJPFSH","067300","8M","6105201000","EA","EA");
+        List<String> tokenList = Arrays.asList("92166","SMTH PIQ MULBERY","FJPFSH","067300","8M","6105201000","00","EA","EA","1","EA","01/06/2017","0.25","4","C","27","FJAP","1");
         testSubstring(tokenList.get(5));
         delInsertInList(tokenList);
+        
+        printList(tokenList);
+        
+        System.out.println(tokenList.get(11).replaceAll("/", ""));
+        
+        System.out.println(effDateZero("01/02/2017"));
     }
     
     public static void testSubstring(String str){
@@ -33,5 +39,19 @@ public class Tester4 {
         listM.set(5, "61052010");
         listM.add(6, "00");
         System.out.println(listM);
+    }
+    
+    public static void printList(List<String> listStr){
+        for (int i = 0; i < listStr.size(); i++) {
+            System.out.println(i + " " + listStr.get(i));
+        }
+    }
+    
+    public static String effDateZero(String dateStr){
+        String noZero = dateStr.substring(1);
+        String noFSlash = noZero.replaceAll("/", "");
+        String str1 = noFSlash.substring(0, 3);
+        String str2 = noFSlash.substring(5, 7);
+        return str1 + str2;
     }
 }

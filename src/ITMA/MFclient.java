@@ -12,7 +12,8 @@ package ITMA;
 public class MFclient {
     public static void main(String[] args) {
         MasterFileReader mfr = new MasterFileReader();
-        mfr.getHeaders();
-        
+        //mfr.getHeaders();
+        mfr.readAndConvert();
+        mfr.printMap(mfr.getMasterFileMap());
     }
 }
