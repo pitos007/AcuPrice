@@ -16,7 +16,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.function.Consumer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
         
@@ -137,11 +136,14 @@ public class PriceListUpdater extends FJFileManager implements Printer, Writer {
     
     // the method changes the current price if the new price does not equal the current price
     // then it updates the priceChangesList
-    public List<String> updatePrice(List<String> origList, String templCode, String origPrice, String uniqueCode, String codeDesc){
+    public List<String> updatePrice(List<String> origList, String templCode, String origPrice, String uniqueCode, String codeDesc) throws MissingRoundingException {
         List<String> mfMapKeyList = getListFromMapKey(templCode); //[95890/1/2/3/4, Womens FJ Lambswool, 99.99, 44.2, 47.4, 43.0 ...]
         String priceListName = origList.get(0); //TRADEUK1
         int priceIndex = getIndexHeaderPrice(priceListName); //2
         String newPrice = mfMapKeyList.get(priceIndex - 1); // 99.99
+        if (newPrice.length() > 6) {
+            throw new MissingRoundingException("new price" + newPrice + " must be rounded up to 2 dec places");
+        }
         if ((!newPrice.equals(origPrice))&&(!newPrice.equals("0"))) { //99.99 != 25.50
             //System.out.println("original list: " + origList);
             //System.out.println("search key: " + templCode);
@@ -167,6 +169,7 @@ public class PriceListUpdater extends FJFileManager implements Printer, Writer {
             return origList;
         }
     }
+    
     
     // gets a list of tokens from the current price List Map
     public List<String> getListFromMapKey(String key){

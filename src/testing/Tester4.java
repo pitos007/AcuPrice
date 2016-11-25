@@ -24,6 +24,12 @@ public class Tester4 {
         System.out.println(tokenList.get(11).replaceAll("/", ""));
         
         System.out.println(effDateZero("01/02/2017"));
+        
+        System.out.println("--------");
+        String doubleStr = "99.999";
+        System.out.println(doubleStr.length());
+        boolean res = doubleStr.length() < 6;
+        System.out.println(res);
     }
     
     public static void testSubstring(String str){
