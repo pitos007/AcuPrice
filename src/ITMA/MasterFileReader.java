@@ -35,29 +35,36 @@ public class MasterFileReader extends FileManager {
         this.sizes = readFile(MFManager.ITMA_CONT + "sizes.scv");
         try {
             Scanner bs = new Scanner(new BufferedReader(new FileReader(new File(MFManager.FJ_APP))));
+            int lineCounter = 0;
             while(bs.hasNextLine()){
+                lineCounter++;
                 String lineStr = bs.nextLine();
-                String emptyMid = lineStr.replaceAll(",,", ", ,"); // //replace 12345,,54321 into 12345," ",54321
-                Scanner ls = new Scanner(emptyMid);
-                ls.useDelimiter(",");
-                List<String> tokenList = new ArrayList<>();
-                while(ls.hasNext()){
-                    tokenList.add(ls.next());
+                if (lineCounter > 2) {
+                    System.out.println(lineStr);
+                    String emptyMid = lineStr.replaceAll(",,", ", ,"); // //replace 12345,,54321 into 12345," ",54321
+                    Scanner ls = new Scanner(emptyMid);
+                    ls.useDelimiter(",");
+                    List<String> tokenList = new ArrayList<>();
+                    while(ls.hasNext()){
+                        tokenList.add(ls.next());
+                    }
+                    System.out.println(tokenList);
+                    String comm = tokenList.get(5);
+                    tokenList.set(5, getComm1(comm)); // replaces 6105201000 with 61052010
+                    tokenList.add(6, getComm2(comm)); // inserts 00 between 61052010 and EA
+                    tokenList.remove(10); // remove Sales U/M
+                    tokenList.remove(14); // remove inv type
+                    if (hasZero(tokenList.get(10))) {
+                        tokenList.set(10, effDateZero(tokenList.get(10)));
+                    }
+                    else{
+                        tokenList.set(10, effDate(tokenList.get(10)));
+                    }
+                    tokenList.add("1");
+                    tokenList.add("awaitcategory");
+                    System.out.println(tokenList);
+                    addSizes(tokenList);
                 }
-                String comm = tokenList.get(5);
-                tokenList.set(5, getComm1(comm)); // replaces 6105201000 with 61052010
-                tokenList.add(6, getComm2(comm)); // inserts 00 between 61052010 and EA
-                tokenList.remove(10); // remove Sales U/M
-                tokenList.remove(14); // remove inv type
-                if (hasZero(tokenList.get(11))) {
-                    tokenList.set(11, effDateZero(tokenList.get(11)));
-                }
-                else{
-                    tokenList.set(11, effDate(tokenList.get(11)));
-                }
-                tokenList.add("1");
-                tokenList.add("awaitcategory");
-                addSizes(tokenList);
             }
         } catch (FileNotFoundException e) {
         }
