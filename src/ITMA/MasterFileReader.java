@@ -24,6 +24,10 @@ public class MasterFileReader extends FileManager {
     private List<String> header2 = new ArrayList<>();
     private List<List<String>> sizes = new ArrayList<>();
     private Map<String,List<String>> masterFileMap = new LinkedHashMap<>();
+    
+    public MasterFileReader(){
+        
+    }
 
     
     public Map<String, List<String>> getMasterFileMap() {
@@ -32,7 +36,7 @@ public class MasterFileReader extends FileManager {
     
     
     public void readAndConvert(){
-        this.sizes = readFile(MFManager.ITMA_CONT + "sizes.scv");
+        this.sizes = readFile(MFManager.ITMA_CONT + "sizes.csv");
         try {
             Scanner bs = new Scanner(new BufferedReader(new FileReader(new File(MFManager.FJ_APP))));
             int lineCounter = 0;
@@ -40,7 +44,6 @@ public class MasterFileReader extends FileManager {
                 lineCounter++;
                 String lineStr = bs.nextLine();
                 if (lineCounter > 2) {
-                    System.out.println(lineStr);
                     String emptyMid = lineStr.replaceAll(",,", ", ,"); // //replace 12345,,54321 into 12345," ",54321
                     Scanner ls = new Scanner(emptyMid);
                     ls.useDelimiter(",");
@@ -48,13 +51,12 @@ public class MasterFileReader extends FileManager {
                     while(ls.hasNext()){
                         tokenList.add(ls.next());
                     }
-                    System.out.println(tokenList);
                     String comm = tokenList.get(5);
                     tokenList.set(5, getComm1(comm)); // replaces 6105201000 with 61052010
                     tokenList.add(6, getComm2(comm)); // inserts 00 between 61052010 and EA
                     tokenList.remove(10); // remove Sales U/M
                     tokenList.remove(14); // remove inv type
-                    if (hasZero(tokenList.get(10))) {
+                    if (hasZero(tokenList.get(10))) {  // 03/02/2016
                         tokenList.set(10, effDateZero(tokenList.get(10)));
                     }
                     else{
@@ -62,7 +64,6 @@ public class MasterFileReader extends FileManager {
                     }
                     tokenList.add("1");
                     tokenList.add("awaitcategory");
-                    System.out.println(tokenList);
                     addSizes(tokenList);
                 }
             }
@@ -70,19 +71,21 @@ public class MasterFileReader extends FileManager {
         }
     }
     
-    public void addSizes(List<String> lineStr){
-        String prodStruct = getProductStructure(lineStr);
-        List<List<String>> sizesList = getXNum(lineStr); // {S, M, L, XL}; {AB, AC, AD, AE}
+    public void addSizes(List<String> origTokenList){
+        String prodStruct = getProductStructure(origTokenList); // LCHTY
+        List<List<String>> sizesList = getXNum(origTokenList); // [[S, M, L, XL, XXL], [AB, AC, AD, AE, AF]]
         int sizeNum = sizesList.get(0).size();
         for (int i = 0; i < sizeNum; i++) {
-            List<String> tokenList = lineStr;
-            String sizeLetter = sizesList.get(0).get(i); // S
-            tokenList.set(0, (tokenList.get(0) + sizeLetter)); // 92166 -> 92166S
-            tokenList.set(18, (prodStruct + sizesList.get(1).get(i))); // L -> LCHTYAB
-            tokenList.remove(19); // C
-            tokenList.remove(20); // H
-            tokenList.remove(21); // TY
-            this.masterFileMap.put(tokenList.get(0), tokenList);
+            // beware! if you write: List<String> newTokenList = origTokenList;
+            // then you will be modifying the same object in the loop - 92166SM, 92166SML, 92166SMLXL
+            List<String> newTokenList = new ArrayList<>(origTokenList);
+            newTokenList.set(0, (origTokenList.get(0) + sizesList.get(0).get(i))); // 92166 -> 92166S
+            newTokenList.set(16, (prodStruct + sizesList.get(1).get(i))); // L -> LCHTYAB
+            newTokenList.remove(17); // L
+            newTokenList.remove(18); // C
+            newTokenList.remove(19); // H
+            newTokenList.remove(17); // L
+            this.masterFileMap.put(newTokenList.get(0), newTokenList);
         }
     }
     
@@ -90,7 +93,7 @@ public class MasterFileReader extends FileManager {
     
     public String getProductStructure(List<String> lineStr){
         String prodStruct = "";
-        for (int i = 18; i < 22; i++) {
+        for (int i = 16; i < 20; i++) {
             prodStruct += lineStr.get(i);
         }
         return prodStruct;
@@ -98,20 +101,19 @@ public class MasterFileReader extends FileManager {
     
     public List<List<String>> getXNum(List<String> listStr){
         List<String> xList = new ArrayList<>();
-        for (int i = 22; i < listStr.size(); i++) {
+        for (int i = 20; i < 77; i++) {
             xList.add(listStr.get(i));   // " ", " ", "X", "X", "X", "X", " ", " ",
         }
         List<List<String>> sizesFound = new ArrayList<>();
         List<String> sizeToken = new ArrayList<>();
         List<String> levelFiveToken = new ArrayList<>();
+        int counter = -1;
         for (int i = 0; i < xList.size(); i++) {
-            if (xList.get(i).equals("(?i)x")) {  // i=2
-                List<String> sizePS = new ArrayList<>(); // "S", "AB"
-                for (int j = 0; j < this.sizes.size(); j++) {
-                    sizePS.add(this.sizes.get(j).get(i)); // "S", "AB"
-                }
-                sizeToken.add(sizePS.get(0)); // "S"
-                levelFiveToken.add(sizePS.get(1)); // "AB"
+            counter++;
+            if (xList.get(i).equals("x") || xList.get(i).equals("X")) {  // i=2
+                List<String> sizeAndPS = this.sizes.get(counter); // [S, AB...], [M, AC...]
+                sizeToken.add(sizeAndPS.get(0)); // "S", "M"...
+                levelFiveToken.add(sizeAndPS.get(1)); // "AB", "AC"...
             }
         }
         sizesFound.add(sizeToken); // S, M, L, XL
@@ -139,7 +141,7 @@ public class MasterFileReader extends FileManager {
     }
     
     public String getComm1(String comm){
-        return comm.substring(0, 7);
+        return comm.substring(0, 8);
     }
     
     public String getComm2(String comm){
@@ -174,8 +176,8 @@ public class MasterFileReader extends FileManager {
         catch (FileNotFoundException ex){
             System.out.println(ex);
         }
-        System.out.println("headers1: " + header1);
-        System.out.println("headers2: " + header2);
+        System.out.println("headers1: " + header1); // 1,2,3,4,8,56,10,11...
+        System.out.println("headers2: " + header2); // Code, Description, Generic Ledger...
     }
     
     
@@ -188,6 +190,14 @@ public class MasterFileReader extends FileManager {
             System.out.println(codes + " " + tempList);
         }
         System.out.println();
+    }
+    
+    public void printListList(List<List<String>> listlistStr){
+        listlistStr.forEach((list) -> {
+            list.forEach((string) -> {
+                System.out.println(string);
+            });
+        });
     }
     
     

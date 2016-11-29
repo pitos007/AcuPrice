@@ -19,8 +19,7 @@ import java.util.Scanner;
  *
  * @author upatryk
  */
-public abstract class FileManager {
-    
+public class FileManager {
     public List<List<String>> readFile(String path){
         List<List<String>> fileSize = new ArrayList<>();
         try {

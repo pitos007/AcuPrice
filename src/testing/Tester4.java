@@ -41,7 +41,7 @@ public class Tester4 {
     
     public static void delInsertInList(List<String> list){
         List<String> listM = new ArrayList<>(list);
-        System.out.println(listM);
+        System.out.println("\n" + listM);
         listM.set(5, "61052010");
         listM.add(6, "00");
         System.out.println(listM);

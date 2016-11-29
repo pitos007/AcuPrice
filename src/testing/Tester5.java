@@ -3,18 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ITMA;
+package testing;
+
+import ITMA.MFManager;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author upatryk
+ * @author UPatryk
  */
-public class MFclient {
+public class Tester5 {
     public static void main(String[] args) {
-        
-        MasterFileReader mfr = new MasterFileReader();
-        //mfr.getHeaders();
-        mfr.readAndConvert();
-        mfr.printMap(mfr.getMasterFileMap());
+        String token1 = "z";
+        System.out.println(token1.equals("X") || token1.equals("x"));
     }
+
+   
 }
