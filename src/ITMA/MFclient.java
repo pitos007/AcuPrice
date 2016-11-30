@@ -5,16 +5,21 @@
  */
 package ITMA;
 
+import java.io.IOException;
+
 /**
  *
  * @author upatryk
  */
 public class MFclient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         MasterFileReader mfr = new MasterFileReader();
         //mfr.getHeaders();
         mfr.readAndConvert();
         mfr.printMap(mfr.getMasterFileMap());
+        
+        MFWriter mfw = new MFWriter();
+        mfw.writeMPLApp(mfr.getMasterFileMap());
     }
 }

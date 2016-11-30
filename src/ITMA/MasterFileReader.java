@@ -28,6 +28,8 @@ public class MasterFileReader extends FileManager {
     public MasterFileReader(){
         
     }
+    
+    
 
     
     public Map<String, List<String>> getMasterFileMap() {
@@ -55,7 +57,7 @@ public class MasterFileReader extends FileManager {
                     tokenList.set(5, getComm1(comm)); // replaces 6105201000 with 61052010
                     tokenList.add(6, getComm2(comm)); // inserts 00 between 61052010 and EA
                     tokenList.remove(10); // remove Sales U/M
-                    tokenList.remove(14); // remove inv type
+                    tokenList.remove(13); // remove inv type
                     if (hasZero(tokenList.get(10))) {  // 03/02/2016
                         tokenList.set(10, effDateZero(tokenList.get(10)));
                     }
@@ -64,6 +66,7 @@ public class MasterFileReader extends FileManager {
                     }
                     tokenList.add("1");
                     tokenList.add("awaitcategory");
+                    tokenList.add("USProdStr");
                     addSizes(tokenList);
                 }
             }
