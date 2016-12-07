@@ -14,10 +14,10 @@ import java.io.IOException;
 public class MFclient {
     public static void main(String[] args) throws IOException {
         
-        MasterFileReader mfr = new MasterFileReader();
+        MasterFileReaderApp mfr = new MasterFileReaderApp();
         //mfr.getHeaders();
-        mfr.readAndConvert();
-        mfr.printMap(mfr.getMasterFileMap());
+        mfr.readAndConvertApp();
+        //mfr.printMap(mfr.getMasterFileMap());
         
         MFWriter mfw = new MFWriter();
         mfw.writeMPLApp(mfr.getMasterFileMap());

@@ -19,13 +19,13 @@ import java.util.Scanner;
  *
  * @author upatryk
  */
-public class MasterFileReader extends FileManager {
+public class MasterFileReaderApp extends FileManager {
     private List<String> header1 = new ArrayList<>();
     private List<String> header2 = new ArrayList<>();
     private List<List<String>> sizes = new ArrayList<>();
     private Map<String,List<String>> masterFileMap = new LinkedHashMap<>();
     
-    public MasterFileReader(){
+    public MasterFileReaderApp(){
         
     }
     
@@ -37,8 +37,8 @@ public class MasterFileReader extends FileManager {
     }
     
     
-    public void readAndConvert(){
-        this.sizes = readFile(MFManager.ITMA_CONT + "sizes.csv");
+    public void readAndConvertApp(){
+        this.sizes = readFile(MFManager.ITMA_CONT + "sizesApp.csv");
         try {
             Scanner bs = new Scanner(new BufferedReader(new FileReader(new File(MFManager.FJ_APP))));
             int lineCounter = 0;
@@ -65,16 +65,16 @@ public class MasterFileReader extends FileManager {
                         tokenList.set(10, effDate(tokenList.get(10)));
                     }
                     tokenList.add("1");
-                    tokenList.add("awaitcategory");
+                    tokenList.add("AWAIT CATEGORY");
                     tokenList.add("USProdStr");
-                    addSizes(tokenList);
+                    addSizesApp(tokenList);
                 }
             }
         } catch (FileNotFoundException e) {
         }
     }
     
-    public void addSizes(List<String> origTokenList){
+    public void addSizesApp(List<String> origTokenList){
         String prodStruct = getProductStructure(origTokenList); // LCHTY
         List<List<String>> sizesList = getXNum(origTokenList); // [[S, M, L, XL, XXL], [AB, AC, AD, AE, AF]]
         int sizeNum = sizesList.get(0).size();
@@ -184,6 +184,7 @@ public class MasterFileReader extends FileManager {
     }
     
     
+    
     public void printMap(Map<String, List<String>> mapList){
         Map<String, List<String>> prListMapa = new LinkedHashMap<>();
         prListMapa = mapList;
@@ -202,6 +203,4 @@ public class MasterFileReader extends FileManager {
             });
         });
     }
-    
-    
 }
