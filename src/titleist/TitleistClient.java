@@ -22,8 +22,8 @@ public class TitleistClient {
 //        TPriceMapReader pmr = new TPriceMapReader(); // optional
 //        pmr.readTPriceMap();
         
-        PriceMapDiffChecker pmdc = new PriceMapDiffChecker("TpriceList_161101");
-        pmdc.checkPriceMapDiff();
+        //PriceMapDiffChecker pmdc = new PriceMapDiffChecker("TpriceList_161222"); // change the String parameter to the most recent price list
+        //pmdc.checkPriceMapDiff();
         
         TPriceUpdater pu = new TPriceUpdater();
         pu.updatePriceList();

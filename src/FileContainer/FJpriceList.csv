@@ -1,70 +1,174 @@
-New,Cover,Description,Price
-52012/29,52043/75 ; 52101,FJ Icon Black,195
-57002/4/5,,FJ Professional,86.97
-53394,,DNA 2.0 w/Boa,119.34
-53383/85/87/88,,DNA 2.0,107.64
-53610/73/78/80/86,,DryJoys Tour,97.76
-53619,,DryJoys Casual Boa,
-53646/57/88,,DryJoys Casual,89.7
-51008,51078,HyperFlex Boa,104.65
-51004/06,51022/46,HyperFlex,93.6
-62800/1/2,,HyperFlex Trainer (Internal Use only),
-57334,,FreeStyle Boa,
-57330/1/2/3,,FreeStyle,
-57250/1/2/3/4,,VersaLuxe,
-,54189/71,Contour w/Boa,93.6
-54170,54018; 54130/48/93,Contour,82.55
-54035/6,,Contour (Foremost styles),62.4
-54211/22; 54216/63,54204/44,Contour Casual,69.16
-50061,,HydroLite 2.0 w/Boa,70.85
-50052/54/55/62/63/64,,HydroLite 2.0,61.75
-53390,53998,FJ Boot,61.23
-57863/4/5,,AWD XL,50.7
-57866/7/8,,AWD XL Casual,46.67
-,,FJ Superlites,46.67
-58016/8/9,58118,FJ Superlites CT,48.1
-45300/1,,GreenJoys,37.05
-45099,45023,Junior DNA / HyperFlex,34.32
-,48203/11,Junior Girls,
-,12450,FirstJoys,156
-,,MYJOYS - Premier FJ Icon w/Boa,213.2
-,52100,MYJOYS - Premier FJ Icon,205.4
-52042,52090,MYJOYS - FJ Icon w/Boa,178.1
-52041,52080    ;    52010/40 ; 52180,MYJOYS - FJ Icon,170.3
-52002,,MYJOYS - D.N.A. w/Boa,
-52001,,MYJOYS - D.N.A.,
-,,MYJOYS - Premier FJ Professional w/Boa,170.3
-,52550,MYJOYS - Premier FJ Professional,162.5
-,,MYJOYS - FJ Professional w/Boa,148.2
-,52530     ;    52270 ; 52300 ; 52390,MYJOYS - FJ Professional,140.4
-,53780,MYJOYS - DryJoys Tour,121.55
-,54280,MYJOYS - Contour,105.95
-54271,,MYJOYS - Contour Casual,105.95
-,,Shoes - Women's,
-94820,,DNA Boa,107.64
-94805/6,,DNA,97.76
-91650/1,,Tailored Collection,
-,,DryJoys Boa,91
-,,DryJoys,83.2
-,,M:Project Spikeless,71.24
-96104,,emBody Boa,
-96000/1; 96100/1/3,,emBody,
-,,Contour,72.8
-98004,,emPower Boa,
-98000/1/2/3,,emPower,
-,,LoPro,61.945
-97705/06/07/08/09/10/11,,Casual Collection,
-,,LoPro Casual,60.45
-,,AQL,57.07
-96109/96110,,emBody FJ Boot (AW '16),
-,98305/18,emBody FJ Boot (AW '15),61.945
-93906/7/8,,eMerge Spiked,
-93903/5,,eMerge Spikeless,
-,,AWD,49.4
-95700/2/3,,enJoy,
-,,SuperLites (Mesh),39
-,99640/70,MYJOYS - DryJoys BOA,123.5
-,99630/60,MYJOYS - DryJoys,115.7
-,,MYJOYS - DryJoys Spikeless,95.81
-,97330,MYJOYS - LoPro,93.6
-,97350,MYJOYS - LoPro Casual,93.6
+New,Cover,Description,DOLDIST1
+52007/08/09,,FJ Icon Black,108.91
+57001/07,57002,FJ Professional,57.87
+53392,53394,DNA 2.0 w/Boa,97.99
+53309,53383/85/88,DNA 2.0,84.70
+53798/99; 53800,53673/78,DryJoys Tour,81.84
+53534,,PRO SL Boa,77.47
+53533/84/94,,PRO SL,64.74
+51026,,HyperFlex II Boa,83.96
+51024/25/31/35,,HyperFlex II,70.07
+57341,,FreeStyle Boa,87.54
+57340,57330/33,FreeStyle,72.17
+57255,57250/53/54,VersaLuxe,71.69
+54159/60,,Contour FIT w/Boa,73.21
+54152/53/54/55,,Contour FIT,60.43
+54365/66/67/68,,Contour Casual,49.24
+58116,,Energize w/Boa,61.44
+58107/14/15,,Energize,48.80
+50008/27,50052/55,HydroLite 2.0,49.54
+,53990,FJ Boot (Laced),50.00
+57872,57864/65,AWD XL,47.13
+57873/74,57868,AWD XL Casual,40.64
+58026/27,,FJ Superlites XP,52.71
+,45300/01,GreenJoys,36.99
+45022,45099,Junior FreeStyle/HyperFlex,50.44
+,,Junior Girls,35.07
+,52042/90,MYJOYS - FJ Icon w/Boa,150.56
+,52041/80/10/40; 52180,MYJOYS - FJ Icon,137.67
+,52002,MYJOYS - D.N.A. w/Boa,142.71
+,52001,MYJOYS - D.N.A.,129.77
+,52550,MYJOYS - FJ Professional,118.26
+,52530; 52270; 52300; 52390,MYJOYS - DryJoys Tour,121.80
+,54280,MYJOYS - Contour,92.64
+,54271,MYJOYS - Contour Casual,94.20
+98898,,Aspire Boa,73.73
+98895/97,,Aspire,58.97
+91692/93,,Tailored Collection,65.33
+99017,,DryJoys Boa,72.29
+96108,,emBody Boa,73.60
+96102/06,96000; 96100,emBody,59.21
+,98004,emPower Boa,71.23
+98014/19/20/21,98003,emPower,54.26
+97718/21/22/23/24,,Casual Collection,52.23
+96109/96110,,emBody FJ Boot,53.43
+93913/14/15,93906/08,eMerge Spiked,45.31
+95706/07,95703,enJoy,37.63
+,,MYJOYS - DryJoys BOA,119.74
+,99640/70,MYJOYS - DryJoys,106.11
+,99630/60,MYJOYS - LoPro,92.51
+99643,97330,MYJOYS - LoPro Casual,89.31
+,,,0.00
+,64011,Pure Touch,13.19
+66747E/48E/49E,,StaSof,10.49
+,60003/37/60/94; 60128/51; 60241/74; 65706/44/51/68/75/91/99; 65702E,FJ Spectrum,7.86
+,68007E/12E; 67032E/48E,SciFlex Tour,8.16
+,68026,SciFlex Tour - Assorted 1/2 doz,47.13
+,68828/34/18; 67692;93,CabrettaSof,8.30
+64815E/16E/18E/20E/22E/24E/53E/60E/70E,,GTxtreme,5.67
+64821E/50E,,GTxtreme - Fashion1/2 doz,34.10
+66820E; 67882E,66241E/58E/70E/79E; 67860E/88E; 67901E/02E,WeatherSof ,4.24
+,66294; 67800,WeatherSof - Fashion 1/2 doz,25.79
+,66409E/13E; 67478E,WeatherSof - 2-glove,8.15
+,66432E,WeatherSof - 3-glove (1 x 3-Fer),11.87
+,66432/53; 67496,WeatherSof - 3-glove (Pk = 6 x 3-Fers),69.73
+,67495E,WeatherSof - Pair,7.89
+,66538/49; 67270,RainGrip Xtreme,6.83
+,66560; 67288,RainGrip Xtreme - Pair,12.29
+66556E/66558E/66569E/67279E,,RainGrip,4.58
+66566E/67280E,,RainGrip - Pair,8.63
+66967E/66979E,,WinterSof - Pair,10.56
+67729E/31E/35E ,,FJ Attitudes,5.56
+67749E,,FJ Attitudes - Assorted Pairs Pack,28.00
+67120E,67109E,StaCooler (Traditional & Fashion),5.89
+,67115,StaCooler (Fashion),34.64
+65932E/39E/50E,,FootJoy Junior,3.53
+,,,0.00
+,18203H/12H,Compression Tour - High Crew - 1/2 Doz,35.53
+,18504H/13H,Compression Tour - Sport - 1/2 Doz,28.16
+,17000H,TechSof Tour Thermal - Crew - 1/2 Doz,24.81
+17213H,,TechSof Tour - Crew - 1/2 Doz,31.09
+17305H/6H,,TechSof Tour - Quarter - 1/2 Doz,26.67
+17401H,,TechSof Tour - Sport - 1/2 Doz,24.74
+,16008H/16H/24H/32H/41H,ProDry - Crew - 1/2 Doz,19.60
+,16219H/27H,ProDry - Quarter - 1/2 Doz,17.64
+,16704H/12H,ProDry - Sport - 1/2 Doz,15.83
+16620H/22H,,ProDry - Roll-Tab - 1/2 Doz,18.48
+,16503H,Lightweight ProDry - Crew - 1/2 Doz,15.94
+,16608H/14H,Lightweight ProDry - Sport - 1/2 Doz,13.77
+,19105H/08H,TechSof Tour - Sport - 1/2 Doz,25.29
+,19508H/14H,LTWT ProDry - Crew - 1/2 Doz,17.11
+,19519H/26H/34H/41H,LTWT ProDry - Pom Pom - 1/2 Doz,13.45
+16861H,16812H,LTWT ProDry - Roll-Tab - 1/2 Doz,16.84
+,19221H/39H,LTWT ProDry - Quarter - 1/2 Doz,15.15
+,19316H,LTWT ProDry - Sportlet - 1/2 Doz,13.77
+,19342H/66H,LTWT ProDry - Striped Sportlet - 1/2 Doz,18.12
+16834D,,LTWT ProDry - GolfLeisure Asst Sportlet - Doz,33.65
+,19311P,LTWT ProDry - Assorted Argyle - Doz,29.69
+,19761P,LTWT ProDry - Asst Fashion - 3 Dozen,105.04
+,14048D/63D,ComfortSof - Sportlet - (4 x 3 pr banded),17.44
+,14322D,ComfortSof - Low Cut - (4 x 3 pr banded),17.44
+,19712P,ComfortSof - Spinner - 4 doz,58.48
+,15017H,ProDry - Crew Assorted - 1/2 Doz,20.86
+,15514H,ProDry - LowCut Assorted - 1/2 Doz,19.36
+,12633/41/59/67/74/81,ProDry - Crew Crested - Doz,74.90
+,12505/12,ProDry - Quarter Crested - Doz,68.65
+,12551/68,ProDry - Sport Crested - Doz,66.53
+,12808,LTWT ProDry - Quarter Crested - Doz,61.76
+,12901/19/27,LTWT ProDry - Sportlet Crested - Doz,60.70
+95097/98,,FJ Full Zip Wind Jacket,24.06
+95088,,FJ 1/2 zip Windshirt - S/S Solid Colour,23.10
+95089,,FJ 1/2 zip Windshirt - S/S Heather,27.48
+,,Pullovers,0.00
+,95390/91/92/88,FJ Lambswool Lined 1/2 Zip (Midweight),56.31
+,95425/6/7/8/9,FJ Lambswool 1/2 Zip (Midweight),43.92
+95418/19,95370/1/2/3/4/86,FJ Lambswool V-Neck Pullover (Midweight),41.73
+,95380/1/2,FJ Lambswool Slipover (Midweight),34.70
+95967/68,95960,FJ Wind Shell Mid Layer,40.40
+92176/77/78,,Spun Poly Buttoned Pullover,28.98
+92144/45/46 ; 92171/72/73/75,,Spun Poly V-neck Pullover,21.23
+92139/43 ; 92170,92586/7,FJ Spun Poly Vest,24.30
+92607/08/09,,Double Layer Contrast Chill-Out,27.46
+92128/29/33/34,,FJ Textured Chill-Out 1/4 zip,27.81
+92135/36/37/38 ; 92538/39,92533/34,FJ Sport Chill Out,30.02
+,,Shirts,0.00
+92161/62/63/64,,Raglan Chest Stripe Pique,25.70
+91985/86/87,,Stretch Pique w/Painted Stripes (A),24.84
+91963/64/65/66,,Stretch Lisle Colour Block Space Dye (A),24.63
+91981/82/83/84,,Heather Lisle Stripe (A),23.94
+,91735/36/37/38/39 ; 91749,Pique Chest Stripe w/ Self Collar (T),24.97
+91990/91/92/93,,Stretch Pique All Colours Chest Stripe (T),23.73
+91971/72/73/74,,Stretch Pique Double Space Dye Chest Stripe (A),23.73
+91960/61/62,,Smooth Pique Chest Stripe (T),23.56
+91998/99 ; 92106,,Birdseye Pique w/Circle Print Trim (A),22.56
+91994/95/96/97 ; 92153/54/55/56,,Smooth Pique w/Half Band Cuff (A),21.69
+92108/09 ; 92112/13,,Stretch Pique Colour Block & Contrast Trim (A),21.01
+91967/68,,Stretch Lisle Tie Print (A),20.92
+91975/76,,Stretch Lisle Open Stripe (T),22.99
+92114/15/16 ; 92157/58/59/60,,Stretch Pique w/FJ Chest Logo (A),19.92
+91977/78/79/80,,Smooth Pique w/Collar & Sleeve Stripes (A),20.23
+91969/70,,Stretch Pique w/Lisle Tie Print Trim (A),19.92
+91988/89,,Stretch Jacquard Geometric (T),19.03
+,91788/89/90/91/92/93/94/95/96,Stretch Pique (T),17.42
+92117/18/19 ; 91839,91817/18/19/20/22/23/24/25/26,Stretch Pique (A),18.11
+,,Trousers,0.00
+92330/31/32/33,,FJ Bedford Trouser (Slim Fit),42.55
+92325/26/27/28,,MT Lite Cooling Performance Trouser (Slim Fit),37.56
+,92235/36/64/65,FJ WRT Xtreme Trouser,32.11
+92317/18,92290/91/92/93; 92309,FJ Performance Trouser,27.91
+92319/23,92206/7/8/9,FJ Trouser (Slim Fit),30.15
+92150/51/52 ; 92334/35/36 ; 92350,,FJ Bedford Shorts,34.11
+92147/48/49,,Tonal Plaid Shorts,28.76
+,92250/51/52/53/58,FJ Solid Colour Shorts,28.62
+,,Women's,0.00
+,,Mid Layers,0.00
+95990/91/92 ; 95598,,Womens DWR Lightweight Softshell Vest,42.98
+95895,95890/1/2/3/4,Womens FJ Lambswool V-Neck (Midweight),39.04
+94355/56/57/58,,Women's Full Zip Hoody,31.68
+94350/51/52/53,,Women's Full Zip Brushed Chill-Out,29.84
+94360/61/62/63,,Women's Full Zip Brushed Chill-Out Vest,29.13
+,,Shirts,0.00
+94340/41/42/43,,Women's Stretch Pique Open V-neck,18.14
+94345/46/47/48,,Women's Smooth Pique Cap Sleeve,17.28
+94321/22/23/24/25/26/27,,Women's Stretch Pique - Solid Colour,17.28
+94330/31/32/33/34/35/36,,Women's Interlock Sleeveless,18.11
+,,Trousers,0.00
+94370/71/72/73,,Women's Performance 7/8 Trouser,35.53
+94375/76/77/78,,Women's Performance Skort,20.51
+,,Juniors,0.00
+,92753/4,FJ Junior FJ Solid Colour Chill-Out 1/4 zip,26.80
+92755/56,,Junior Textured Chill-Out,24.73
+92727/28,,Junior Stretch Pique w/Painted Stripes,23.31
+92708/09,,Junior Smooth Pique w/Collar & Sleeve Stripes,22.42
+92745/46,92740/1/2,FJ Junior Stretch Pique w/neck tape trim,16.68
+,92730/1,FJ Junior Shorts,19.62

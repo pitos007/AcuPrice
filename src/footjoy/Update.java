@@ -17,16 +17,16 @@ public class Update {
          * generatePriceMap() will be invoked on Extractor manager
          * in the PriceListUpdater constructor
          */
-        TemplateWriter tempWrit = new TemplateWriter();
-        tempWrit.createTemplateFile();
+//        TemplateWriter tempWrit = new TemplateWriter();
+//        tempWrit.createTemplateFile();
         
-//        PriceListUpdater pr = new PriceListUpdater();
-//        pr.readAndUpdatePriceFile();
-//        Report rep = new Report();
-//        rep.updateOutFile(pr.getPriceChangesList());
-//        
-//        FJPriceListWriter plw = new FJPriceListWriter();
-//        plw.writeUpdatedFile(pr.getPriceFileList());
+        PriceListUpdater pr = new PriceListUpdater();
+        pr.readAndUpdatePriceFile();
+        Report rep = new Report();
+        rep.updateOutFile(pr.getPriceChangesList());
+        
+        FJPriceListWriter plw = new FJPriceListWriter();
+        plw.writeUpdatedFile(pr.getPriceFileList());
         
     }
 }

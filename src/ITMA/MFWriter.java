@@ -9,6 +9,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,7 +52,9 @@ public class MFWriter {
                     bw.write(line.get(9)); bw.write(","); // convFctr
                     bw.write("1"); bw.write(","); // pkgQty
                     bw.write(line.get(11)); bw.write(","); // wgt
-                    bw.write(line.get(12)); bw.write(","); // wgtCnvFctr
+                    Double dbWgtCnvFctr = roundDb(Double.valueOf(line.get(12)), 4);
+                    String StrWgtCnvFctr = String.valueOf(dbWgtCnvFctr);
+                    bw.write(StrWgtCnvFctr); bw.write(","); // wgtCnvFctr
                     bw.write(line.get(111)); bw.write(","); // awaitCat
                     bw.write(line.get(16)); bw.write(","); // prodStruct
                     bw.write(line.get(14)); bw.write(","); // priceCat
@@ -64,6 +68,14 @@ public class MFWriter {
                     bw.write("1"); bw.write(","); // issueCode
                     bw.write(line.get(75)); bw.write(","); // ttf
                     bw.write(line.get(79)); bw.write(","); // stdCst
+                    
+                    for (int i = 1; i < 12; i++) {
+                        bw.write(","); // prodAttr
+                    }
+                    
+                    for (int i = 91; i < 109; i++) {
+                        bw.write(line.get(i)); bw.write(","); // priceList
+                    }
                     bw.newLine();
                 }
             }
@@ -84,6 +96,9 @@ public class MFWriter {
         for (int i = 0; i < 39; i++) {
             line += i + ",";
         }
+        for (int i = 0; i < 18; i++) {
+            line += "PriceList" + i + ",";
+        }
         return line;
     }
     
@@ -97,5 +112,12 @@ public class MFWriter {
         System.out.println("creating output file: ");
         System.out.println(outFileName);
         return outFileName;
+    }
+    
+    public static double roundDb(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
 }

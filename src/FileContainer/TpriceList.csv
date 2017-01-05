@@ -1,219 +1,155 @@
-Type,Key,TRADEDO1,TRADEUK1,DOLDIST1,EUDIST1,TRADEEU1
-bll,Pro V1 ,100,100,100,100,100
-bll,Pro V1x ,37,28.5,29.6,26,37
-bll,Pro V1 (All Double Digit),38,28.3,30.4,26,37
-bll,Pro V1x (All Double Digit),38,28.3,30.4,26,37
-bll,NXT Tour 'S' and yellow,26,18.9,20.8,18.5,26.5
-bll,Velocity,21,14.25,16.8,14.75,19
-bll,DT TruSoft,17.5,11.5,14,12.5,15.5
-bll,NEW! Pinnacle Rush (dz),11.5,8.25,10.35,9.5,10.5
-bll,NEW! Pinnacle Soft (dz),11.5,8.25,10.35,9.5,10.5
-bll,Pinnacle Exception,0,6.75,8.5,8,9
-bll,Pinnacle Practice ( Doz )White,6.5,6.25,6.5,6,7.5
-bll,Pinnacle Practice ( Doz )Yellow,6.5,6.25,6.5,6,7.5
-bll,Pinnacle Practice ( Doz )White +Logo,8,7.3,8,7.5,9.5
-bll,Pinnacle Practice ( Doz )Yellow + Logo,8,7.3,8,7.5,9.5
-bll,PRO  V1  LOGO  OVER-RUNS (BULK),15.5,14.5,15.5,0,20
-bll,PINNACLE  LOGO  OVER-RUNS (BULK),4,3.5,4,0,5
-bll,NEW! PRO V1X OUTS,21,15,21,0,20
-bll,X-OUT - TITLEIST  SURLYN,7,6.4,7,0,10
-bll,PRACTICE BALLS (V1 & V1X) Loose,20,18.3,20,0,26
-bll,PRACTICE BALLS Pro V1 Practice Custom Dz 100PK,0,18.3,0,0,0
-bll,PRACTICE BALLS NXT,9,8.6,9,9,13
-bll,PRACTICE BALLS NXT - LOGO,12.86,10,13,10.5,15
-irn,716 AP1,75,54,57,49,69
-irn,716 AP1 Graphite,91,64,69,60,79
-irn,716 AP1 Forged,101,0,76,31,89
-irn,716 AP1 Forged Graphite,117,0,88,63,97
-irn,716 AP2 Forged,101,68,76,67,89
-irn,716 AP2 Forged Graphite,117,78,88,77,97
-irn,716 CB,101,68,76,67,89
-irn,716 MB,93,68,70,67,89
-irn,716 T-MB,135,100,102,85,125
-irn,716 T-MB Graphite,151,110,114,95,139
-irn,716 CB Graphite,117,78,88,63,97
-irn,716 MB Graphite,109,78,82,63,97
-irn,2017 AP1 Steel,0,62,0,50,78
-irn,2017 AP1 Graphite,0,72,0,0,0
-irn,2017 AP2 Steel,0,78,0,66,101
-irn,2017 AP2 Graphite,0,88,0,0,0
-irn,2017 AP3 Steel,0,72,0,0,0
-irn,2017 AP3 Graphite,0,78,0,0,0
-irn,2017 CB Steel,0,72,0,66,101
-irn,2017 CB Graphite,0,78,0,0,0
-irn,2017 MB Steel,0,72,0,66,101
-irn,2017 MB Graphite,0,78,0,0,0
-irn,2017 T-MB Steel,135,125,101.25,100,155
-irn,2017 T-MB Graphite,151,135,113.25,0,0
-irn,Vokey SM6 - Tour Chrome,100,70,75,60,89
-vky,Vokey SM6 - Steel Grey,100,70,75,60,89
-vky,Vokey SM6 - Jet Black,100,70,75,60,89
-vky,Vokey SM6 - Custom Graphite,116,81,87,70,97
-mtl,Hybrids - 816H1,165,117,124,95,147
-mtl,Hybrids - 816H2,165,117,124,95,147
-mtl,Hybrids - 818H1,0,135,0,0,0
-mtl,Hybrids - 818H2,0,135,0,0,0
-mtl,Drivers  917 D2  ,340,250,255,201.5,310
-mtl,Drivers  917 D3  ,340,250,255,201.5,310
-mtl,Drivers  917 D4,340,0,340,0,0
-mtl,Fairways  917 F2,210,155,157.5,123.5,190
-mtl,Fairways  917 F3  ,210,155,157.5,123.5,190
-ptr,"Cameron Crown 33""",250,185,225,200,235
-ptr,Cameron  Futura / H Dual Balance ,260,195,234,210,255
-ptr,Cameron Select / H - 2016,250,185,225,200,235
-ptr,Cameron - Futura / H - 2017,250,185,250,245,245
-ptr,S Cameron - Limited Editions #1,450,0,405,350,399
-ptr,S Cameron - Limited Editions #2,250,0,225,300,399
-ptr,S Cameron - Limited Editions #3,300,0,270,300,399
-ptr,S Cameron - Limited Editions #4 (Jordan Spieth),540,350,486,415,499
-ptr,S Cameron - My Girl / Holiday,425,315,383,335,419
-ptr,Pivot Tool,6,6,6,6,8
-glv,Players,13.5,11.1,12,10,15
-glv,Players-Flex ,11.5,9,10,9,12.5
-glv,Perma-Soft,9.5,8.05,8,7,10
-bag,"NEW! Tour Vinyl  Staff Bag(9.5"")",275,220,205,210,279
-bag,Sta-Dry Cart Bag,175,120,153,120,159
-bag,NEW! Midsize Staff Cart Bag,165,130,144,112,149
-bag,Deluxe Cart Bag,0,95,131,94,125
-bag,Lightweight Cart Bag,135,75,119,75,99
-bag,NEW! Tour Stand ,165,115,144,100,135
-bag,NEW! Players 5 StaDry Waterproof Stand ,147,115,128,112,149
-bag,NEW! Players 14 Stand Bag - Staff Colours,144,100,126,90,119
-bag,NEW! Players 14 Stand Bag,0,100,0,0,0
-bag,NEW! Players 5 Stand Bag - Staff Colours,135,83,118,75,99
-bag,NEW! Players 5 Stand Bag,0,83,0,0,0
-bag,Sta-Dry 4UP Stand Bag,145,100,127,94,125
-bag,NEW! Players 4 Stand Bag - Staff Colours,133,70,116,60,80
-bag,NEW! Players 4 Stand Bag,0,70,0,0,0
-bag,NEW! Premium Carry DS Bag,63.25,40,55,40,55
-bag,NEW! Sunday Carry DS Bag ,51.75,30,45,30,45
-hdw,Classic Ball Marker (Dozen),168,120,147,105,140
-hdw,NEW! Performance Ball Marker (Dozen),180,120,147,105,140
-hdw,Flag Q Max (Dozen) (FRA/BEL/SPA/POR/SWE),0,0,0,108,0
-hdw,Flag Q Max (1/2 dz) (ENG/SCO/EIR/NIR/WAL/SA/GER/NL/CH),0,58.75,0,54,144
-hdw,NEW! Tour Performance (Dozen),162,117.5,142,111.75,149
-hdw,NEW! Tour Performance Visor (Dozen),144,95,126,96,129
-hdw,Tour Visor - Black/White (Dozen),144,0,126,0,129
-hdw,NEW! Two Tone Mesh (Dozen),162,117.5,147,105,140
-hdw,Flat Bill - Black/White (1/2 dz) ,90,58.75,79,51,69
-hdw,NEW! Ladies Pink Ribbon Visor (1/2 dz),66,58.75,58,51,69
-hdw,NEW! Ladies Pink Ribbon Cap (1/2 dz),75,65,66,59,79
-hdw,NEW! Ladies Sports Visor (1/2 dz),66,58.75,58,51,69
-hdw,NEW! Junior Performance Cap (1/2 dz),60,58.75,52,49,65
-hdw,Sta Dry Bucket (1/2 dz),120,90,105,74,99
-hdw,Sta Dry Cap (1/2 dz),105,80,92,74,99
-hdw,NEW! Winter POM POM (1/2 dz),72,52.5,63,48,65
-hdw,NEW! Winter Fitted Beanie (Striped) Ladies and Mens (1/2 dz),60,52.5,52,48,65
-hdw,NEW! Winter Jacquard Beanie (1/2 dz),90,60,79,56,75
-hdw,NEW! Performance Snood (1/2 dz),0,52.5,0,48,65
-hdw,Performance Beanie (1/2 dz),90,52.5,79,56,75
-hdw,Aussie Assorted (1/2 dz) SOUTHERN & S AFRICA ONLY,108,0,105,90,119
-hdw,NEW! Performance Seersucker Bucket (1/2 dz),120,0,105,90,119
-hdw,NEW! Dobby Tech Cap (Dozen),198,117.5,173,112,149
-hdw,NEW! Players Deep Fit (Dozen),198,117.5,173,112,149
-acc,PROFESSIONAL Small Wheeled Travel Cover,200,130,175,118,132
-acc,"PROFESSIONAL 24"" Wheeled Duffel",175,112.5,153,123,163
-acc,"PROFESSIONAL 24"" Roller",180,112.5,158,126,168
-acc,PROFESSIONAL Duffel Bag,130,85,113,87,116
-acc,PROFESSIONAL Messenger Bag ,0,80,105,79,105
-acc,PROFESSIONAL Backpack,130,85,113,87,116
-acc,PROFESSIONAL Cabin Bag,120,80,105,93,125
-acc,PROFESSIONAL Briefcase,130,85,114,86,115
-acc,PROFESSIONAL Zippered Dopp Kit,40,30,35,30,41
-acc,PROFESSIONAL Tote Bag,100,0,88,52,69
-acc,ESSENTIAL Travel Cover,125,73,110,72,96
-acc,"ESSENTIAL 22"" Wheeled Duffel Bag",95,60,83,60,79
-acc,ESSENTIAL Duffel Bag,60,37,53,36,49
-acc,NEW! Large Backpack,60,37,53,37,50
-acc,ESSENTIAL Sackpack,15,10.5,13,11,15
-acc,ESSENTIAL Valubles Pouch,10,5.25,9,10,9
-acc,NEW! Practice Ball Bag,45,40,40,36,49
-acc,NEW! Den Caddy,60,50,53,50,55
-acc,Double Canopy Umbrella,35,25,30,25,34
-acc,Premier Umbrella ,60,55,53,60,79
-acc,Staff Towel,18,13,16,12,15
-acc,Players Towel,14,10.5,13,10,12
-acc,Microfibre Towel,12,10.5,11,12,16
-acc,Dri-Hood Towel,20,17.5,18,18,23
-acc,NEW! Microfibre Tri-Fold Cart Towel,0,7.5,0,7,10
-acc,Black Leather Headcover - Driver,45,32,40,30,39
-acc,Black Leather Headcover - Fairway,42.5,30,37,28,37
-acc,Black Leather Headcover - Hybrid,40,27,35,30,35
-acc,NEW! Leather White Headcover - Driver ,45,32,40,30,39
-acc,NEW! Leather White Headcover - Fairway,42.5,30,37,28,37
-acc,NEW! Leather White Headcover - Hybrid ,40,27,35,26,35
-acc,Scotty Cameron Headcover,0,0,0,0,0
-acc,Hand Warmer,16,19,14,15,18
-acc,Ear Band,6,0,6,5,7
-acc,Cart Mitts,20,15,17,15,18
-chr,SHAFT BAND1,5,3.25,4.375,2.925,4.5
-chr,SHAFT BAND1a,10,6,8.75,5.525,8.5
-chr,SHAFT BAND2,15,7.5,13.125,6.825,10.5
-chr,SHAFT BAND2a,20,10,17.5,8.775,13.5
-chr,SHAFT BAND3,25,16.5,21.875,14.95,23
-chr,SHAFT BAND4,30,20,26.25,17.875,27.5
-chr,SHAFT BAND5,40,26,35,23.4,36
-chr,SHAFT BAND6,50,33,43.75,29.575,45.5
-chr,SHAFT BAND7,75,50,65.625,44.85,69
-chr,SHAFT BAND8,100,65,87.5,58.5,90
-chr,SHAFT BAND9,125,83,109.375,74.425,114.5
-chr,SHAFT BAND10,150,100,131.25,89.7,138
-chr,SHAFT BAND11,175,115,153.125,103.35,159
-chr,SHAFT BAND12,200,130,175,116.675,179.5
-chr,SHAFT BAND13,225,145,196.875,130,200
-chr,SHAFT BAND14,250,165,218.75,147.55,227
-chr,WW LASER ETCH CHARGE,18,12,15.75,11.05,17
-chr,WW WEIGHT PORT INCR CHARGE,10,7,8.75,6.5,10
-chr,WW WEIGHT PORT DECR CHARGE,18,12,15.75,11.05,17
-chr,SHAFT PURCHASE BAND1,75,50,65.625,44.85,69
-chr,SHAFT PURCHASE BAND2,90,60,78.75,53.95,83
-chr,SHAFT PURCHASE BAND3,105,70,91.875,63.05,97
-chr,SHAFT PURCHASE BAND4,120,80,105,71.5,110
-chr,SHAFT PURCHASE BAND5,135,90,118.125,80.6,124
-chr,SHAFT PURCHASE BAND6,150,100,131.25,89.7,138
-chr,SHAFT PURCHASE BAND7,175,115,153.125,103.35,159
-chr,SHAFT PURCHASE BAND8,195,130,170.625,117,180
-chr,SHAFT PURCHASE BAND9,225,145,196.875,130,200
-chr,SHAFT PURCHASE BAND10,250,165,218.75,148.2,228
-chr,SHAFT PURCHASE BAND11,275,180,240.625,161.85,249
-chr,SHAFT PURCHASE BAND12,300,195,262.5,174.85,269
-chr,SHAFT PURCHASE BAND13,325,210,284.375,188.5,290
-chr,TITL GRIP CHARGE BAND1,3,2,2.625,1.95,3
-chr,TITL GRIP CHARGE BAND2,6,4,5.25,3.575,5.5
-chr,TITL GRIP CHARGE BAND3,9,6,7.875,5.525,8.5
-chr,TITL GRIP CHARGE BAND4,18,12.5,15.75,11.05,17
-chr,PUTTER WEIGHT UPGRADE,23.25,15,20.34375,13,20
-chr,SUREFIT WRENCH,15,12,13.125,12,15
-chr,917 Driver/Fairway WEIGHT KIT,100,76,75,67,90
-chr,917 Driver/Fairway Weights Pair,25,19,20,18,24
-chr,Fairway & Hybrid recoupling,30,20,26,0,0
-chr,Scotty Cameron Headcovers,20,12.5,17.5,13,20
-chr,Metal Headcovers,9,5.5,8,10,16
-chr,VOKEY LIMITED EDITION,165,115,144,120,158
-chr,VOKEY PERSONALISATION,10,7.5,9,7,11
-chr,WEDGEWORKS VOKEY SM5 Raw Wedge,130,90,114,85,125
-chr,WEDGEWORKS VOKEY SM6 Raw Wedge,0,0,114,0,0
-chr,WEDGEWORKS VOKEY Low Bounce K Grind,130,90,114,90,125
-chr,WEDGEWORKS VOKEY SM6 60M High Bounce,0,105,0,88,135
-chr,WEDGEWORKS VOKEY Snow Stamp,18,12,16,13,17
-chr,WEDGEWORKS VOKEY Toe Engraving,18,12,16,14,17
-chr,WEDGEWORKS VOKEY Custom Ferrule,3,2,3,2.5,3
-chr,SECOND VOKEY LIMITED EDITION,135,95,118,88,132
-chr,THIRD VOKEY LIMITED EDITION,150,105,131,95,145
-chr,Dynamic Gold - Steel,0,30,0,28,42
-chr,Kurokage - Graphite,0,30,0,35,42
-chr,SM6 Customisation - Straight/Freestyling Stamping,16,10,14,9,13.5
-chr,SM6 Customisation - Snow,24,12,21,10,16
-chr,SM6 Customisation - Shaft Bands,5,2,5,2,2.7
-chr,SM6 Customisation - Custom Ferrule,5,2,5,2,2.7
-acc,Carry Tournament Bag - Black/Navy,51.75,30,45,25,39
-acc,NEW! Players 5 Tournament Bag - Black/Navy,135,83,120,0,0
-acc,NEW! Players 4 Tournament Bag - Black/Red,133,70,117,0,0
-acc,Ball Marker,168,9.25,148,88,134
-acc,NEW! Ladies Pink Ribbon Performance Cap - White (Each),0,9.8,0,0,0
-acc,NEW! Junior Performance Cap - White (Each),0,9.8,0,0,0
-acc,NEW! Mens Knit Logo Pom Pom Beanie (1/2 dz),0,8.75,0,0,0
-acc,Locker Room Bag ,23.25,17,20,15,22
-acc,Single Canopy Umbrella ,25,16,22,0,0
-acc,NEW! Microfibre Tri-Fold Towel - Navy,0,6.25,0,0,0
-acc,NEW! Microfibre Tri-Fold Towel - Black ,0,6.25,0,0,0
+Type,Keys,DOLDIST1,EUDIST1
+bll,Pro V1 ,29.6,26
+bll,Pro V1x ,29.6,26
+bll,Pro V1 (All Double Digit),30.4,26
+bll,Pro V1x (All Double Digit),30.4,26
+bll,NXT Tour 'S' and yellow,20.8,18.5
+bll,Velocity,16.8,14.75
+bll,DT TruSoft,14,12.5
+bll,NEW! Pinnacle Rush (dz),10.35,9.5
+bll,NEW! Pinnacle Soft (dz),10.35,9.5
+bll,Pinnacle Exception,8.5,8
+bll,Pinnacle Practice ( Doz )White,6.5,6
+bll,Pinnacle Practice ( Doz )Yellow,6.5,6
+bll,Pinnacle Practice ( Doz )White +Logo,8,7.5
+bll,Pinnacle Practice ( Doz )Yellow + Logo,8,7.5
+bll,PRO  V1  LOGO  OVER-RUNS (BULK),15.5,0
+bll,PINNACLE  LOGO  OVER-RUNS (BULK),4,0
+bll,NEW! PRO V1X OUTS,21,0
+bll,X-OUT - TITLEIST  SURLYN,7,0
+bll,PRACTICE BALLS (V1 & V1X) Loose,20,0
+bll,PRACTICE BALLS Pro V1 Practice Custom Dz 100PK,0,0
+bll,PRACTICE BALLS NXT,9,9
+bll,PRACTICE BALLS NXT - LOGO,13,10.5
+bll,NXT Practice Yellow,0,9
+irn,716 AP1,46.56,42.33
+irn,716 AP1 Graphite,56.89,51.72
+irn,716 AP2 Forged,72.44,65.85
+irn,716 AP2 Forged Graphite,78.89,71.72
+irn,716 CB,71.44,64.94
+irn,716 MB,48.98,44.53
+irn,716 T-MB,74.89,68.08
+irn,716 T-MB Graphite,81.35,73.95
+irn,716 CB Graphite,77.82,70.74
+irn,716 MB Graphite,55.44,50.4
+irn,2017 T-MB Steel,101.25,0
+irn,2017 T-MB Graphite,113.25,0
+vky,Vokey SM6 - Tour Chrome,55,48
+vky,Vokey SM6 - Steel Grey,55,48
+vky,Vokey SM6 - Jet Black,55,48
+vky,Vokey SM6 - Custom Graphite,65,56
+mtl,Hybrids - 816H1,100.02,90.93
+mtl,Hybrids - 816H2,100.02,90.93
+mtl,Drivers  917 D2  ,225.11,204.64
+mtl,Drivers  917 D3  ,225.11,204.64
+mtl,Fairways  917 F2,126.25,114.78
+mtl,Fairways  917 F3  ,126.25,114.78
+ptr,"Cameron Crown 33""",225,200
+ptr,Cameron  Dual Balance ,241,219.09
+ptr,Cameron Select / H - 2016,230.73,209.76
+ptr,Cameron - Futura / H - 2017,230.73,209.76
+ptr,S Cameron - Limited Editions #1 My Girl/Holiday,405,350
+ptr,S Cameron - Limited Editions #2,225,300
+ptr,S Cameron - Limited Editions #3,270,300
+ptr,S Cameron - Limited Editions #4 (Jordan Spieth),486,415
+ptr,S Cameron - My Girl / Holiday,383,335
+ptr,Pivot Tool,6,6
+glv,Players,11.06,10.53
+glv,Players-Flex ,9.51,9.06
+glv,Perma-Soft,8.33,7.93
+bag,"NEW! Tour Vinyl  Staff Bag(9.5"")",250.38,238.46
+bag,Sta-Dry Cart Bag,126.51,120.48
+bag,NEW! Midsize Staff Cart Bag,115.12,109.63
+bag,Deluxe Cart Bag,131,0
+bag,Lightweight Cart Bag,96.97,92.35
+bag,NEW! Tour Stand ,122.92,117.06
+bag,NEW! Players 5 StaDry Waterproof Stand ,118.58,112.94
+bag,NEW! Players 14 Stand Bag - Staff Colours,94.23,89.74
+bag,NEW! Players 5 Stand Bag - Staff Colours,89.09,84.85
+bag,Sta-Dry 4UP Stand Bag,105.91,100.88
+bag,NEW! Premium Carry DS Bag,45.65,43.48
+bag,NEW! Sunday Carry DS Bag ,32.02,30.49
+hdw,Classic Ball Marker (Dozen),126.45,120.43
+hdw,NEW! Performance Ball Marker (Dozen),121.14,115.37
+hdw,Flag Q Max (Dozen) (FRA/BEL/SPA/POR/SWE),0,108
+hdw,Flag Q Max (1/2 dz) (ENG/SCO/EIR/NIR/WAL/SA/GER/NL/CH),0,54
+hdw,NEW! Tour Performance (Dozen),86.43,82.31
+hdw,NEW! Tour Performance Visor (Dozen),79.34,75.55
+hdw,Tour Visor - Black/White (Dozen),79.34,0
+hdw,NEW! Two Tone Mesh (Dozen),89.28,85.02
+hdw,Flat Bill - Black/White (1/2 dz) ,41.8,39.8
+hdw,NEW! Ladies Pink Ribbon Visor (1/2 dz),35.92,34.2
+hdw,NEW! Ladies Pink Ribbon Cap (1/2 dz),61.34,58.42
+hdw,NEW! Ladies Sports Visor (1/2 dz),41.51,39.54
+hdw,NEW! Junior Performance Cap (1/2 dz),42.89,40.86
+hdw,Sta Dry Bucket (1/2 dz),65.89,62.75
+hdw,Sta Dry Cap (1/2 dz),57.03,54.32
+hdw,NEW! Winter POM POM (1/2 dz),63,48
+hdw,NEW! Winter Fitted Beanie (Striped) Ladies and Mens (1/2 dz),52,48
+hdw,NEW! Winter Jacquard Beanie (1/2 dz),79,56
+hdw,NEW! Performance Snood (1/2 dz),0,48
+hdw,Performance Beanie (1/2 dz),79,56
+hdw,Aussie Assorted (1/2 dz) SOUTHERN & S AFRICA ONLY,105,90
+hdw,NEW! Performance Seersucker Bucket (1/2 dz),60.35,57.48
+hdw,NEW! Dobby Tech Cap (Dozen),86.43,82.31
+hdw,NEW! Players Deep Fit (Dozen),91.17,86.83
+acc,PROFESSIONAL Small Wheeled Travel Cover,161.31,153.62
+acc,"PROFESSIONAL 24"" Wheeled Duffel",129.95,123.77
+acc,"PROFESSIONAL 24"" Roller",133.46,127.11
+acc,PROFESSIONAL Duffel Bag,100.89,87
+acc,PROFESSIONAL Messenger Bag ,79.77,75.97
+acc,PROFESSIONAL Backpack,92.02,87.63
+acc,PROFESSIONAL Cabin Bag,85.46,81.38
+acc,PROFESSIONAL Briefcase,94.02,86
+acc,PROFESSIONAL Zippered Dopp Kit,31.86,30.35
+acc,PROFESSIONAL Tote Bag,88,52
+acc,ESSENTIAL Travel Cover,78.08,74.35
+acc,"ESSENTIAL 22"" Wheeled Duffel Bag",65.63,62.49
+acc,ESSENTIAL Duffel Bag,42.17,40.17
+acc,NEW! Large Backpack,42.74,40.71
+acc,ESSENTIAL Sackpack,11.43,10.89
+acc,ESSENTIAL Valubles Pouch,9,10
+acc,NEW! Practice Ball Bag,41.28,39.32
+acc,NEW! Den Caddy,65.35,62.25
+acc,Double Canopy Umbrella,31,29.52
+acc,Premier Umbrella ,63.72,62.25
+acc,Staff Towel,17.03,16.22
+acc,Players Towel,12.03,11.46
+acc,Microfibre Towel,9.14,8.71
+acc,Dri-Hood Towel,20.8,19.82
+acc,NEW! Microfibre Tri-Fold Cart Towel,6.37,6.06
+acc,Black Leather Headcover - Driver,27.69,26.38
+acc,Black Leather Headcover - Fairway,22.94,21.85
+acc,Black Leather Headcover - Hybrid,22.14,21.08
+acc,NEW! Leather White Headcover - Driver ,26.11,24.88
+acc,NEW! Leather White Headcover - Fairway,21.35,20.34
+acc,NEW! Leather White Headcover - Hybrid ,20.55,19.57
+acc,Scotty Cameron Headcover,0,0
+acc,Hand Warmer,14,15
+acc,Ear Band,6,5
+acc,Cart Mitts,17,15
+acc,SUREFIT WRENCH,13.125,12
+acc,917 Driver/Fairway WEIGHT KIT,75,67
+acc,917 Driver/Fairway Weights Pair,20,18
+acc,Fairway & Hybrid recoupling,26,0
+acc,Scotty Cameron Headcovers,17.5,13
+acc,Metal Headcovers,8,10
+acc,VOKEY LIMITED EDITION,144,120
+acc,VOKEY PERSONALISATION,9,7
+acc,WEDGEWORKS VOKEY SM5 Raw Wedge,114,85
+acc,WEDGEWORKS VOKEY SM6 Raw Wedge,114,0
+acc,WEDGEWORKS VOKEY Low Bounce K Grind,114,90
+acc,WEDGEWORKS VOKEY SM6 60M High Bounce,0,88
+acc,WEDGEWORKS VOKEY Snow Stamp,16,13
+acc,WEDGEWORKS VOKEY Toe Engraving,16,14
+acc,WEDGEWORKS VOKEY Custom Ferrule,3,2.5
+acc,SECOND VOKEY LIMITED EDITION,118,88
+acc,THIRD VOKEY LIMITED EDITION,131,95
+acc,Dynamic Gold - Steel,0,28
+acc,Kurokage - Graphite,0,35
+acc,SM6 Customisation - Straight/Freestyling Stamping,14,9
+acc,SM6 Customisation - Snow,21,10
+acc,SM6 Customisation - Shaft Bands,5,2
+acc,SM6 Customisation - Custom Ferrule,5,2
+acc,Locker Room Bag ,20,15
+acc,Single Canopy Umbrella ,22,0
