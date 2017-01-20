@@ -71,6 +71,7 @@ public class MasterFileReaderApp extends FileManager {
                 }
             }
         } catch (FileNotFoundException e) {
+            System.out.println(e + " when readAndConvertApp");
         }
     }
     

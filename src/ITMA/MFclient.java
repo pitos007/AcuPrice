@@ -14,12 +14,19 @@ import java.io.IOException;
 public class MFclient {
     public static void main(String[] args) throws IOException {
         
-        MasterFileReaderApp mfr = new MasterFileReaderApp();
-        //mfr.getHeaders();
-        mfr.readAndConvertApp();
-        //mfr.printMap(mfr.getMasterFileMap());
+        //MasterFileReaderApp mfr = new MasterFileReaderApp();
+            //mfr.getHeaders();
+        //mfr.readAndConvertApp();
+            //mfr.printMap(mfr.getMasterFileMap());
         
-        MFWriter mfw = new MFWriter();
-        mfw.writeMPLApp(mfr.getMasterFileMap());
+        //MFWriterApp mfw = new MFWriterApp();
+        //mfw.writeMPLApp(mfr.getMasterFileMap());
+        
+        MasterFileReaderSh mfrs = new MasterFileReaderSh();
+        mfrs.readAndConvertSh();
+        mfrs.printMap(mfrs.getMasterFileMap());
+        
+        //MFWriterSh mfws = new MFWriterSh();
+        //mfws.writeMPLSh(mfrs.getMasterFileMap());
     }
 }

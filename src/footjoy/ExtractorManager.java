@@ -31,9 +31,9 @@ public class ExtractorManager extends Extractor implements Printer{
         List<String> groupTokensFull = new ArrayList<>();
         //System.out.println("groupTokens: " + groupTokens);
         for (String grToken : groupTokens) {
-            List<String> tokenNum = getTokens(grToken);
+            List<String> tokenNum = super.getTokens(grToken);
             //System.out.println("tokenNum: " + tokenNum);
-            List<String> templList = createCodes(tokenNum);
+            List<String> templList = super.createCodes(tokenNum);
             //System.out.println("templList: " + templList);
             for (String eachToken : templList) {
                 groupTokensFull.add(eachToken);

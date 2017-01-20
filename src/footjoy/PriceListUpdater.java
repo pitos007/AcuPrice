@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  * @author UPatryk
  */
 public class PriceListUpdater extends FJFileManager implements Printer, Writer {
-    private FJFileManager fileMgr = new FJFileManager();
+    //private FJFileManager fileMgr = new FJFileManager();
     private ExtractorManager em = new ExtractorManager();
     private List<String> headers;
     private List<Map<String, List<String>>> priceFileList = new ArrayList<>();
@@ -34,7 +34,9 @@ public class PriceListUpdater extends FJFileManager implements Printer, Writer {
     private String path = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\FileContainer\\";
     
     public PriceListUpdater() throws DuplicateElementException{
-        this.headers = fileMgr.getFileNames();
+        //this.headers = fileMgr.getFileNames();
+        this.headers = super.getFileNames();
+        //this.priceList = em.generatePriceMap(); // 12345 [10, 11, 12]
         this.priceList = em.generatePriceMap(); // 12345 [10, 11, 12]
     }
     
@@ -213,7 +215,8 @@ public class PriceListUpdater extends FJFileManager implements Printer, Writer {
     
     @Override
     public String createFileName(String fileName){
-        String outPath = fileMgr.getOutPathName();
+        //String outPath = fileMgr.getOutPathName();
+        String outPath = super.getOutPathName();
         DateFormat dateFormat = new SimpleDateFormat("yyMMddHHmmss");
         Date dateTime = new Date();
         String dateTimeStr = dateFormat.format(dateTime);

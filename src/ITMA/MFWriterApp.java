@@ -21,8 +21,7 @@ import java.util.Map;
  *
  * @author UPatryk
  */
-public class MFWriter {
-    
+public class MFWriterApp {
     
     public void writeMPLApp(Map<String,List<String>> masterFileMap) throws IOException{
         if (masterFileMap.isEmpty()) {
@@ -66,7 +65,7 @@ public class MFWriter {
                     bw.write(line.get(77)); bw.write(","); // rwear
                     bw.write(line.get(76)); bw.write(","); // year
                     bw.write("1"); bw.write(","); // issueCode
-                    bw.write(line.get(75)); bw.write(","); // ttf
+                    bw.write(line.get(75)); bw.write(","); // trTimeFence
                     bw.write(line.get(79)); bw.write(","); // stdCst
                     
                     for (int i = 1; i < 12; i++) {

@@ -12,7 +12,7 @@ package ITMA;
 public class MFManager {
     static final String ITMA_CONT = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\ITMA\\";
     static final String FJ_APP = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\ITMA\\fjapp.csv";
-    static final String FJ_SH = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\ITMA\\fjshoes.csv";
+    static final String FJ_SH = "C:\\Users\\upatryk\\Documents\\NetBeansProjects\\AcuPrice\\src\\ITMA\\fjsh.csv";
     
     
     public MFManager() {
