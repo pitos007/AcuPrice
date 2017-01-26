@@ -52,17 +52,17 @@ public class MasterFileReaderSh extends MasterFileReaderApp {
                     while(ls.hasNext()){
                         tokenList.add(ls.next());
                     }
-                    String comm = tokenList.get(7);
-                    tokenList.set(7, getComm1(comm)); // replaces 6105201000 with 61052010
-                    tokenList.add(8, getComm2(comm)); // inserts 00 between 61052010 and EA
-                    tokenList.remove(13); // remove Sales U/M
-                    tokenList.remove(17); // remove inv type
-                    if (hasZero(tokenList.get(14))) {  // 03/02/2016
-                        tokenList.set(14, effDateZero(tokenList.get(14)));
+                    String comm = tokenList.get(6);
+                    tokenList.set(6, getComm1(comm)); // replaces 6105201000 with 61052010
+                    tokenList.add(7, getComm2(comm)); // inserts 00 between 61052010 and EA
+                    if (hasZero(tokenList.get(13))) {  // 03/02/2016
+                        tokenList.set(13, effDateZero(tokenList.get(13)));
                     }
                     else{
-                        tokenList.set(14, effDate(tokenList.get(14)));
+                        tokenList.set(13, effDate(tokenList.get(13)));
                     }
+                    tokenList.remove(12); // remove Sales U/M
+                    tokenList.remove(15); // remove inv type
                     tokenList.add("1");
                     tokenList.add("AWAIT CATEGORY");
                     tokenList.add("USProdStr");
@@ -73,6 +73,8 @@ public class MasterFileReaderSh extends MasterFileReaderApp {
             System.out.println(e + " when readAndConvertSh");
         }
     }
+    
+    
     
     
     public void addSizesSh(List<String> origTokenList){
