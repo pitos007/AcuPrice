@@ -31,6 +31,8 @@ public class MFWriterSh extends MFWriterApp {
                 bw.newLine();
                 for (String k : masterFileMap.keySet()) {
                     List<String> line = masterFileMap.get(k);
+                    //System.out.println(line.get(13));
+                    
                     bw.write(line.get(0)); bw.write(","); // Code
                     bw.write(line.get(2)); bw.write(","); // Desc
                     bw.write(line.get(3)); bw.write(","); // Generic
@@ -45,7 +47,7 @@ public class MFWriterSh extends MFWriterApp {
                     bw.write(line.get(12)); bw.write(","); // convFctr
                     bw.write("12"); bw.write(","); // pkgQty
                     bw.write(line.get(15)); bw.write(","); // wgt
-                    Double dbWgtCnvFctr = roundDb(Double.valueOf(line.get(16)), 4);
+                    Double dbWgtCnvFctr = roundDb(Double.valueOf(line.get(13)), 4);
                     String StrWgtCnvFctr = String.valueOf(dbWgtCnvFctr);
                     bw.write(StrWgtCnvFctr); bw.write(","); // wgtCnvFctr
                     bw.write("AWAIT CATEGORY"); bw.write(","); // awaitCat

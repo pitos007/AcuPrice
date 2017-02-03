@@ -26,7 +26,7 @@ public class MFclient {
         mfrs.readAndConvertSh();
         mfrs.printMap(mfrs.getMasterFileMap());
         
-        //MFWriterSh mfws = new MFWriterSh();
-        //mfws.writeMPLSh(mfrs.getMasterFileMap());
+        MFWriterSh mfws = new MFWriterSh();
+        mfws.writeMPLSh(mfrs.getMasterFileMap());
     }
 }

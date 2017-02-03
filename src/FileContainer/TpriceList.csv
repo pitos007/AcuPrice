@@ -1,149 +1,124 @@
-Type,Keys,AGDISC1
-bll,Pro V1 ,25.7
-bll,Pro V1x ,25.7
-bll,Pro V1 (All Double Digit),0
-bll,Pro V1x (All Double Digit),0
-bll,NXT Tour 'S' and yellow,17.04
-bll,Velocity,12.85
-bll,DT TruSoft,10.37
-bll,NEW! Pinnacle Rush (dz),7.28
-bll,NEW! Pinnacle Soft (dz),7.28
-bll,Pinnacle Exception,5.95
-bll,Pinnacle Practice ( Doz )White,6.25
-bll,Pinnacle Practice ( Doz )Yellow,6.25
-bll,Pinnacle Practice ( Doz )White +Logo,7.3
-bll,Pinnacle Practice ( Doz )Yellow + Logo,7.3
-bll,PRO  V1  LOGO  OVER-RUNS (BULK),14.5
-bll,PINNACLE  LOGO  OVER-RUNS (BULK),3.5
-bll,NEW! PRO V1X OUTS,15
-bll,X-OUT - TITLEIST  SURLYN,6.4
-bll,PRACTICE BALLS (V1 & V1X) Loose,18.3
-bll,PRACTICE BALLS Pro V1 Practice Custom Dz 100PK,18.3
-bll,PRACTICE BALLS NXT,8.6
-bll,PRACTICE BALLS NXT - LOGO,10
-bll,NXT Practice Yellow,8.6
-irn,716 AP1,52.92
-irn,716 AP1 Graphite,62.72
-irn,716 AP1 Forged,0
-irn,716 AP1 Forged Graphite,0
-irn,716 AP2 Forged,66.64
-irn,716 AP2 Forged Graphite,76.44
-irn,716 CB,66.64
-irn,716 MB,66.64
-irn,716 T-MB,98
-irn,716 T-MB Graphite,107.8
-irn,716 CB Graphite,76.44
-irn,716 MB Graphite,76.44
-irn,2017 AP1 Steel,60.76
-irn,2017 AP1 Graphite,70.56
-irn,2017 AP2 Steel,76.44
-irn,2017 AP2 Graphite,86.24
-irn,2017 AP3 Steel,70.56
-irn,2017 AP3 Graphite,76.44
-irn,2017 CB Steel,70.56
-irn,2017 CB Graphite,76.44
-irn,2017 MB Steel,70.56
-irn,2017 MB Graphite,76.44
-irn,2017 T-MB Steel,122.5
-irn,2017 T-MB Graphite,132.3
-irn,Vokey SM6 - Tour Chrome,68.6
-irn,Vokey SM6 - Steel Grey,68.6
-irn,Vokey SM6 - Jet Black,68.6
-irn,Vokey SM6 - Custom Graphite,79.38
-mtl,Hybrids - 816H1,114.66
-mtl,Hybrids - 816H2,114.66
-mtl,Hybrids - 818H1,132.3
-mtl,Hybrids - 818H2,132.3
-mtl,Drivers  917 D2  ,245
-mtl,Drivers  917 D3  ,245
-mtl,Drivers  917 D4,0
-mtl,Fairways  917 F2,151.9
-mtl,Fairways  917 F3  ,151.9
-ptr,"Cameron Crown 33""",181.3
-ptr,Cameron  Dual Balance ,191.1
-ptr,Cameron Select / H - 2016,181.3
-ptr,Cameron - Futura / H - 2017,181.3
-ptr,S Cameron - Limited Editions #1 My Girl/Holiday,0
-ptr,S Cameron - Limited Editions #2,0
-ptr,S Cameron - Limited Editions #3,0
-ptr,S Cameron - Limited Editions #4 (Jordan Spieth),343
-ptr,S Cameron - My Girl / Holiday,308.7
-ptr,Pivot Tool,5.88
-glv,Players,9.25
-glv,Players-Flex ,7.94
-glv,Perma-Soft,7.1
-bags ,"NEW! Tour Vinyl  Staff Bag(9.5"")",183.26
-bags ,Sta-Dry Cart Bag,99.96
-bags ,NEW! Midsize Staff Cart Bag,108.29
-bags ,Deluxe Cart Bag,79.14
-bags ,Lightweight Cart Bag,62.48
-bags ,NEW! Tour Stand ,95.8
-bags ,NEW! Players 5 StaDry Waterproof Stand ,95.8
-bags ,NEW! Players 14 Stand Bag - Staff Colours,83.3
-bags ,NEW! Players 14 Stand Bag,83.3
-bags ,NEW! Players 5 Stand Bag - Staff Colours,69.14
-bags ,NEW! Players 5 Stand Bag,69.14
-bags ,Sta-Dry 4UP Stand Bag,83.3
-bags ,NEW! Players 4 Stand Bag - Staff Colours,58.31
-bags ,NEW! Players 4 Stand Bag,58.31
-bags ,NEW! Premium Carry DS Bag,33.32
-bags ,NEW! Sunday Carry DS Bag ,24.99
-hdv,Classic Ball Marker (Dozen),105.84
-hdv,NEW! Performance Ball Marker (Dozen),102
-hdv,Flag Q Max (Dozen) (FRA/BEL/SPA/POR/SWE),0
-hdv,Flag Q Max (1/2 dz) (ENG/SCO/EIR/NIR/WAL/SA/GER/NL/CH),51.82
-hdv,NEW! Tour Performance (Dozen),103.64
-hdv,NEW! Tour Performance Visor (Dozen),83.79
-hdv,Tour Visor - Black/White (Dozen),0
-hdv,NEW! Two Tone Mesh (Dozen),103.64
-hdv,Flat Bill - Black/White (1/2 dz) ,51.82
-hdv,NEW! Ladies Pink Ribbon Visor (1/2 dz),51.82
-hdv,NEW! Ladies Pink Ribbon Cap (1/2 dz),57.33
-hdv,NEW! Ladies Sports Visor (1/2 dz),51.82
-hdv,NEW! Junior Performance Cap (1/2 dz),51.82
-hdv,Sta Dry Bucket (1/2 dz),74.97
-hdv,Sta Dry Cap (1/2 dz),66.64
-hdv,NEW! Winter POM POM (1/2 dz),43.73
-hdv,NEW! Winter Fitted Beanie (Striped) Ladies and Mens (1/2 dz),43.73
-hdv,NEW! Winter Jacquard Beanie (1/2 dz),49.98
-hdv,NEW! Performance Snood (1/2 dz),43.73
-hdv,Performance Beanie (1/2 dz),43.73
-hdv,Aussie Assorted (1/2 dz) SOUTHERN & S AFRICA ONLY,0
-hdv,NEW! Performance Seersucker Bucket (1/2 dz),0
-hdv,NEW! Dobby Tech Cap (Dozen),103.64
-hdv,NEW! Players Deep Fit (Dozen),103.64
-acc,PROFESSIONAL Small Wheeled Travel Cover,114.66
-acc,"PROFESSIONAL 24"" Wheeled Duffel",99.23
-acc,"PROFESSIONAL 24"" Roller",99.23
-acc,PROFESSIONAL Duffel Bag,74.97
-acc,PROFESSIONAL Messenger Bag ,70.56
-acc,PROFESSIONAL Backpack,74.97
-acc,PROFESSIONAL Cabin Bag,70.56
-acc,PROFESSIONAL Briefcase,74.97
-acc,PROFESSIONAL Zippered Dopp Kit,26.46
-acc,PROFESSIONAL Tote Bag,0
-acc,ESSENTIAL Travel Cover,64.39
-acc,"ESSENTIAL 22"" Wheeled Duffel Bag",52.92
-acc,ESSENTIAL Duffel Bag,32.63
-acc,NEW! Large Backpack,32.63
-acc,ESSENTIAL Sackpack,9.26
-acc,ESSENTIAL Valubles Pouch,4.63
-acc,NEW! Practice Ball Bag,35.28
-acc,NEW! Den Caddy,44.1
-acc,Double Canopy Umbrella,22.05
-acc,Premier Umbrella ,48.51
-acc,Staff Towel,11.47
-acc,Players Towel,9.26
-acc,Microfibre Towel,9.26
-acc,Dri-Hood Towel,15.44
-acc,NEW! Microfibre Tri-Fold Cart Towel,6.62
-acc,Black Leather Headcover - Driver,28.22
-acc,Black Leather Headcover - Fairway,26.46
-acc,Black Leather Headcover - Hybrid,23.81
-acc,NEW! Leather White Headcover - Driver ,28.22
-acc,NEW! Leather White Headcover - Fairway,26.46
-acc,NEW! Leather White Headcover - Hybrid ,23.81
-acc,Scotty Cameron Headcover,£0.00
-acc,Hand Warmer,15.83
-acc,Ear Band,0
-acc,Cart Mitts,12.5
+Type,Keys,TRADEZR1
+bll,Pro V1 ,525
+bll,Pro V1x ,525
+bll,Pro V1 (All Double Digit),525
+bll,Pro V1x (All Double Digit),525
+bll,NXT Tour 'S' and yellow,360
+bll,Velocity,270
+bll,DT TruSoft,240
+bll,NEW! Pinnacle Rush (dz),190
+bll,NEW! Pinnacle Soft (dz),190
+bll,Pinnacle Exception,165
+bll,Pinnacle Practice ( Doz )White,140
+bll,Pinnacle Practice ( Doz )Yellow,140
+bll,Pinnacle Practice ( Doz )White +Logo,165
+bll,Pinnacle Practice ( Doz )Yellow + Logo,165
+bll,PRO  V1  LOGO  OVER-RUNS (BULK),350
+bll,PINNACLE  LOGO  OVER-RUNS (BULK),125
+bll,NEW! PRO V1X OUTS,300
+bll,X-OUT - TITLEIST  SURLYN,130
+bll,PRACTICE BALLS (V1 & V1X) Loose,360
+bll,PRACTICE BALLS NXT,200
+bll,PRACTICE BALLS NXT - LOGO,200
+irn,716 AP1,1000
+irn,716 AP1 Graphite,1200
+irn,716 AP2 Forged,1300
+irn,716 AP2 Forged Graphite,1450
+irn,716 CB,1300
+irn,716 MB,1200
+irn,716 T-MB,1870
+irn,716 T-MB Graphite,2000
+irn,716 CB Graphite,1450
+irn,716 MB Graphite,1350
+irn,2017 AP1 Steel,1000
+irn,2017 AP1 Graphite,1200
+irn,2017 AP2 Steel,1300
+irn,2017 AP2 Graphite,1450
+irn,2017 CB Steel,1375
+irn,2017 MB Steel,1275
+irn,2017 T-MB Steel,2100
+irn,Vokey SM6 - Tour Chrome,1250
+irn,Vokey SM6 - Steel Grey,1250
+irn,Vokey SM6 - Jet Black,1250
+irn,Vokey SM6 - Custom Graphite,1400
+mtl,Hybrids - 816H1,2000
+mtl,Hybrids - 816H2,2000
+mtl,Hybrids - 818H1,2000
+mtl,Hybrids - 818H2,2000
+mtl,Drivers  917 D2  ,4500
+mtl,Drivers  917 D7  ,4500
+mtl,Fairways  917 F  ,2700
+mtl,Fairways  917 FD   ,2700
+ptr,"Cameron Crown 33""",3300
+ptr,Cameron  Dual Balance ,3800
+ptr,Cameron Select / H - 2016,3300
+ptr,Cameron - Futura / H - 2017,3300
+ptr,S Cameron - Limited Editions #1 My Girl/Holiday,6500
+ptr,S Cameron - Limited Editions #2,6500
+ptr,S Cameron - Limited Editions #3,6500
+ptr,S Cameron - Limited Editions #4 (Jordan Spieth),6500
+ptr,S Cameron - My Girl / Holiday,6500
+ptr,Pivot Tool,100
+glv,Players,220
+glv,Players-Flex ,170
+glv,Perma-Soft,150
+bags ,"NEW! Tour Vinyl  Staff Bag(9.5"")",4500
+bags ,Sta-Dry Cart Bag,2450
+bags ,NEW! Midsize Staff Cart Bag,2350
+bags ,Deluxe Cart Bag,2150
+bags ,Lightweight Cart Bag,1850
+bags ,NEW! Tour Stand ,2200
+bags ,NEW! Players 5 StaDry Waterproof Stand ,2300
+bags ,NEW! Players 14 Stand Bag - Staff Colours,1850
+bags ,NEW! Players 14 Stand Bag,1850
+bags ,NEW! Players 5 Stand Bag - Staff Colours,1750
+bags ,NEW! Players 5 Stand Bag,1750
+bags ,Sta-Dry 4UP Stand Bag,2000
+bags ,NEW! Players 4 Stand Bag - Staff Colours,1550
+bags ,NEW! Players 4 Stand Bag,1550
+bags ,NEW! Premium Carry DS Bag,900
+bags ,NEW! Sunday Carry DS Bag ,600
+hdv,Classic Ball Marker (Dozen),2500
+hdv,NEW! Performance Ball Marker (Dozen),2500
+hdv,Flag Q Max (Dozen) (FRA/BEL/SPA/POR/SWE),2000
+hdv,NEW! Tour Performance (Dozen),2340
+hdv,NEW! Tour Performance Visor (Dozen),2340
+hdv,Tour Visor - Black/White (Dozen),2340
+hdv,NEW! Two Tone Mesh (Dozen),2500
+hdv,NEW! Ladies Pink Ribbon Visor (1/2 dz),1020
+hdv,NEW! Ladies Pink Ribbon Cap (1/2 dz),1250
+hdv,NEW! Ladies Sports Visor (1/2 dz),1020
+hdv,NEW! Junior Performance Cap (1/2 dz),1170
+hdv,NEW! Winter POM POM Beanie (1/2 dz),1140
+hdv,NEW! Winter Fitted Beanie (Striped) Ladies and Mens (1/2 dz),1140
+hdv,Performance Beanie (1/2 dz),1140
+hdv,Aussie Assorted (1/2 dz) SOUTHERN & S AFRICA ONLY,1450
+hdv,NEW! Performance Seersucker Bucket (1/2 dz),1500
+hdv,NEW! Dobby Tech Cap (Dozen),2500
+hdv,NEW! Players Deep Fit (Dozen),2500
+acc,PROFESSIONAL Small Wheeled Travel Cover,3000
+acc,"PROFESSIONAL 24"" Wheeled Duffel",2450
+acc,"PROFESSIONAL 24"" Roller",2500
+acc,PROFESSIONAL Duffel Bag,1900
+acc,PROFESSIONAL Messenger Bag ,1700
+acc,PROFESSIONAL Backpack,1850
+acc,PROFESSIONAL Cabin Bag,1700
+acc,PROFESSIONAL Briefcase,1850
+acc,ESSENTIAL Travel Cover,1750
+acc,"ESSENTIAL 22"" Wheeled Duffel Bag",1275
+acc,ESSENTIAL Duffel Bag,800
+acc,NEW! Large Backpack,800
+acc,ESSENTIAL Sackpack,250
+acc,ESSENTIAL Valubles Pouch,160
+acc,NEW! Practice Ball Bag,700
+acc,NEW! Den Caddy,1000
+acc,Double Canopy Umbrella,600
+acc,Premier Umbrella ,1250
+acc,Staff Towel,300
+acc,Players Towel,250
+acc,Microfibre Towel,200
+acc,NEW! Microfibre Tri-Fold Cart Towel,145
+acc,Black Leather Headcover - Driver,550
+acc,Black Leather Headcover - Fairway,450
+acc,Ear Band,90
+acc,Cart Mitts,330

@@ -66,6 +66,7 @@ public class MasterFileReaderSh extends MasterFileReaderApp {
                     tokenList.add("1");
                     tokenList.add("AWAIT CATEGORY");
                     tokenList.add("USProdStr");
+                    //System.out.println(tokenList);
                     addSizesSh(tokenList);
                 }
             }
@@ -79,14 +80,14 @@ public class MasterFileReaderSh extends MasterFileReaderApp {
     
     public void addSizesSh(List<String> origTokenList){
         String prodStruct = getProductStructure(origTokenList); // LCHTY
-        List<List<String>> sizesList = getXNum(origTokenList); // [[S, M, L, XL, XXL], [AB, AC, AD, AE, AF]]
+        List<List<String>> sizesList = getXNum(origTokenList); // [[60, 65, 70, 75, 80], [G, H, I, J, K]]
         int sizeNum = sizesList.get(0).size();
         for (int i = 0; i < sizeNum; i++) {
             // beware! if you write: List<String> newTokenList = origTokenList;
             // then you will be modifying the same object in the loop - 92166SM, 92166SML, 92166SMLXL
             List<String> newTokenList = new ArrayList<>(origTokenList);
-            newTokenList.set(0, (origTokenList.get(0) + sizesList.get(0).get(i))); // 92166 -> 92166S
-            newTokenList.set(21, (prodStruct + sizesList.get(1).get(i))); // L -> LCHTYAB
+            newTokenList.set(0, (origTokenList.get(0) + sizesList.get(0).get(i) + origTokenList.get(1))); // 92166 -> 92166+075+M
+            newTokenList.set(21, (prodStruct + sizesList.get(1).get(i) + origTokenList.get(1))); // KADJD+J+M
             newTokenList.remove(22); // L
             newTokenList.remove(23); // C
             newTokenList.remove(24); // H
@@ -98,9 +99,10 @@ public class MasterFileReaderSh extends MasterFileReaderApp {
     @Override
     public String getProductStructure(List<String> lineStr){
         String prodStruct = "";
-        for (int i = 20; i < 24; i++) {
+        for (int i = 18; i < 22; i++) {
             prodStruct += lineStr.get(i);
         }
+        //System.out.println(prodStruct);
         return prodStruct;
     }
     
@@ -108,9 +110,10 @@ public class MasterFileReaderSh extends MasterFileReaderApp {
     @Override
     public List<List<String>> getXNum(List<String> listStr){
         List<String> xList = new ArrayList<>();
-        for (int i = 26; i < 52; i++) {
+        for (int i = 22; i < 50; i++) {
             xList.add(listStr.get(i));   // " ", " ", "X", "X", "X", "X", " ", " ",
         }
+        //System.out.println(xList);
         List<List<String>> sizesFound = new ArrayList<>();
         List<String> sizeToken = new ArrayList<>();
         List<String> levelFiveToken = new ArrayList<>();
@@ -118,9 +121,9 @@ public class MasterFileReaderSh extends MasterFileReaderApp {
         for (int i = 0; i < xList.size(); i++) {
             counter++;
             if (xList.get(i).equals("x") || xList.get(i).equals("X")) {  // i=2
-                List<String> sizeAndPS = this.sizes.get(counter); // [S, AB...], [M, AC...]
-                sizeToken.add(sizeAndPS.get(0)); // "S", "M"...
-                levelFiveToken.add(sizeAndPS.get(1)); // "AB", "AC"...
+                List<String> sizeAndPS = this.sizes.get(counter); // [60, G...], [65, H...]
+                sizeToken.add(sizeAndPS.get(0)); // "60", "65"...
+                levelFiveToken.add(sizeAndPS.get(1)); // "G", "H"...
             }
         }
         sizesFound.add(sizeToken); // S, M, L, XL
