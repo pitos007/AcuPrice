@@ -57,7 +57,7 @@ public class MFWriterApp {
                     bw.write(line.get(111)); bw.write(","); // awaitCat
                     bw.write(line.get(16)); bw.write(","); // prodStruct
                     bw.write(line.get(14)); bw.write(","); // priceCat
-                    bw.write(line.get(112)); bw.write(","); // USProdStr
+                    //w.write(line.get(112)); bw.write(","); // USProdStr
                     bw.write(line.get(0)); bw.write(","); // PriceAsProd
                     bw.write(getSalesAnUM(line.get(15))); bw.write(","); //salesAnUM
                     bw.write(line.get(73)); bw.write(","); // BoughtMade

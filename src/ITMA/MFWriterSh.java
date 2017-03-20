@@ -68,9 +68,9 @@ public class MFWriterSh extends MFWriterApp {
                         bw.write(","); // prodAttr
                     }
                     
-                    for (int i = 72; i < 87; i++) {
-                        bw.write(line.get(i)); bw.write(","); // priceList
-                    }
+//                    for (int i = 72; i < 87; i++) {
+//                        bw.write(line.get(i)); bw.write(","); // priceList
+//                    }
                     bw.newLine();
                 }
             }
